@@ -26,14 +26,14 @@ export default defineGuide({
   von: 'b_basel_fr',
   nach: 'b_lejonquera',
   related: ['maut-spanien', 'benzinpreis-frankreich', 'maut-italien', 'tanken-luxemburg', 'vignette-schweiz'],
-  sources: ['aprr', 'vinciLiaisons', 'asfGuide', 'sanef', 'atmb', 'sftrf'],
+  sources: ['aprr', 'vinciLiaisons', 'asfGuide', 'sanef', 'atmb', 'atmbFluxLibre', 'sftrf'],
   de: {
     slug: 'maut-frankreich',
     nav: 'Maut Frankreich',
     card: 'Péage 2026 nach den Rastern von APRR, ASF und Escota: Klassen 1, 2 und 5, Tunnel.',
     title: 'Maut Frankreich 2026: Klassen, Péage-Preise, Tunnel',
     description: 'Maut Frankreich 2026: Preise von APRR, ASF und Escota ab 1. Februar, Klasse 1, 2 oder 5 für Pkw, Wohnmobil, Gespann und Motorrad, dazu Mont Blanc und Fréjus.',
-    h1: 'Maut Frankreich 2026: was kostet der Péage?',
+    h1: 'Maut Frankreich 2026: was kostet der Péage, wie online bezahlen?',
     intro: 'Start und Ziel wählen: der Rechner nimmt die Preise je Ein- und Ausfahrt aus den Tarifrastern der Betreiber und nennt, was er nicht gelesen hat.',
     resume: (h) => {
       const { spanien, paris } = D(h);
@@ -46,6 +46,7 @@ export default defineGuide({
         { q: 'Wie viel spart ein Motorrad auf der französischen Autobahn?', a: `Motorräder haben eine eigene Klasse 5 und zahlen deutlich weniger als ein Pkw. Von Basel bis zur spanischen Grenze sind es ${h.eur(spanien.mo.s.geprueft, 2)} statt ${h.eur(spanien.pkw.s.geprueft, 2)}, also gut ${h.num(Math.round((1 - spanien.mo.s.geprueft / spanien.pkw.s.geprueft) * 100))} Prozent weniger. Das gilt auch für Seitenwagen und Trikes. Im Fréjus-Tunnel fährt ein Motorrad mit Anhänger ebenfalls in Klasse 5.` },
         { q: 'Warum fehlt für Straßburg–Paris ein Mautbetrag?', a: 'Die Strecke läuft über die A4 der Sanef. Deren Tarifraster 2026 gibt es als PDF, der Server verweigert automatisierten Abrufen aber den Zugriff, auch über Archivkopien. Wir haben die Preise deshalb nicht gelesen und zeigen den Abschnitt als „nicht verifiziert“, statt einen alten oder geschätzten Wert einzusetzen. Dasselbe gilt für die A1 von Lille nach Paris.' },
         { q: 'Lohnt sich am Mont-Blanc-Tunnel das Ticket für Hin- und Rückfahrt?', a: `Ja, wenn Sie innerhalb einer Woche zurückkommen. Die einfache Fahrt kostet für den Pkw von Frankreich nach Italien ${h.eur(mb.einfach.pkw, 2)}, Hin und zurück ${h.eur(mb.hinzurueck.pkw, 2)}. Die Rückfahrt gilt laut ATMB bis Mitternacht des siebten Tages nach dem Ausstellen. Bei einem längeren Urlaub zahlen Sie zweimal den einfachen Preis, in der Gegenrichtung wegen der italienischen Mehrwertsteuer etwas mehr.` },
+        { q: 'Kann ich die Maut in Frankreich online bezahlen?', a: 'An den klassischen Mautstellen zahlen Sie vor Ort, mit Karte, bar oder mit einem Télépéage-Gerät. Online zahlen Sie auf den Strecken ohne Schranken (Flux Libre): laut ATMB auf der A79 und auf der A13 und A14 in der Normandie, ab 2027 auch auf der A40 zwischen Passy und Annemasse. Dort wird das Kennzeichen erfasst, und Sie zahlen innerhalb von 72 Stunden auf der Website des Betreibers oder bei einem Tabakhändler des Nirio-Netzes. Einen Beleg über eine an der Mautstelle nicht bezahlte Fahrt begleichen Sie ebenfalls online mit Karte.' },
       ];
     },
     body: (h) => {
@@ -82,6 +83,7 @@ ${h.table(['Einfahrt – Ausfahrt', 'Betreiber', 'Klasse 1', 'Klasse 2', 'Klasse
         { q: 'How much does a motorcycle save on French motorways?', a: `Motorcycles have their own class 5 and pay much less than a car. From Basel to the Spanish border it is ${h.eur(spanien.mo.s.geprueft, 2)} instead of ${h.eur(spanien.pkw.s.geprueft, 2)}, a good ${h.num(Math.round((1 - spanien.mo.s.geprueft / spanien.pkw.s.geprueft) * 100))} per cent less. The same applies to sidecars and trikes. In the Fréjus tunnel a motorcycle with a trailer also travels in class 5.` },
         { q: 'Why is there no toll amount for Strasbourg to Paris?', a: 'The route runs on Sanef’s A4. Its 2026 rate grid exists as a PDF, but the server refuses automated access, archive copies included. We have therefore not read the prices and show the section as “not verified” rather than inserting an old or estimated figure. The same applies to the A1 from Lille to Paris.' },
         { q: 'Is the return ticket worth it at the Mont Blanc tunnel?', a: `Yes, if you come back within a week. One way from France to Italy costs a car ${h.eur(mb.einfach.pkw, 2)}, a return ${h.eur(mb.hinzurueck.pkw, 2)}. According to ATMB the return leg is valid until midnight on the seventh day after issue. On a longer holiday you pay the single fare twice, and slightly more in the opposite direction because of Italian VAT.` },
+        { q: 'Can I pay French tolls online?', a: 'At conventional toll plazas you pay on the spot, by card, cash or with a télépéage tag. You pay online on barrier-free sections (Flux Libre): according to ATMB, the A79 and the A13 and A14 in Normandy, and from 2027 the A40 between Passy and Annemasse too. There the number plate is recorded and you pay within 72 hours on the operator’s website or at a tobacconist in the Nirio network. A receipt for a trip not paid at a toll plaza can also be settled online by card.' },
       ];
     },
     body: (h) => {
@@ -118,6 +120,7 @@ ${h.table(['Entry – exit', 'Operator', 'Class 1', 'Class 2', 'Class 5'], rows,
         { q: 'Hoeveel bespaart een motor op de Franse snelweg?', a: `Motoren hebben een eigen klasse 5 en betalen flink minder dan een auto. Van Bazel tot de Spaanse grens is het ${h.eur(spanien.mo.s.geprueft, 2)} in plaats van ${h.eur(spanien.pkw.s.geprueft, 2)}, dus ruim ${h.num(Math.round((1 - spanien.mo.s.geprueft / spanien.pkw.s.geprueft) * 100))} procent minder. Dat geldt ook voor zijspannen en trikes. In de Fréjustunnel rijdt een motor met aanhanger eveneens in klasse 5.` },
         { q: 'Waarom ontbreekt een tolbedrag voor Straatsburg–Parijs?', a: 'De route loopt over de A4 van Sanef. Het tariefrooster 2026 bestaat als pdf, maar de server weigert automatische toegang, ook via archiefkopieën. Wij hebben de prijzen dus niet gelezen en tonen het traject als “niet geverifieerd”, in plaats van een oude of geschatte waarde in te vullen. Hetzelfde geldt voor de A1 van Rijsel naar Parijs.' },
         { q: 'Loont een retourticket bij de Mont Blanc-tunnel?', a: `Ja, als u binnen een week terugkomt. Enkele reis van Frankrijk naar Italië kost voor een auto ${h.eur(mb.einfach.pkw, 2)}, heen en terug ${h.eur(mb.hinzurueck.pkw, 2)}. Volgens ATMB geldt de terugrit tot middernacht van de zevende dag na uitgifte. Bij een langere vakantie betaalt u twee keer de enkele prijs, in de andere richting door de Italiaanse btw iets meer.` },
+        { q: 'Kan ik de tol in Frankrijk online betalen?', a: 'Bij de gewone tolposten betaalt u ter plaatse, met een kaart, contant of met een télépéage-badge. Online betaalt u op de trajecten zonder slagboom (Flux Libre): volgens ATMB op de A79 en op de A13 en A14 in Normandië, vanaf 2027 ook op de A40 tussen Passy en Annemasse. Daar wordt de nummerplaat geregistreerd en betaalt u binnen 72 uur op de site van de beheerder of bij een tabakszaak van het Nirio-netwerk. Ook een onbetaalde tolbon voldoet u online.' },
       ];
     },
     body: (h) => {

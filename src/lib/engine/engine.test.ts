@@ -191,3 +191,40 @@ describe('Weekly Oil Bulletin und EZB-Kurse', () => {
     expect(M.KURSE.kurse.CZK).toBeGreaterThan(20); expect(M.KURSE.kurse.HUF).toBeGreaterThan(300);
   });
 });
+
+describe('Tarifperioden : Tarif nach Reisetag, sonst « noch nicht veröffentlicht »', () => {
+  const route = M.route('muenchen', 'villach')!;
+  it('Tauern 15 € bis 31.12.2026, ab 1.1.2027 ohne Preis (Tarif 2027 der ASFINAG noch nicht veröffentlicht)', () => {
+    expect(M.maut(route.schritte, 'pkw', '2026-12-31').find((x) => x.id === 'tauern')?.preis).toBe(15);
+    const neu = M.maut(route.schritte, 'pkw', '2027-01-02').find((x) => x.id === 'tauern');
+    expect(neu?.preis).toBeNull();
+    expect(neu?.grund).toBe('tarif_offen');
+  });
+  it('Frankreich : Raster gilt bis 31.1.2027 ; Italien : Kilometertarif bis 31.12.2026', () => {
+    const fr = (tag: string) => M.maut(M.route('lyon', 'b_lejonquera')!.schritte, 'pkw', tag)[0].preis;
+    expect(fr('2027-01-31')).toBe(55.5);
+    expect(fr('2027-02-01')).toBeNull();
+    const it = (tag: string) => M.maut(M.route('b_brenner', 'modena')!.schritte, 'pkw', tag)[0];
+    expect(it('2026-12-31').preis).toBeGreaterThan(0);
+    expect(it('2027-01-01').preis).toBeNull();
+  });
+  it('Kroatien (Betreiber nennt kein Ende) : Preis bleibt', () => {
+    const m = M.maut(M.route('b_obrezje', 'zagreb')!.schritte, 'pkw', '2027-06-01');
+    expect(m.find((x) => x.id === 'bregana')?.preis).toBe(1);
+  });
+  it('Hin- und Rückfahrt über den Jahreswechsel : Hinfahrt gezählt, Rückfahrt offen', () => {
+    const r = M.reise({ start: 'muenchen', ziel: 'villach', fz: 'pkw', sorte: 'e95', verbrauch: 7, ab: '2026-12-20', dauer: 14, hinUndZurueck: true, aufenthalt: false })!;
+    expect(r.summen.mautGeprueft).toBe(15);
+    expect(r.mautRueck?.find((x) => x.id === 'tauern')?.grund).toBe('tarif_offen');
+    const vorher = M.reise({ start: 'muenchen', ziel: 'villach', fz: 'pkw', sorte: 'e95', verbrauch: 7, ab: '2026-11-01', dauer: 14, hinUndZurueck: true, aufenthalt: false })!;
+    expect(vorher.summen.mautGeprueft).toBe(30);
+    expect(vorher.mautRueck).toBeNull();
+  });
+  it('Folgetarif : ab folge.ab ersetzt er den alten, danach gilt sein eigenes Ende', () => {
+    const t = { preis: 1, preise_bis: '2026-12-31', folge: { ab: '2027-01-01', preis: 2, preise_bis: '2027-12-31' } };
+    expect(M.tarifAm(t, '2026-06-01')?.preis).toBe(1);
+    expect(M.tarifAm(t, '2027-03-01')?.preis).toBe(2);
+    expect(M.tarifAm(t, '2028-01-01')).toBeNull();
+    expect(M.tarifAm(t)?.preis).toBe(1);
+  });
+});

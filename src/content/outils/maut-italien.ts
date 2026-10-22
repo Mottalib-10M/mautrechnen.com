@@ -24,14 +24,14 @@ export default defineGuide({
   von: 'b_brenner',
   nach: 'rom',
   related: ['brennermaut', 'maut-nach-italien', 'spritpreise-italien', 'maut-oesterreich', 'vignette-schweiz', 'maut-frankreich'],
-  sources: ['aspiCalcolo', 'aspiClassi', 'a22', 'osm'],
+  sources: ['aspiCalcolo', 'aspiClassi', 'aspiPagamento', 'a22', 'osm'],
   de: {
     slug: 'maut-italien',
     nav: 'Maut Italien',
     card: 'Kilometertarife 2026 von Autostrade und A22, Mautklassen, geschätzte Maut je Strecke.',
-    title: 'Maut Italien 2026: Kilometertarife, Klassen, Schätzung',
+    title: 'Maut Italien 2026: Kilometertarife, Klassen, Wohnmobil',
     description: 'Maut Italien 2026: so rechnen Autostrade per l’Italia und die A22, welche Klasse Pkw, Wohnmobil und Gespann haben und was die Fahrt Brenner–Rom etwa kostet.',
-    h1: 'Maut Italien 2026: was kostet die Autostrada?',
+    h1: 'Maut Italien 2026: was kostet die Autostrada, wie bezahlen?',
     intro: 'Start und Ziel wählen: der Rechner schätzt die italienische Maut aus den amtlichen Kilometertarifen und zeigt, welche Abschnitte er nicht kennt.',
     resume: (h) => {
       const { T, rom } = D(h);
@@ -44,6 +44,7 @@ export default defineGuide({
         { q: 'In welche Mautklasse fällt ein Pkw mit Wohnwagen in Italien?', a: `Ein Pkw mit einachsigem Wohnwagen hat zusammen drei Achsen und fällt damit in die Klasse 3. Bei Autostrade kostet das im Flachland ${h.eur(T.aspi_pianura.preis.gespann, 5)} je Kilometer statt ${h.eur(T.aspi_pianura.preis.pkw, 5)} für den Pkw allein. Vom Brenner nach Rom macht das nach unserer Schätzung ${h.eur(rom.gs.s.schaetzung - rom.pkw.s.schaetzung, 2)} mehr aus. Ein Wohnwagen mit Tandemachse ergibt vier Achsen und eine noch höhere Klasse.` },
         { q: 'Zahlt ein Motorrad in Italien weniger Maut als ein Auto?', a: 'Nein. Italien teilt die Fahrzeuge nach Achsen und nach der Höhe über der Vorderachse ein, nicht nach der Art des Fahrzeugs. Motorrad und Pkw haben beide zwei Achsen und liegen an der Vorderachse unter 1,30 Meter, sie fallen also beide in die Klasse A und zahlen denselben Kilometertarif. Anders als in Frankreich gibt es für Motorräder keine eigene, günstigere Klasse.' },
         { q: 'Welche italienischen Autobahnen rechnet diese Seite nicht?', a: 'Die Abschnitte von Konzessionären, deren Tarif 2026 wir nicht lesen konnten: die A4 Brescia–Padova, die Autostrade Alto Adriatico im Nordosten, die A7 Milano–Serravalle Richtung Genua und die A10 dei Fiori zur französischen Grenze. Sie erscheinen im Rechner als „nicht verifiziert“ und gehen in keine Summe ein, die Fahrt zum Gardasee, nach Venedig oder an die Riviera ist dort also unvollständig.' },
+        { q: 'Wie bezahle ich die Maut in Italien, und geht das online?', a: 'An der Mautstelle der Ausfahrt: bar, mit Karte, mit der Prepaid-Karte Viacard oder per Telepedaggio (Telepass), so nennt Autostrade per l’Italia die Zahlungsarten. Online zahlt man nur nachträglich: Wer an der Mautstelle nicht zahlen konnte, erhält einen Beleg über die nicht bezahlte Maut (Rapporto di Mancato Pagamento) und begleicht ihn auf der Seite des Betreibers mit Kreditkarte, ohne Aufschlag innerhalb von 15 Tagen; danach kommen Bearbeitungskosten hinzu.' },
       ];
     },
     body: (h) => {
@@ -58,7 +59,7 @@ export default defineGuide({
       return `<h2>Die Formel der Betreiber</h2>
 <p>Autostrade per l’Italia beschreibt die Berechnung so: Kilometertarif der Fahrzeugklasse mal gefahrene Kilometer, dazu die Mehrwertsteuer, der Betrag auf 10 Cent gerundet (${h.src('aspiCalcolo')}). Jeder Konzessionär rechnet seinen Abschnitt getrennt; wer vom Brenner über die A22 und dann über die A1 fährt, bekommt also zwei getrennt gerundete Beträge. Die Tarife unten enthalten bereits 22 % Mehrwertsteuer und gelten seit dem 1. Januar 2026.</p>
 ${h.table(['Betreiber, Streckenart', 'Klasse A (Pkw, Motorrad)', 'Klasse B (Wohnmobil)', 'Klasse 3 (Pkw + Wohnwagen)'], tarif, 'Euro je Kilometer, mit Mehrwertsteuer', ['l', 'r', 'r', 'r'])}
-<p>Quellen: ${h.src('aspiCalcolo')}, ${h.src('a22')}, Klassen nach ${h.src('aspiClassi')}. Klasse A heißt: zwei Achsen und an der Vorderachse höchstens 1,30 Meter hoch. Die meisten Wohnmobile und hohen Kastenwagen liegen darüber und fahren in Klasse B.</p>
+<p>Quellen: ${h.src('aspiCalcolo')}, ${h.src('a22')}, Klassen nach ${h.src('aspiClassi')}. Ein Wohnmobil über 3,5 Tonnen zahlt dasselbe wie ein leichteres, denn das Gewicht zählt für die Klasse nicht: mit zwei Achsen und über 1,30 Meter Höhe Klasse B (${h.eur(T.aspi_pianura.preis.wohnmobil, 5)} je Kilometer im Flachland bei Autostrade), mit drei Achsen Klasse 3 (${h.eur(T.aspi_pianura.preis.gespann, 5)}). Klasse A heißt: zwei Achsen und an der Vorderachse höchstens 1,30 Meter hoch. Die meisten Wohnmobile und hohen Kastenwagen liegen darüber und fahren in Klasse B.</p>
 <h2>Geschätzte Maut auf typischen Strecken</h2>
 ${h.table(['Strecke', 'Länge', 'Pkw', 'Wohnmobil', 'Pkw + Wohnwagen'], rows, 'Einfache Fahrt, Schätzung aus Kilometertarif × Routenlänge (OpenStreetMap)', ['l', 'r', 'r', 'r', 'r'])}
 <p>Die Längen stammen aus dem Routing auf Daten von ${h.src('osm', 'OpenStreetMap')}. Die tatsächliche Mautstrecke beginnt und endet an den Mautstellen und kann einige Kilometer kürzer oder länger sein. Für Hin- und Rückfahrt verdoppelt der Rechner den Betrag.</p>
@@ -85,6 +86,7 @@ ${h.table(['Strecke', 'Länge', 'Pkw', 'Wohnmobil', 'Pkw + Wohnwagen'], rows, 'E
         { q: 'Which toll class is a car with a caravan in Italy?', a: `A car with a single-axle caravan has three axles in total and is therefore class 3. On Autostrade lowland stretches that costs ${h.eur(T.aspi_pianura.preis.gespann, 5)} per kilometre instead of ${h.eur(T.aspi_pianura.preis.pkw, 5)} for the car alone. From the Brenner to Rome our estimate puts the difference at ${h.eur(rom.gs.s.schaetzung - rom.pkw.s.schaetzung, 2)}. A caravan with a twin axle makes four axles and an even higher class.` },
         { q: 'Do motorcycles pay less than cars on Italian motorways?', a: 'No. Italy classifies vehicles by axles and by height above the front axle, not by vehicle type. A motorcycle and a car both have two axles and stay under 1.30 metres at the front axle, so both fall into class A and pay the same per-km rate. Unlike France, Italy has no separate, cheaper class for motorcycles.' },
         { q: 'Which Italian motorways does this site not calculate?', a: 'Sections run by concessionaires whose 2026 rates we could not read: the A4 Brescia–Padova, Autostrade Alto Adriatico in the north-east, the A7 Milano–Serravalle towards Genoa and the A10 dei Fiori to the French border. They appear in the calculator as “not verified” and are left out of every total, so trips to Lake Garda, Venice or the Riviera are incomplete there.' },
+        { q: 'How do I pay Italian tolls, and can I pay online?', a: 'At the exit toll plaza: cash, card, the prepaid Viacard or electronic tolling (Telepass), as Autostrade per l’Italia lists the payment methods. Online payment is only after the fact: if you could not pay at the plaza, you get a receipt for the unpaid toll (Rapporto di Mancato Pagamento) and settle it on the operator’s website by credit card, with no surcharge within 15 days; after that, processing costs are added.' },
       ];
     },
     body: (h) => {
@@ -99,7 +101,7 @@ ${h.table(['Strecke', 'Länge', 'Pkw', 'Wohnmobil', 'Pkw + Wohnwagen'], rows, 'E
       return `<h2>The operators’ formula</h2>
 <p>Autostrade per l’Italia describes the calculation as the per-km rate for the vehicle class times the kilometres driven, plus VAT, rounded to 10 cents (${h.src('aspiCalcolo')}). Each concessionaire charges its own section separately: a driver going from the Brenner down the A22 and then on the A1 gets two separately rounded amounts. The rates below already include 22% VAT and have applied since 1 January 2026.</p>
 ${h.table(['Operator, type of stretch', 'Class A (car, motorcycle)', 'Class B (motorhome)', 'Class 3 (car + caravan)'], tarif, 'Euros per kilometre, VAT included', ['l', 'r', 'r', 'r'])}
-<p>Sources: ${h.src('aspiCalcolo')}, ${h.src('a22')}, classes as per ${h.src('aspiClassi')}. Class A means two axles and no more than 1.30 metres high at the front axle. Most motorhomes and high vans exceed that and travel in class B.</p>
+<p>Sources: ${h.src('aspiCalcolo')}, ${h.src('a22')}, classes as per ${h.src('aspiClassi')}. A motorhome over 3.5 tonnes pays the same as a lighter one, because weight does not count for the class: with two axles and over 1.30 metres high it is class B (${h.eur(T.aspi_pianura.preis.wohnmobil, 5)} per kilometre on flat Autostrade sections), with three axles class 3 (${h.eur(T.aspi_pianura.preis.gespann, 5)}). Class A means two axles and no more than 1.30 metres high at the front axle. Most motorhomes and high vans exceed that and travel in class B.</p>
 <h2>Estimated tolls on typical routes</h2>
 ${h.table(['Route', 'Distance', 'Car', 'Motorhome', 'Car + caravan'], rows, 'One way, estimate from per-km rate × route length (OpenStreetMap)', ['l', 'r', 'r', 'r', 'r'])}
 <p>Distances come from routing on ${h.src('osm', 'OpenStreetMap')} data. The actual tolled distance starts and ends at the toll stations and can be a few kilometres shorter or longer. For a return trip the calculator doubles the amount.</p>
@@ -126,6 +128,7 @@ ${h.table(['Route', 'Distance', 'Car', 'Motorhome', 'Car + caravan'], rows, 'One
         { q: 'In welke tolklasse valt een auto met caravan in Italië?', a: `Een auto met een eenassige caravan heeft samen drie assen en valt dus in klasse 3. Bij Autostrade kost dat in vlak land ${h.eur(T.aspi_pianura.preis.gespann, 5)} per kilometer in plaats van ${h.eur(T.aspi_pianura.preis.pkw, 5)} voor de auto alleen. Van de Brenner naar Rome scheelt dat volgens onze schatting ${h.eur(rom.gs.s.schaetzung - rom.pkw.s.schaetzung, 2)}. Een caravan met tandemas geeft vier assen en een nog hogere klasse.` },
         { q: 'Betaalt een motor in Italië minder tol dan een auto?', a: 'Nee. Italië deelt voertuigen in naar het aantal assen en de hoogte boven de vooras, niet naar het soort voertuig. Een motor en een auto hebben allebei twee assen en blijven bij de vooras onder 1,30 meter, ze vallen dus allebei in klasse A en betalen hetzelfde kilometertarief. Anders dan Frankrijk kent Italië geen aparte, goedkopere klasse voor motoren.' },
         { q: 'Welke Italiaanse snelwegen rekent deze site niet?', a: 'De trajecten van concessiehouders waarvan wij het tarief van 2026 niet konden lezen: de A4 Brescia–Padova, Autostrade Alto Adriatico in het noordoosten, de A7 Milano–Serravalle richting Genua en de A10 dei Fiori naar de Franse grens. Ze staan in de rekenhulp als “niet geverifieerd” en tellen in geen enkel totaal mee; ritten naar het Gardameer, Venetië of de Rivièra zijn daar dus onvolledig.' },
+        { q: 'Hoe betaal ik de tol in Italië, en kan dat online?', a: 'Bij de tolpost van de afrit: contant, met een kaart, met de prepaidkaart Viacard of via telepedaggio (Telepass), zo noemt Autostrade per l’Italia de betaalwijzen. Online betaalt u alleen achteraf: wie bij de tolpost niet kon betalen, krijgt een bon voor de onbetaalde tol (Rapporto di Mancato Pagamento) en voldoet die op de site van de beheerder met een creditcard, zonder toeslag binnen 15 dagen; daarna komen er administratiekosten bij.' },
       ];
     },
     body: (h) => {
@@ -140,7 +143,7 @@ ${h.table(['Route', 'Distance', 'Car', 'Motorhome', 'Car + caravan'], rows, 'One
       return `<h2>De formule van de exploitanten</h2>
 <p>Autostrade per l’Italia beschrijft de berekening als het kilometertarief van de voertuigklasse maal de gereden kilometers, plus btw, afgerond op 10 cent (${h.src('aspiCalcolo')}). Elke concessiehouder rekent zijn eigen traject apart: wie van de Brenner over de A22 en daarna over de A1 rijdt, krijgt dus twee apart afgeronde bedragen. De tarieven hieronder bevatten al 22 % btw en gelden sinds 1 januari 2026.</p>
 ${h.table(['Exploitant, soort traject', 'Klasse A (auto, motor)', 'Klasse B (camper)', 'Klasse 3 (auto + caravan)'], tarif, 'Euro per kilometer, btw inbegrepen', ['l', 'r', 'r', 'r'])}
-<p>Bronnen: ${h.src('aspiCalcolo')}, ${h.src('a22')}, klassen volgens ${h.src('aspiClassi')}. Klasse A betekent: twee assen en boven de vooras hoogstens 1,30 meter hoog. De meeste campers en hoge bestelbussen zitten daarboven en rijden in klasse B.</p>
+<p>Bronnen: ${h.src('aspiCalcolo')}, ${h.src('a22')}, klassen volgens ${h.src('aspiClassi')}. Een camper boven 3,5 ton betaalt hetzelfde als een lichtere, want het gewicht telt niet voor de klasse: met twee assen en hoger dan 1,30 meter klasse B (${h.eur(T.aspi_pianura.preis.wohnmobil, 5)} per kilometer in het vlakke land bij Autostrade), met drie assen klasse 3 (${h.eur(T.aspi_pianura.preis.gespann, 5)}). Klasse A betekent: twee assen en boven de vooras hoogstens 1,30 meter hoog. De meeste campers en hoge bestelbussen zitten daarboven en rijden in klasse B.</p>
 <h2>Geschatte tol op gangbare routes</h2>
 ${h.table(['Route', 'Afstand', 'Auto', 'Camper', 'Auto + caravan'], rows, 'Enkele reis, schatting uit kilometertarief × lengte van de route (OpenStreetMap)', ['l', 'r', 'r', 'r', 'r'])}
 <p>De afstanden komen uit een routeberekening op gegevens van ${h.src('osm', 'OpenStreetMap')}. Het werkelijke tolplichtige stuk begint en eindigt bij de tolstations en kan enkele kilometers korter of langer zijn. Voor heen en terug verdubbelt de rekenhulp het bedrag.</p>

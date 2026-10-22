@@ -35,7 +35,7 @@ export default defineGuide({
     card: 'E-Vignette der DARS: Klassen 2A und 2B, Preise 2026, Karawankentunnel extra.',
     title: 'Vignette Slowenien 2026: Klassen 2A, 2B und Preise',
     description: 'Vignette Slowenien 2026: 7 Tage, Monat oder Jahr, Klasse 2A für Pkw, 2B für die meisten Wohnmobile. Was frei ist und warum der Karawankentunnel extra kostet.',
-    h1: 'Vignette Slowenien 2026: welche Klasse, welche Laufzeit?',
+    h1: 'Vignette Slowenien 2026 online kaufen: Klasse und Laufzeit, auch für 1 Tag',
     intro: 'Slowenien erhebt die Autobahnmaut über die E-Vignette: der Rechner wählt Klasse und Laufzeit für Ihre Fahrtage.',
     resume: (h) => {
       const { a, b, m, lang, kurz, kar } = D(h);
@@ -60,7 +60,7 @@ export default defineGuide({
       ];
       return `<h2>Preise der E-Vignette</h2>
 ${h.table(['Laufzeit', 'Klasse 2A (Pkw)', 'Klasse 2B (Wohnmobil)', 'Klasse 1 (Motorrad)'], rows, undefined, ['l', 'r', 'r', 'r'])}
-<p>Quelle: ${h.src('darsVignette')}, gelesen am ${h.date(h.P.retrieved_at)}. Die DARS nennt auf dieser Seite kein Datum des Inkrafttretens; Preise für 2027 haben wir nicht gefunden.</p>
+<p>Quelle: ${h.src('darsVignette')}, gelesen am ${h.date(h.P.retrieved_at)}. Die DARS nennt auf dieser Seite kein Datum des Inkrafttretens; Offizielle Seite und Webshop ist evinjeta.dars.si der Autobahngesellschaft DARS: Dort kaufen Sie die E-Vignette online zum Preis oben; die DARS warnt ausdrücklich vor nicht autorisierten Verkäufern im Netz. Preise für 2027 haben wir nicht gefunden.</p>
 <h2>Durchreise nach Kroatien: was der Rechner wählt</h2>
 <p>Anders als in Österreich gibt es in Slowenien keine 1-Tages-Vignette. Wer am ${h.date(ab)} durchfährt und zwei Wochen später zurückkommt, kann zwei 7-Tages-Vignetten oder eine Monatsvignette kaufen; bei gleichem Preis nimmt der Rechner die Lösung mit weniger Vignetten. Für ein Wohnmobil der Klasse 2B kostet dieselbe Reise ${h.eur(camper.summeEur, 2)}. Wer länger als einen Monat bleibt oder mehrmals im Jahr fährt, vergleicht mit der Jahresvignette, die von Datum zu Datum gilt (${h.src('darsValidity')}).</p>
 <h2>Karawankentunnel: Vignette gilt nicht</h2>
@@ -100,7 +100,7 @@ ${h.table(['Laufzeit', 'Klasse 2A (Pkw)', 'Klasse 2B (Wohnmobil)', 'Klasse 1 (Mo
       ];
       return `<h2>E-vignette prices</h2>
 ${h.table(['Duration', 'Class 2A (car)', 'Class 2B (motorhome)', 'Class 1 (motorcycle)'], rows, undefined, ['l', 'r', 'r', 'r'])}
-<p>Source: ${h.src('darsVignette')}, read on ${h.date(h.P.retrieved_at)}. DARS gives no start date for these prices on that page, and we found no 2027 prices.</p>
+<p>Source: ${h.src('darsVignette')}, read on ${h.date(h.P.retrieved_at)}. DARS gives no start date for these prices on that page, and we found no 2027 prices. The official site and web shop is evinjeta.dars.si, run by the motorway company DARS: buy the e-vignette online there at the price above; DARS explicitly warns against unauthorised sellers online.</p>
 <h2>Transit to Croatia: what the calculator chooses</h2>
 <p>Unlike Austria, Slovenia has no 1-day vignette. If you drive through on ${h.date(ab)} and come back two weeks later, you can buy two 7-day vignettes or one monthly vignette; at equal cost the calculator picks the option with fewer vignettes. For a class 2B motorhome the same trip costs ${h.eur(camper.summeEur, 2)}. If you stay longer than a month or travel several times a year, compare with the annual vignette, which runs from date to date (${h.src('darsValidity')}).</p>
 <h2>Karawanken tunnel: the vignette does not apply</h2>
@@ -140,7 +140,7 @@ ${h.table(['Duration', 'Class 2A (car)', 'Class 2B (motorhome)', 'Class 1 (motor
       ];
       return `<h2>Prijzen van het e-vignet</h2>
 ${h.table(['Duur', 'Klasse 2A (auto)', 'Klasse 2B (camper)', 'Klasse 1 (motor)'], rows, undefined, ['l', 'r', 'r', 'r'])}
-<p>Bron: ${h.src('darsVignette')}, gelezen op ${h.date(h.P.retrieved_at)}. DARS vermeldt op die pagina geen ingangsdatum, en prijzen voor 2027 vonden we niet.</p>
+<p>Bron: ${h.src('darsVignette')}, gelezen op ${h.date(h.P.retrieved_at)}. DARS vermeldt op die pagina geen ingangsdatum, en prijzen voor 2027 vonden we niet. De officiële site en webwinkel is evinjeta.dars.si van snelwegbeheerder DARS: daar koopt u het e-vignet online tegen de prijs hierboven; DARS waarschuwt uitdrukkelijk voor niet-erkende verkopers op internet.</p>
 <h2>Doorreis naar Kroatië: wat de rekenhulp kiest</h2>
 <p>Anders dan Oostenrijk heeft Slovenië geen dagvignet. Wie op ${h.date(ab)} doorrijdt en twee weken later terugkomt, kan twee weekvignetten of één maandvignet kopen; bij gelijke prijs kiest de rekenhulp de oplossing met minder vignetten. Voor een camper in klasse 2B kost dezelfde reis ${h.eur(camper.summeEur, 2)}. Wie langer dan een maand blijft of meerdere keren per jaar rijdt, vergelijkt met het jaarvignet, dat van datum tot datum geldt (${h.src('darsValidity')}).</p>
 <h2>Karawankentunnel: het vignet geldt niet</h2>

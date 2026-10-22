@@ -32,9 +32,9 @@ export default defineGuide({
     slug: 'maut-oesterreich',
     nav: 'Maut Österreich',
     card: 'Vignette und Streckenmaut zusammen: Brenner, Tauern, Karawanken, Pyhrn, Arlberg.',
-    title: 'Maut Österreich 2026: Vignette und Streckenmaut zusammen',
+    title: 'Maut Österreich 2026: Vignette, Streckenmaut online kaufen',
     description: 'Maut Österreich 2026: Vignette plus Streckenmaut für Brenner, Tauern, Karawanken, Pyhrn und Arlberg, Felbertauern und Großglockner, je Richtung berechnet.',
-    h1: 'Maut Österreich 2026: was kostet die Durchfahrt wirklich?',
+    h1: 'Maut Österreich 2026: Durchfahrt, 10 Tage und Wohnmobil über 3,5 t',
     intro: 'Einfahrt und Ausfahrt wählen: der Rechner addiert die Streckenmaut der ASFINAG auf Ihrem Weg; die Vignette rechnet er auf der Seite zur Vignette und im Reiserechner.',
     resume: (h) => {
       const { S, sued, v } = D(h);
@@ -56,7 +56,7 @@ export default defineGuide({
       const w = wege.map(([a, b]) => { const f = fahrt(a, b); return [`${ort(h, a)} – ${ort(h, b)}`, `${h.num(f.km)} km`, h.eur(f.s, 2)]; });
       return `<h2>Die fünf Streckenmaut-Abschnitte 2026</h2>
 ${h.table(['Abschnitt', 'Einzelfahrt', 'hin und zurück', 'Mehrfahrtenkarte'], rows, 'Pkw, Wohnmobil bis 3,5 t und Motorrad zahlen gleich', ['l', 'r', 'r', 'r'])}
-<p>Quelle: ${h.src('asfinagStrecke')} und ${h.src('asfinagMautordnung')}, gelesen am ${h.date(h.P.retrieved_at)}. Auf der A10 gibt es eine Teilstrecke für ${h.eur(S.tauern.teilstrecke, 2)}, wenn man nur einen der beiden Tunnel durchfährt; auf der A13 kosten Teilstrecken zwischen ${h.eur(Math.min(...S.brenner.teilstrecken), 2)} und ${h.eur(Math.max(...S.brenner.teilstrecken), 2)}. Für die Pyhrnautobahn verkauft die ASFINAG Bosruck (${h.eur(S.pyhrn.teile.bosruck, 2)}) und Gleinalm (${h.eur(S.pyhrn.teile.gleinalm, 2)}) einzeln.</p>
+<p>Quelle: ${h.src('asfinagStrecke')} und ${h.src('asfinagMautordnung')}, gelesen am ${h.date(h.P.retrieved_at)}. Online kaufen Sie Vignette und Streckenmaut im Mautshop der ASFINAG: Die Einzelfahrt gilt sofort nach dem Kauf, die Digitale Streckenmaut FLEX wird nach jeder Durchfahrt abgerechnet. Auf der A10 gibt es eine Teilstrecke für ${h.eur(S.tauern.teilstrecke, 2)}, wenn man nur einen der beiden Tunnel durchfährt; auf der A13 kosten Teilstrecken zwischen ${h.eur(Math.min(...S.brenner.teilstrecken), 2)} und ${h.eur(Math.max(...S.brenner.teilstrecken), 2)}. Für die Pyhrnautobahn verkauft die ASFINAG Bosruck (${h.eur(S.pyhrn.teile.bosruck, 2)}) und Gleinalm (${h.eur(S.pyhrn.teile.gleinalm, 2)}) einzeln.</p>
 <h2>Was typische Durchfahrten kosten</h2>
 ${h.table(['Strecke', 'Länge', 'Streckenmaut Pkw'], w, 'Einfache Fahrt, ohne Vignette', ['l', 'r', 'r'])}
 <p>Die Fahrt von Suben über Linz und den Pyhrn nach Spielfeld ist die Route vieler Urlauber nach Slowenien und Kroatien, die Salzburg meiden wollen; sie kostet durch zwei Tunnel mehr Streckenmaut als die Tauernroute. Welche Variante insgesamt günstiger ist, hängt auch von Sprit und Vignetten in den Nachbarländern ab: das rechnet ${h.a('maut-nach-kroatien', 'Maut nach Kroatien')} für die ganze Fahrt.</p>
@@ -92,7 +92,7 @@ ${h.table(['Strecke', 'Länge', 'Streckenmaut Pkw'], w, 'Einfache Fahrt, ohne Vi
       const w = wege.map(([a, b]) => { const f = fahrt(a, b); return [`${ort(h, a)} – ${ort(h, b)}`, `${h.num(f.km)} km`, h.eur(f.s, 2)]; });
       return `<h2>The five section-toll routes in 2026</h2>
 ${h.table(['Section', 'Single trip', 'Return', 'Multi-trip card'], rows, 'Cars, motorhomes up to 3.5 t and motorcycles pay the same', ['l', 'r', 'r', 'r'])}
-<p>Source: ${h.src('asfinagStrecke')} and ${h.src('asfinagMautordnung')}, read on ${h.date(h.P.retrieved_at)}. On the A10 there is a partial-route fare of ${h.eur(S.tauern.teilstrecke, 2)} if you only pass one of the two tunnels; on the A13, partial routes cost between ${h.eur(Math.min(...S.brenner.teilstrecken), 2)} and ${h.eur(Math.max(...S.brenner.teilstrecken), 2)}. On the Pyhrn motorway ASFINAG sells Bosruck (${h.eur(S.pyhrn.teile.bosruck, 2)}) and Gleinalm (${h.eur(S.pyhrn.teile.gleinalm, 2)}) separately.</p>
+<p>Source: ${h.src('asfinagStrecke')} and ${h.src('asfinagMautordnung')}, read on ${h.date(h.P.retrieved_at)}. Buy the vignette and section tolls online in ASFINAG’s toll shop: a single trip is valid straight after purchase, and the Digital Section Toll FLEX is billed after each passage. On the A10 there is a partial-route fare of ${h.eur(S.tauern.teilstrecke, 2)} if you only pass one of the two tunnels; on the A13, partial routes cost between ${h.eur(Math.min(...S.brenner.teilstrecken), 2)} and ${h.eur(Math.max(...S.brenner.teilstrecken), 2)}. On the Pyhrn motorway ASFINAG sells Bosruck (${h.eur(S.pyhrn.teile.bosruck, 2)}) and Gleinalm (${h.eur(S.pyhrn.teile.gleinalm, 2)}) separately.</p>
 <h2>What typical crossings cost</h2>
 ${h.table(['Route', 'Distance', 'Section toll, car'], w, 'One way, without vignette', ['l', 'r', 'r'])}
 <p>The drive from Suben via Linz and the Pyhrn to Spielfeld is the route many holidaymakers take to Slovenia and Croatia when they want to avoid Salzburg; with two tunnels it costs more in section tolls than the Tauern route. Which option is cheaper overall also depends on fuel and vignettes in the neighbouring countries: ${h.a('maut-nach-kroatien', 'tolls to Croatia')} works that out for the whole journey.</p>

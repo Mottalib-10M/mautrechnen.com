@@ -34,7 +34,7 @@ export default defineGuide({
     card: 'eDálnice 2026: Preise in Kronen und Euro, 365-Tage-Jahresvignette, Motorrad frei.',
     title: 'Vignette Tschechien 2026: Preise in Kronen und Euro',
     description: 'Vignette Tschechien 2026: elektronische Dálniční známka für 1, 10 oder 30 Tage oder ein Jahr ab Starttag. Preise in Kronen und Euro, Motorrad und Anhänger frei.',
-    h1: 'Vignette Tschechien 2026: Preise und Laufzeiten',
+    h1: 'Vignette Tschechien 2026: Preise, offizielle Seite, online kaufen',
     intro: 'Die tschechische Vignette ist elektronisch und gilt ab dem gewählten Tag: der Rechner nennt die billigste Laufzeit für Ihre Fahrtage.',
     resume: (h) => {
       const { k, e, lang, kurz, stand } = D(h);
@@ -54,7 +54,7 @@ export default defineGuide({
       const rows = h.M.produkte('CZ', 'pkw', ab).map((p) => [{ '1t': '1 Tag', '10t': '10 Tage', '30t': '30 Tage', jahr: '365 Tage' }[p.id] ?? p.id, h.geld(p.preis, 'CZK'), h.eur(p.preisEur, 2), p.bis ? h.date(p.bis) : '–']);
       return `<h2>Preise ab dem 1. Januar 2026</h2>
 ${h.table(['Laufzeit', 'Preis', 'in Euro', `gültig bis (Beginn ${h.date(ab)})`], rows, `Normaler Kraftstoff, Fahrzeuge bis 3,5 t; Euro zum EZB-Kurs vom ${h.date(stand)}`, ['l', 'r', 'r', 'r'])}
-<p>Quelle: ${h.src('edalnice')}, gelesen am ${h.date(h.P.retrieved_at)}. Auf der Startseite und in den häufigen Fragen der eDálnice standen beim Lesen noch niedrigere Beträge, die nicht zur Preisliste passen; maßgeblich ist die Preisliste mit Gültigkeit ab dem 1. Januar 2026. Preise für 2027 sind nicht veröffentlicht.</p>
+<p>Quelle: ${h.src('edalnice')}, gelesen am ${h.date(h.P.retrieved_at)}. Offizielle Seite ist edalnice.cz des staatlichen Verkehrsinfrastrukturfonds SFDI: Dort kaufen Sie die Vignette online direkt zum Listenpreis. Auf der Startseite und in den häufigen Fragen der eDálnice standen beim Lesen noch niedrigere Beträge, die nicht zur Preisliste passen; maßgeblich ist die Preisliste mit Gültigkeit ab dem 1. Januar 2026. Preise für 2027 sind nicht veröffentlicht.</p>
 <h2>Welche Laufzeit für die Durchreise?</h2>
 <p>Wer Tschechien auf dem Weg nach Österreich, Ungarn oder Kroatien durchquert, braucht die Vignette meist nur an zwei Tagen. Zwei 1-Tages-Vignetten kosten ${h.geld(k['1t'] * 2, 'CZK')}, die 10-Tages-Vignette ${h.geld(k['10t'], 'CZK')}: Liegen Hin- und Rückfahrt höchstens zehn Tage auseinander, ist die 10-Tages-Vignette günstiger, sonst die beiden Tagesvignetten. Für die Abfahrt am ${h.date(ab)} wählt der Rechner bei zwei Wochen ${wahl(h, lang)} (${h.eur(lang.summeEur, 2)}), bei einer Woche ${wahl(h, kurz)} (${h.eur(kurz.summeEur, 2)}). Die 30-Tages-Vignette für ${h.geld(k['30t'], 'CZK')} lohnt sich erst, wenn Sie im Land selbst an vielen Tagen Autobahn fahren.</p>
 <h2>Kronen und Euro</h2>
@@ -89,7 +89,7 @@ ${h.table(['Laufzeit', 'Preis', 'in Euro', `gültig bis (Beginn ${h.date(ab)})`]
       const rows = h.M.produkte('CZ', 'pkw', ab).map((p) => [{ '1t': '1 day', '10t': '10 days', '30t': '30 days', jahr: '365 days' }[p.id] ?? p.id, h.geld(p.preis, 'CZK'), h.eur(p.preisEur, 2), p.bis ? h.date(p.bis) : '–']);
       return `<h2>Prices from 1 January 2026</h2>
 ${h.table(['Duration', 'Price', 'in euros', `valid until (start ${h.date(ab)})`], rows, `Standard fuel, vehicles up to 3.5 t; euros at the ECB rate of ${h.date(stand)}`, ['l', 'r', 'r', 'r'])}
-<p>Source: ${h.src('edalnice')}, read on ${h.date(h.P.retrieved_at)}. When we read it, the eDálnice home page and FAQ still showed lower amounts that do not match the price list; the price list valid from 1 January 2026 is the one that counts. No 2027 prices have been published.</p>
+<p>Source: ${h.src('edalnice')}, read on ${h.date(h.P.retrieved_at)}. The official site is edalnice.cz, run by the State Fund for Transport Infrastructure (SFDI): buy the vignette online there, directly at the list price. When we read it, the eDálnice home page and FAQ still showed lower amounts that do not match the price list; the price list valid from 1 January 2026 is the one that counts. No 2027 prices have been published.</p>
 <h2>Which duration for a transit?</h2>
 <p>If you cross Czechia on the way to Austria, Hungary or Croatia, you usually need the vignette on two days only. Two 1-day vignettes cost ${h.geld(k['1t'] * 2, 'CZK')}, the 10-day vignette ${h.geld(k['10t'], 'CZK')}: if the drive out and back are at most ten days apart, the 10-day vignette is cheaper, otherwise the two day vignettes. Leaving on ${h.date(ab)}, the calculator picks ${wahl(h, lang)} (${h.eur(lang.summeEur, 2)}) for two weeks and ${wahl(h, kurz)} (${h.eur(kurz.summeEur, 2)}) for one week. The 30-day vignette at ${h.geld(k['30t'], 'CZK')} only pays off if you drive on motorways on many days within the country.</p>
 <h2>Koruna and euros</h2>
@@ -124,7 +124,7 @@ ${h.table(['Duration', 'Price', 'in euros', `valid until (start ${h.date(ab)})`]
       const rows = h.M.produkte('CZ', 'pkw', ab).map((p) => [{ '1t': '1 dag', '10t': '10 dagen', '30t': '30 dagen', jahr: '365 dagen' }[p.id] ?? p.id, h.geld(p.preis, 'CZK'), h.eur(p.preisEur, 2), p.bis ? h.date(p.bis) : '–']);
       return `<h2>Prijzen vanaf 1 januari 2026</h2>
 ${h.table(['Looptijd', 'Prijs', 'in euro', `geldig tot (start ${h.date(ab)})`], rows, `Gewone brandstof, voertuigen tot 3,5 t; euro tegen de ECB-koers van ${h.date(stand)}`, ['l', 'r', 'r', 'r'])}
-<p>Bron: ${h.src('edalnice')}, gelezen op ${h.date(h.P.retrieved_at)}. Op de startpagina en in de veelgestelde vragen van eDálnice stonden bij het lezen nog lagere bedragen die niet met de prijslijst overeenkomen; de prijslijst die geldt vanaf 1 januari 2026 is bepalend. Prijzen voor 2027 zijn niet gepubliceerd.</p>
+<p>Bron: ${h.src('edalnice')}, gelezen op ${h.date(h.P.retrieved_at)}. De officiële site is edalnice.cz van het staatsfonds voor verkeersinfrastructuur SFDI: daar koopt u het vignet online, rechtstreeks tegen de lijstprijs. Op de startpagina en in de veelgestelde vragen van eDálnice stonden bij het lezen nog lagere bedragen die niet met de prijslijst overeenkomen; de prijslijst die geldt vanaf 1 januari 2026 is bepalend. Prijzen voor 2027 zijn niet gepubliceerd.</p>
 <h2>Welke looptijd voor een doorreis?</h2>
 <p>Wie Tsjechië doorkruist op weg naar Oostenrijk, Hongarije of Kroatië, heeft het vignet meestal maar op twee dagen nodig. Twee dagvignetten kosten ${h.geld(k['1t'] * 2, 'CZK')}, het 10-dagenvignet ${h.geld(k['10t'], 'CZK')}: liggen heen- en terugreis hoogstens tien dagen uit elkaar, dan is het 10-dagenvignet goedkoper, anders de twee dagvignetten. Bij vertrek op ${h.date(ab)} kiest de rekenhulp bij twee weken ${wahl(h, lang)} (${h.eur(lang.summeEur, 2)}), bij één week ${wahl(h, kurz)} (${h.eur(kurz.summeEur, 2)}). Het 30-dagenvignet van ${h.geld(k['30t'], 'CZK')} loont pas als u in het land zelf op veel dagen snelweg rijdt.</p>
 <h2>Kronen en euro</h2>

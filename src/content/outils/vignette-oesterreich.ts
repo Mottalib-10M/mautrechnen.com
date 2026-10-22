@@ -35,7 +35,7 @@ export default defineGuide({
     card: 'Preise 2026 der ASFINAG, günstigste Laufzeit für Ihre Reisedaten.',
     title: 'Vignette Österreich 2026: Preise und günstigste Laufzeit',
     description: 'Vignette Österreich 2026: 9,60 € für 1 Tag, 12,80 € für 10 Tage, 32 € für 2 Monate. Der Rechner nennt die günstigste Laufzeit für Ihre Hin- und Rückfahrt.',
-    h1: 'Vignette Österreich 2026: welche Laufzeit für Ihre Reise?',
+    h1: 'Vignette Österreich 2026 online kaufen: welche Laufzeit für Ihre Reise?',
     intro: 'Abfahrtstag und Rückfahrt eingeben: der Rechner wählt unter den vier Vignetten der ASFINAG die billigste für Ihre Fahrtage.',
     resume: (h) => {
       const { kfz, moto, durch, kurz } = D(h);
@@ -115,7 +115,7 @@ ${h.table(['Duration', 'Car, motorhome up to 3.5 t', 'Motorcycle', `valid until 
     card: 'Prijzen 2026 van ASFINAG, goedkoopste duur voor uw reisdata.',
     title: 'Vignet Oostenrijk 2026: prijzen en goedkoopste duur',
     description: 'Vignet Oostenrijk 2026: € 9,60 voor 1 dag, € 12,80 voor 10 dagen, € 32 voor 2 maanden. De rekenhulp kiest de goedkoopste duur voor uw heen- en terugreis.',
-    h1: 'Vignet Oostenrijk 2026: welke duur voor uw reis?',
+    h1: 'Vignet Oostenrijk 2026: 1 dag, 10 dagen, 2 maanden of een jaar?',
     intro: 'Vul de dag van vertrek en van terugkeer in: de rekenhulp kiest uit de vier vignetten van ASFINAG het goedkoopste voor uw rijdagen.',
     resume: (h) => {
       const { kfz, moto, durch, kurz } = D(h);

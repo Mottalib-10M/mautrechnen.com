@@ -6,6 +6,7 @@
  */
 import { P, type Fz, type SourceKey } from './params';
 import type { Schritt } from './route';
+import { tarifAm, type MitPeriode } from './tarif';
 
 type Typ = 'sys' | 'strecke' | 'barriere' | 'it' | 'nv';
 export interface MautPosten {
@@ -29,10 +30,12 @@ export interface MautPosten {
 type Preis = Record<Fz, number | null>;
 interface Paar { von: string; bis: string; preis: Preis; quelle?: string }
 const KANTEN = P.kanten as Record<string, { typ: string; sys?: string; id?: string; tarif?: string; grund?: string }>;
-const SYS = P.systeme as Record<string, { land: string; quelle: string; paare: Record<string, Paar> }>;
-const STRECKE = P.streckenmaut as Record<string, { land: string; kante: string; quelle: string; preis: Preis }>;
-const BARR = P.barrieren as Record<string, { land: string; quelle: string; preis: Preis }>;
-const ITT = P.italien_tarife as Record<string, { quelle: string; betreiber: string; preis: Record<Fz, number> }>;
+const SYS = P.systeme as unknown as Record<string, MitPeriode & { land: string; quelle: string; paare: Record<string, Paar> }>;
+const STRECKE = P.streckenmaut as unknown as Record<string, MitPeriode & { land: string; kante: string; quelle: string; preis: Preis }>;
+const BARR = P.barrieren as unknown as Record<string, MitPeriode & { land: string; quelle: string; preis: Preis }>;
+const ITT = P.italien_tarife as unknown as Record<string, MitPeriode & { quelle: string; betreiber: string; preis: Record<Fz, number> }>;
+/** Posten ohne Preis, weil der Tarif für den Reisetag noch nicht veröffentlicht ist. */
+const offen = (typ: Typ, land: string, id: string, von: string, nach: string, quelle: string): MautPosten => ({ typ, land, id, von, nach, preis: null, quelle: quelle as SourceKey, grund: 'tarif_offen' });
 
 export function kantenArt(a: string, b: string) { return KANTEN[`${a}|${b}`] ?? KANTEN[`${b}|${a}`]; }
 export function streckeAuf(a: string, b: string): string | null {
@@ -42,21 +45,24 @@ export function streckeAuf(a: string, b: string): string | null {
 /** Italien : Summe km × Tarif je Betreiber, mit MwSt. (im Tarif), auf 10 Cent gerundet (Formel des Betreibers). */
 export const rund10 = (x: number) => Math.round(x * 10) / 10;
 
-export function maut(schritte: Schritt[], fz: Fz): MautPosten[] {
+/** `tag` = Reisetag (ISO) : wählt die Tarifperiode ; ohne Tag gilt der gelesene Tarif. */
+export function maut(schritte: Schritt[], fz: Fz, tag?: string): MautPosten[] {
   const out: MautPosten[] = [];
   let i = 0;
   while (i < schritte.length) {
     const s = schritte[i];
     const st = streckeAuf(s.von, s.nach);
     if (st) {
-      const x = STRECKE[st];
+      const x = tarifAm(STRECKE[st], tag);
+      if (!x) { out.push(offen('strecke', STRECKE[st].land, st, s.von, s.nach, STRECKE[st].quelle)); i++; continue; }
       out.push({ typ: 'strecke', land: x.land, id: st, von: s.von, nach: s.nach, preis: x.preis[fz], quelle: x.quelle as SourceKey });
       i++; continue;
     }
     const k = kantenArt(s.von, s.nach);
     if (!k || k.typ === 'frei') { i++; continue; }
     if (k.typ === 'barriere') {
-      const b = BARR[k.id!];
+      const b = tarifAm(BARR[k.id!], tag);
+      if (!b) { out.push(offen('barriere', BARR[k.id!].land, k.id!, s.von, s.nach, BARR[k.id!].quelle)); i++; continue; }
       out.push({ typ: 'barriere', land: b.land, id: k.id!, von: s.von, nach: s.nach, preis: b.preis[fz], quelle: b.quelle as SourceKey });
       i++; continue;
     }
@@ -68,7 +74,8 @@ export function maut(schritte: Schritt[], fz: Fz): MautPosten[] {
       let j = i;
       while (j + 1 < schritte.length && kantenArt(schritte[j + 1].von, schritte[j + 1].nach)?.sys === k.sys && !streckeAuf(schritte[j + 1].von, schritte[j + 1].nach)) j++;
       const von = s.von, nach = schritte[j].nach;
-      const sys = SYS[k.sys!];
+      const sys = tarifAm(SYS[k.sys!], tag);
+      if (!sys) { out.push(offen('sys', SYS[k.sys!].land, k.sys!, von, nach, SYS[k.sys!].quelle)); i = j + 1; continue; }
       const paar = sys.paare[`${von}|${nach}`] ?? sys.paare[`${nach}|${von}`];
       if (paar) {
         out.push({ typ: 'sys', land: sys.land, id: k.sys!, von, nach, preis: paar.preis[fz], quelle: (paar.quelle ?? sys.quelle) as SourceKey, station: `${paar.von} – ${paar.bis}`, ...(paar.preis[fz] == null ? { grund: sys.land === 'HR' ? 'hac_paar' : 'fr_paar' } : {}) } as MautPosten);
@@ -80,15 +87,18 @@ export function maut(schritte: Schritt[], fz: Fz): MautPosten[] {
     if (k.typ === 'it') {
       // Aufeinanderfolgende Kanten desselben Betreibers : eine Fahrt, ein gerundeter Betrag.
       const betreiber = ITT[k.tarif!].betreiber;
-      let j = i, summe = 0, km = 0;
+      let j = i, summe = 0, km = 0, fehlt = false;
       const quelle = ITT[k.tarif!].quelle as SourceKey;
       while (j < schritte.length) {
         const kk = kantenArt(schritte[j].von, schritte[j].nach);
         if (kk?.typ !== 'it' || ITT[kk.tarif!].betreiber !== betreiber) break;
-        summe += schritte[j].km * ITT[kk.tarif!].preis[fz];
+        const t = tarifAm(ITT[kk.tarif!], tag);
+        if (!t) fehlt = true;
+        else summe += schritte[j].km * t.preis[fz];
         km += schritte[j].km;
         j++;
       }
+      if (fehlt) { out.push({ ...offen('it', 'IT', k.tarif!, s.von, schritte[j - 1].nach, quelle), km: Math.round(km) }); i = j; continue; }
       out.push({ typ: 'it', land: 'IT', id: k.tarif!, von: s.von, nach: schritte[j - 1].nach, preis: rund10(summe), schaetzung: true, km: Math.round(km), quelle });
       i = j; continue;
     }

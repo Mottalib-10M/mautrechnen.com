@@ -35,7 +35,7 @@ export default defineGuide({
     card: 'E-Matrica 2026: Klasse D1 mit Anhänger, D1M für Motorräder, Preise in Forint und Euro.',
     title: 'Vignette Ungarn 2026: E-Matrica D1, Preise in Euro',
     description: 'Vignette Ungarn 2026: E-Matrica D1 für Pkw samt Wohnwagen, D1M fürs Motorrad, Preise in Forint und Euro. Mit 60-Minuten-Regel und Zuschlag ohne Vignette.',
-    h1: 'Vignette Ungarn 2026: E-Matrica für Pkw und Gespann',
+    h1: 'Vignette Ungarn 2026: E-Matrica online kaufen, offizielle Seite',
     intro: 'Die ungarische E-Matrica gibt es für einen Tag, zehn Tage, einen Monat oder das Jahr: der Rechner wählt die günstigste für Ihre Fahrtage.',
     resume: (h) => {
       const { d1, m, e, lang, kurz, stand, jahrBis } = D(h);
@@ -60,7 +60,7 @@ export default defineGuide({
       ];
       return `<h2>Preise der E-Matrica ab dem 1. Januar 2026</h2>
 ${h.table(['Laufzeit', 'D1 (Pkw, auch mit Anhänger)', 'D1M (Motorrad)'], rows, 'Bruttopreise in Forint, Mehrwertsteuer enthalten', ['l', 'r', 'r'])}
-<p>Quelle: ${h.src('nemzetiutdij')}, gelesen am ${h.date(h.P.retrieved_at)}. Die Jahresvignetten kaufen Motorradfahrer als D1-Produkt, deshalb ist der Preis gleich. Preise für 2027 sind noch nicht veröffentlicht. Die Umrechnung in Euro im Rechner folgt dem EZB-Kurs vom ${h.date(stand)} (${h.src('ezb')}).</p>
+<p>Quelle: ${h.src('nemzetiutdij')}, gelesen am ${h.date(h.P.retrieved_at)}. Offizielle Seite ist nemzetiutdij.hu der staatlichen Betreibergesellschaft NÚSZ; von dort kaufen Sie die E-Matrica online im Webshop des Betreibers. Die Jahresvignetten kaufen Motorradfahrer als D1-Produkt, deshalb ist der Preis gleich. Preise für 2027 sind noch nicht veröffentlicht. Die Umrechnung in Euro im Rechner folgt dem EZB-Kurs vom ${h.date(stand)} (${h.src('ezb')}).</p>
 <h2>Wie lange die einzelnen Vignetten gelten</h2>
 <p>Die Tagesvignette gilt bis Mitternacht des gewählten Tages. Die Vignette für zehn Tage, auf Ungarisch „heti“ (Woche) genannt, umfasst den ersten Tag und die neun folgenden. Die Monatsvignette läuft bis zum selben Kalendertag des Folgemonats, die Jahresvignette bis zum 31. Januar des nächsten Jahres. Wer am ${h.date(ab)} einreist und zwei Wochen bleibt, dabei aber jeden Tag Autobahn fährt, zahlt mit Wohnwagen ${h.geld(urlaub.summe, 'HUF')}: Der Rechner nimmt dann die Monatsvignette, wenn sie billiger ist als die Summe kürzerer Vignetten.</p>
 <h2>Strecken ohne Vignette</h2>
@@ -100,7 +100,7 @@ ${h.table(['Laufzeit', 'D1 (Pkw, auch mit Anhänger)', 'D1M (Motorrad)'], rows, 
       ];
       return `<h2>E-matrica prices from 1 January 2026</h2>
 ${h.table(['Duration', 'D1 (car, also with trailer)', 'D1M (motorcycle)'], rows, 'Gross prices in forint, VAT included', ['l', 'r', 'r'])}
-<p>Source: ${h.src('nemzetiutdij')}, read on ${h.date(h.P.retrieved_at)}. Motorcyclists buy annual vignettes as a D1 product, which is why the price is the same. No 2027 prices have been published yet. The calculator converts to euros at the ECB rate of ${h.date(stand)} (${h.src('ezb')}).</p>
+<p>Source: ${h.src('nemzetiutdij')}, read on ${h.date(h.P.retrieved_at)}. The official site is nemzetiutdij.hu, run by the state operator NÚSZ; from there you buy the e-matrica online in the operator’s web shop. Motorcyclists buy annual vignettes as a D1 product, which is why the price is the same. No 2027 prices have been published yet. The calculator converts to euros at the ECB rate of ${h.date(stand)} (${h.src('ezb')}).</p>
 <h2>How long each vignette lasts</h2>
 <p>The daily vignette is valid until midnight on the chosen day. The ten-day vignette, called “heti” (weekly) in Hungarian, covers the first day and the nine following. The monthly vignette runs to the same calendar day of the next month, the annual one to 31 January of the following year. If you enter on ${h.date(ab)} and stay two weeks, using motorways every day, a car with caravan pays ${h.geld(urlaub.summe, 'HUF')}: the calculator takes the monthly vignette whenever it is cheaper than a string of shorter ones.</p>
 <h2>Sections without a vignette</h2>
@@ -140,7 +140,7 @@ ${h.table(['Duration', 'D1 (car, also with trailer)', 'D1M (motorcycle)'], rows,
       ];
       return `<h2>Prijzen van de e-matrica vanaf 1 januari 2026</h2>
 ${h.table(['Looptijd', 'D1 (auto, ook met aanhanger)', 'D1M (motor)'], rows, 'Brutoprijzen in forint, btw inbegrepen', ['l', 'r', 'r'])}
-<p>Bron: ${h.src('nemzetiutdij')}, gelezen op ${h.date(h.P.retrieved_at)}. Motorrijders kopen jaarvignetten als D1-product, daarom is de prijs gelijk. Prijzen voor 2027 zijn nog niet gepubliceerd. De rekenhulp rekent om naar euro tegen de ECB-koers van ${h.date(stand)} (${h.src('ezb')}).</p>
+<p>Bron: ${h.src('nemzetiutdij')}, gelezen op ${h.date(h.P.retrieved_at)}. De officiële site is nemzetiutdij.hu van de staatsbeheerder NÚSZ; van daaruit koopt u de e-matrica online in de webwinkel van de beheerder. Motorrijders kopen jaarvignetten als D1-product, daarom is de prijs gelijk. Prijzen voor 2027 zijn nog niet gepubliceerd. De rekenhulp rekent om naar euro tegen de ECB-koers van ${h.date(stand)} (${h.src('ezb')}).</p>
 <h2>Hoe lang elk vignet geldt</h2>
 <p>Het dagvignet geldt tot middernacht van de gekozen dag. Het vignet voor tien dagen, in het Hongaars “heti” (week) genoemd, omvat de eerste dag en de negen volgende. Het maandvignet loopt tot dezelfde kalenderdag van de volgende maand, het jaarvignet tot 31 januari van het jaar erna. Wie op ${h.date(ab)} binnenkomt en twee weken blijft, en daarbij elke dag snelweg rijdt, betaalt met caravan ${h.geld(urlaub.summe, 'HUF')}: de rekenhulp neemt het maandvignet zodra dat goedkoper is dan een reeks kortere vignetten.</p>
 <h2>Trajecten zonder vignet</h2>

@@ -31,7 +31,7 @@ export default defineGuide({
     card: 'Eine Jahresvignette für 14 Monate, zweite Vignette für den Wohnwagen, Umrechnung in Euro.',
     title: 'Vignette Schweiz 2026: Preis, E-Vignette und Wohnwagen',
     description: 'Vignette Schweiz 2026: nur als Jahresvignette, 14 Monate gültig, auch als E-Vignette. Wann der Wohnwagen eine zweite braucht und was die Durchreise kostet.',
-    h1: 'Vignette Schweiz 2026: eine Vignette, 14 Monate',
+    h1: 'Vignette Schweiz 2026 online kaufen: eine Vignette, auch für 1 Tag',
     intro: 'Die Schweiz kennt keine Kurzzeitvignette: der Rechner zeigt, was die Jahresvignette für Ihr Fahrzeug in Euro kostet und bis wann sie gilt.',
     resume: (h) => {
       const { chf, eur, gespann, stand, bis } = D(h);
@@ -103,7 +103,7 @@ ${h.table(['Vehicle', 'Vignettes', 'Price', 'in euros'], rows, `Converted at the
     card: 'Eén jaarvignet voor 14 maanden, een tweede voor de caravan, omgerekend naar euro.',
     title: 'Vignet Zwitserland 2026: prijs, e-vignet en caravan',
     description: 'Vignet Zwitserland 2026: alleen als jaarvignet, 14 maanden geldig, ook als e-vignet. Wanneer de caravan een tweede vignet nodig heeft en wat de doorreis kost.',
-    h1: 'Vignet Zwitserland 2026: één vignet, 14 maanden',
+    h1: 'Vignet Zwitserland 2026: één vignet van 14 maanden, ook voor 1 of 10 dagen',
     intro: 'Zwitserland kent geen kortlopend vignet: de rekenhulp toont wat het jaarvignet voor uw voertuig in euro kost en tot wanneer het geldt.',
     resume: (h) => {
       const { chf, eur, gespann, stand, bis } = D(h);

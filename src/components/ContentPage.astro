@@ -42,7 +42,7 @@ const id = `r-${page.id}`;
     </header>
     <div data-outil class="mb-4">
       {page.tool === 'reise' && <ReiseCalc client:load lang={lang} refDay={REF_DAY} methodHref={methodHref} id={id} start={page.von} ziel={page.nach} />}
-      {page.tool === 'maut' && <MautCalc client:load lang={lang} methodHref={methodHref} id={id} von={page.von!} nach={page.nach!} laender={page.laender ?? [page.land!]} />}
+      {page.tool === 'maut' && <MautCalc client:load lang={lang} refDay={REF_DAY} methodHref={methodHref} id={id} von={page.von!} nach={page.nach!} laender={page.laender ?? [page.land!]} />}
       {page.tool === 'vignette' && <VignetteCalc client:load lang={lang} refDay={REF_DAY} methodHref={methodHref} id={id} land={page.land as VLand} />}
       {page.tool === 'sprit' && <SpritCalc client:load lang={lang} methodHref={methodHref} id={id} land={page.land!} />}
     </div>

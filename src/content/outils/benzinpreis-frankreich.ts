@@ -55,7 +55,7 @@ export default defineGuide({
     card: 'Super, Diesel und Autogas in Frankreich im Wochenmittel, mit Luxemburg und Spanien verglichen.',
     title: 'Benzinpreis Frankreich 2026: Super, Diesel, Autogas',
     description: 'Benzinpreis Frankreich 2026: amtlicher Wochendurchschnitt für Super 95, Diesel und Autogas, Vergleich mit Luxemburg und Spanien, Sprit bis ans Mittelmeer.',
-    h1: 'Benzinpreis in Frankreich 2026: wo tanken auf dem Weg nach Süden?',
+    h1: 'Benzinpreis in Frankreich aktuell: wo tanken auf dem Weg nach Süden?',
     intro: 'Sorte und Tankfüllung wählen: der Rechner zeigt, was eine Tankfüllung in Frankreich gegenüber Deutschland oder einem anderen Land kostet.',
     resume: (h) => {
       const { e95, diesel, lpg, lu95, es95, h95, hD, spanne } = D(h);

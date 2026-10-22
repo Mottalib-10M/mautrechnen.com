@@ -205,6 +205,14 @@
     "nl": "ATMB, tarieven Mont Blanc-tunnel 2026"
    }
   },
+  "atmbFluxLibre": {
+   "url": "https://www.atmb.com/notre-adn/flux-libre-peage-sans-arrets-ni-barrieres/comment-payer-son-peage-en-flux-libre/",
+   "label": {
+    "de": "ATMB, Maut ohne Schranken (Flux Libre) bezahlen",
+    "en": "ATMB, paying barrier-free tolls (Flux Libre)",
+    "nl": "ATMB, tol zonder slagboom (Flux Libre) betalen"
+   }
+  },
   "sftrf": {
    "url": "https://www.sftrf.fr/wp-content/uploads/2025/12/Tarifs_tunnel_2026_FR.pdf",
    "label": {
@@ -235,6 +243,14 @@
     "de": "Autostrade per l'Italia, Mautklassen",
     "en": "Autostrade per l'Italia, toll classes",
     "nl": "Autostrade per l'Italia, tolklassen"
+   }
+  },
+  "aspiPagamento": {
+   "url": "https://www.autostrade.it/it/servizi-al-cliente/pedaggio/mancato-pagamento/paga-online",
+   "label": {
+    "de": "Autostrade per l’Italia, nicht bezahlte Maut online begleichen",
+    "en": "Autostrade per l’Italia, paying an unpaid toll online",
+    "nl": "Autostrade per l’Italia, onbetaalde tol online voldoen"
    }
   },
   "a22": {
@@ -662,7 +678,8 @@
     3.5,
     4.0,
     6.0
-   ]
+   ],
+   "preise_bis": "2026-12-31"
   },
   "tauern": {
    "land": "AT",
@@ -680,7 +697,8 @@
     "nl": "A10 Tauernsnelweg (Tauern- en Katschbergtunnel)"
    },
    "mehrfahrtenkarte": 90.0,
-   "teilstrecke": 7.5
+   "teilstrecke": 7.5,
+   "preise_bis": "2026-12-31"
   },
   "karawanken": {
    "land": "AT",
@@ -698,7 +716,8 @@
     "nl": "A11 Karawankentunnel"
    },
    "monatskarte_14": 40.4,
-   "dars_hrusica": 9.0
+   "dars_hrusica": 9.0,
+   "preise_bis": "2026-12-31"
   },
   "pyhrn": {
    "land": "AT",
@@ -719,7 +738,8 @@
     "en": "A9 Pyhrn motorway (Bosruck and Gleinalm tunnels)",
     "nl": "A9 Pyhrnsnelweg (Bosruck- en Gleinalmtunnel)"
    },
-   "mehrfahrtenkarte": 80.0
+   "mehrfahrtenkarte": 80.0,
+   "preise_bis": "2026-12-31"
   },
   "arlberg": {
    "land": "AT",
@@ -736,7 +756,8 @@
     "en": "S16 Arlberg road tunnel",
     "nl": "S16 Arlberg-wegtunnel"
    },
-   "mehrfahrtenkarte": 78.0
+   "mehrfahrtenkarte": 78.0,
+   "preise_bis": "2026-12-31"
   }
  },
  "_maut_fr": "Frankreich: geschlossene Systeme mit Preis je Paar Ein- und Ausfahrt, gelesen auf den Rastern der Betreiber (gültig ab 1.2.2026). Klasse 1 = Pkw bis 2 m Höhe; Klasse 2 = Wohnmobil und Gespann mit Wohnwagen über 2 m Höhe; Klasse 5 = Motorrad. Ein Paar ohne gelesenen Preis gilt als nicht verifiziert.",
@@ -744,6 +765,7 @@
   "aprr": {
    "land": "FR",
    "quelle": "aprr",
+   "preise_bis": "2027-01-31",
    "gueltig_ab": "2026-02-01",
    "name": {
     "de": "APRR (A36, A31, A6)",
@@ -866,6 +888,7 @@
   "asf": {
    "land": "FR",
    "quelle": "vinciLiaisons",
+   "preise_bis": "2027-01-31",
    "gueltig_ab": "2026-02-01",
    "name": {
     "de": "ASF (A7, A9)",
@@ -939,6 +962,7 @@
   "escota": {
    "land": "FR",
    "quelle": "vinciLiaisons",
+   "preise_bis": "2027-01-31",
    "gueltig_ab": "2026-02-01",
    "name": {
     "de": "Escota (A8)",
@@ -961,6 +985,7 @@
   "hac": {
    "land": "HR",
    "quelle": "hacA1",
+   "preise_bis": null,
    "gueltig_ab": null,
    "name": {
     "de": "Hrvatske autoceste (A1, A6)",
@@ -1023,6 +1048,7 @@
   "bina": {
    "land": "HR",
    "quelle": "bina",
+   "preise_bis": null,
    "gueltig_ab": null,
    "name": {
     "de": "BINA-Istra (Istrisches Ypsilon)",
@@ -1108,7 +1134,8 @@
     "wohnmobil": 1.2,
     "gespann": 1.2,
     "motorrad": 0.6
-   }
+   },
+   "preise_bis": null
   },
   "rupa": {
    "land": "HR",
@@ -1123,7 +1150,8 @@
     "wohnmobil": 2.1,
     "gespann": 2.1,
     "motorrad": 0.7
-   }
+   },
+   "preise_bis": null
   },
   "macelj": {
    "land": "HR",
@@ -1138,7 +1166,8 @@
     "wohnmobil": 10.0,
     "gespann": 10.0,
     "motorrad": 4.0
-   }
+   },
+   "preise_bis": null
   }
  },
  "_italien": "Italien: Schätzung = Kilometertarif des Betreibers (MwSt. 22 % inbegriffen) × Kilometer des Abschnitts laut Routing, auf 10 Cent gerundet. Die amtlichen Kilometer von Mautstelle zu Mautstelle sind nicht frei veröffentlicht. Klasse A = Pkw und Motorrad, B = Wohnmobil (Vorderachse über 1,30 m), 3 = Pkw mit einachsigem Wohnwagen.",
@@ -1152,7 +1181,8 @@
     "wohnmobil": 0.08054,
     "gespann": 0.10615,
     "motorrad": 0.07869
-   }
+   },
+   "preise_bis": "2026-12-31"
   },
   "aspi_montagna": {
    "quelle": "aspiCalcolo",
@@ -1163,7 +1193,8 @@
     "wohnmobil": 0.09536,
     "gespann": 0.1232,
     "motorrad": 0.09315
-   }
+   },
+   "preise_bis": "2026-12-31"
   },
   "a22_montagna": {
    "quelle": "a22",
@@ -1174,7 +1205,8 @@
     "wohnmobil": 0.0777,
     "gespann": 0.10289,
     "motorrad": 0.07592
-   }
+   },
+   "preise_bis": "2026-12-31"
   },
   "a22_pianura": {
    "quelle": "a22",
@@ -1185,7 +1217,8 @@
     "wohnmobil": 0.06564,
     "gespann": 0.08901,
     "motorrad": 0.06412
-   }
+   },
+   "preise_bis": "2026-12-31"
   }
  },
  "_kanten": "Mautart jeder Kante in Frankreich, Italien, Kroatien, Slowenien und Spanien. sys = geschlossenes System, strecke = Streckenmaut, barriere = offene Mautstelle, it = italienische Schätzung, nv = Maut vorhanden, Preis nicht verifiziert (Grund), frei = keine Maut. Kanten in Ländern mit Vignette (AT, CH, SI, CZ, HU, SK) und ohne Pkw-Maut (DE, NL, BE, LU) brauchen keinen Eintrag, außer Streckenmaut.",
@@ -1466,6 +1499,11 @@
    "de": "Frankreich: Preis für diese Ein- und Ausfahrt nicht gelesen",
    "en": "France: price for this entry and exit not read",
    "nl": "Frankrijk: prijs voor deze op- en afrit niet gelezen"
+  },
+  "tarif_offen": {
+   "de": "Tarif für dieses Reisedatum noch nicht veröffentlicht (der gelesene Tarif endet vorher)",
+   "en": "rate for this travel date not yet published (the rate we read ends earlier)",
+   "nl": "tarief voor deze reisdatum nog niet gepubliceerd (het gelezen tarief eindigt eerder)"
   }
  },
  "tunnel": {
@@ -1476,7 +1514,8 @@
     "pkw": 13.5,
     "wohnmobil": 13.5,
     "motorrad": 12.0
-   }
+   },
+   "preise_bis": null
   },
   "grossglockner": {
    "land": "AT",
@@ -1489,7 +1528,8 @@
     "pkw": 36.5,
     "motorrad": 30.0
    },
-   "herbst_ab": "2026-10-15"
+   "herbst_ab": "2026-10-15",
+   "saison_ende": "Wintersperre ab Anfang November 2026 (Betreiber); Preise 2027 offen"
   },
   "montblanc": {
    "land": "FR",
@@ -1503,7 +1543,8 @@
     "pkw": 69.2,
     "wohnmobil": 92.3,
     "motorrad": 46.1
-   }
+   },
+   "preise_bis": "2026-12-31"
   },
   "frejus": {
    "land": "FR",
@@ -1517,7 +1558,8 @@
     "pkw": 69.2,
     "wohnmobil": 92.3,
     "motorrad": 46.1
-   }
+   },
+   "preise_bis": "2026-12-31"
   },
   "gsb": {
    "land": "CH",
@@ -1531,18 +1573,22 @@
     "pkw": 53.5,
     "wohnmobil": 84.0,
     "motorrad": 28.0
-   }
+   },
+   "preise_bis": null
   }
  },
  "daenemark": {
   "quelle": "storebaelt",
   "storebaelt_dkk": 235,
-  "oresund_dkk": 470
+  "oresund_dkk": 470,
+  "storebaelt_preise_bis": "2026-12-31",
+  "oresund_preise_bis": null
  },
  "spanien": {
   "ausol_normal": 12.0,
   "ausol_saison": 19.55,
-  "ap6_villalba_adanero": 15.7
+  "ap6_villalba_adanero": 15.7,
+  "preise_bis": "2026-12-31"
  },
  "_vignettenfrei": "Kanten ohne Vignettenpflicht: AT seit 15.12.2019 A1 Walserberg–Salzburg Nord, A12 Grenze–Kufstein-Süd, A14 Hörbranz–Hohenems (asfinagVignette); SI seit 1.1.2026 H5 und H6 an der Küste (darsValidity). Streckenmaut-Abschnitte brauchen ebenfalls keine Vignette.",
  "vignettenfrei": {
@@ -1551,5 +1597,7 @@
   "b_hoerbranz|bregenz": "asfinagVignette",
   "koper|portoroz": "darsValidity",
   "koper|b_dragonja": "darsValidity"
- }
+ },
+ "tarife_geprueft": "2026-10-22",
+ "_tarifperioden": "preise_bis = letzter Reisetag, für den der gelesene Tarif gilt (null = Betreiber nennt kein Ende, gilt bis auf Weiteres). Danach rechnet der Rechner den Posten nicht und zeigt „noch nicht veröffentlicht“. Veröffentlicht der Betreiber den Folgetarif, kommt er als folge = { ab, preise_bis, preis | paare | produkte, quelle } in denselben Eintrag: ab dem Reisetag ab ersetzt er die Felder des alten Tarifs. Fälligkeiten: CONTRIBUTING-DONNEES.md, Abschnitt „Échéances des tarifs“."
 }

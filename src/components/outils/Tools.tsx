@@ -58,7 +58,7 @@ function MautListe({ posten, l, fahrten }: { posten: M.MautPosten[]; l: L; fahrt
         <li key={i} className="flex items-start justify-between gap-3 border-b border-navy-100 pb-2">
           <span className="text-navy-800">
             <span className="font-medium">{land(p.land, l)}</span> · {mautName(p, l)}
-            {p.preis == null && <span className="block text-xs text-amber-800">{T(l, 'Nicht verifiziert, nicht in der Summe', 'Not verified, not in the total', 'Niet geverifieerd, niet in het totaal')} : {(P.nv_gruende as Record<string, Record<L, string>>)[p.grund ?? 'fr_paar'][l]}</span>}
+            {p.preis == null && <span className="block text-xs text-amber-800">{p.grund === 'tarif_offen' ? T(l, 'Nicht in der Summe', 'Not in the total', 'Niet in het totaal') : T(l, 'Nicht verifiziert, nicht in der Summe', 'Not verified, not in the total', 'Niet geverifieerd, niet in het totaal')} : {(P.nv_gruende as Record<string, Record<L, string>>)[p.grund ?? 'fr_paar'][l]}</span>}
             {p.schaetzung && <span className="block text-xs text-navy-600">{T(l, 'Schätzung: Kilometertarif 2026 × Kilometer, auf 10 Cent gerundet', 'Estimate: 2026 per-km rate × kilometres, rounded to 10 cents', 'Schatting: kilometertarief 2026 × kilometers, afgerond op 10 cent')}</span>}
             {p.quelle && <span className="block text-xs text-navy-600"><Q k={p.quelle} l={l} /></span>}
           </span>
@@ -143,7 +143,7 @@ export function ReiseCalc({ lang: l, refDay, methodHref, id, start = 'muenchen',
         ...(r.summen.mautSchaetzung > 0 ? [[T(l, 'Maut Italien (Schätzung)', 'Italian tolls (estimate)', 'Tol Italië (schatting)'), eur(r.summen.mautSchaetzung, l)] as [string, string]] : []),
         [T(l, 'Sprit', 'Fuel', 'Brandstof'), eur(r.summen.sprit, l)],
       ]} />
-      {r.offen.length > 0 && <Note>{T(l, `${r.offen.length} Mautabschnitt(e) ohne verifizierten Preis, nicht in der Summe (Liste unten).`, `${r.offen.length} toll section(s) without a verified price, not in the total (list below).`, `${r.offen.length} toltraject(en) zonder geverifieerde prijs, niet in het totaal (lijst hieronder).`)}</Note>}
+      {r.offen.length > 0 && <Note>{T(l, `${r.offen.length} Mautabschnitt(e) ohne verifizierten oder für Ihr Reisedatum veröffentlichten Preis, nicht in der Summe (Liste unten).`, `${r.offen.length} toll section(s) without a verified price or a price published for your travel date, not in the total (list below).`, `${r.offen.length} toltraject(en) zonder geverifieerde of voor uw reisdatum gepubliceerde prijs, niet in het totaal (lijst hieronder).`)}</Note>}
       {r.vignettenFehlen.length > 0 && <Note>{T(l, `Vignette ${r.vignettenFehlen.map((c) => land(c, l)).join(', ')} : Preise 2027 noch nicht veröffentlicht, nicht in der Summe.`, `Vignette ${r.vignettenFehlen.map((c) => land(c, l)).join(', ')}: 2027 prices not yet published, not in the total.`, `Vignet ${r.vignettenFehlen.map((c) => land(c, l)).join(', ')}: prijzen 2027 nog niet gepubliceerd, niet in het totaal.`)}</Note>}
       <MethodLink href={methodHref} lang={l} />
     </>
@@ -163,8 +163,12 @@ export function ReiseCalc({ lang: l, refDay, methodHref, id, start = 'muenchen',
       <section>
         <h3 className="mb-2 text-base font-semibold text-navy-900">{T(l, 'Vignetten', 'Vignettes', 'Vignetten')}</h3>
         <VignettenListe v={r.vignetten} l={l} />
-        <h3 className="mb-2 mt-5 text-base font-semibold text-navy-900">{T(l, 'Maut und Tunnel, je Fahrt', 'Tolls and tunnels, per trip', 'Tol en tunnels, per rit')}</h3>
-        <MautListe posten={r.maut} l={l} fahrten={r.fahrten} />
+        <h3 className="mb-2 mt-5 text-base font-semibold text-navy-900">{r.mautRueck ? T(l, `Maut und Tunnel, Hinfahrt am ${datum(ab, l)}`, `Tolls and tunnels, outward trip on ${datum(ab, l)}`, `Tol en tunnels, heenreis op ${datum(ab, l)}`) : T(l, 'Maut und Tunnel, je Fahrt', 'Tolls and tunnels, per trip', 'Tol en tunnels, per rit')}</h3>
+        <MautListe posten={r.maut} l={l} fahrten={r.mautRueck ? 1 : r.fahrten} />
+        {r.mautRueck && <>
+          <h3 className="mb-2 mt-5 text-base font-semibold text-navy-900">{T(l, `Maut und Tunnel, Rückfahrt am ${datum(M.addDays(ab, dauer), l)}`, `Tolls and tunnels, return trip on ${datum(M.addDays(ab, dauer), l)}`, `Tol en tunnels, terugreis op ${datum(M.addDays(ab, dauer), l)}`)}</h3>
+          <MautListe posten={r.mautRueck} l={l} fahrten={1} />
+        </>}
         {r.summen.mautSchaetzung > 0 && <p className="mt-2 text-xs text-navy-600">* {T(l, 'Italien veröffentlicht die Preise von Mautstelle zu Mautstelle nicht frei: Kilometertarif des Betreibers × Kilometer laut Routing.', 'Italy does not publish station-to-station prices openly: operator per-km rate × routed kilometres.', 'Italië publiceert de prijzen van tolpost tot tolpost niet vrij: kilometertarief van de exploitant × kilometers volgens de routeplanner.')}</p>}
       </section>
     </div>
@@ -173,15 +177,16 @@ export function ReiseCalc({ lang: l, refDay, methodHref, id, start = 'muenchen',
 }
 
 /* ------------------------------------------------------------------ Maut einer Strecke */
-interface MautProps { lang: L; methodHref?: string; id: string; von: string; nach: string; laender: string[] }
-export function MautCalc({ lang: l, methodHref, id, von: v0, nach: n0, laender }: MautProps) {
+interface MautProps { lang: L; refDay: string; methodHref?: string; id: string; von: string; nach: string; laender: string[] }
+export function MautCalc({ lang: l, refDay, methodHref, id, von: v0, nach: n0, laender }: MautProps) {
   const ids = ORT_ALLE.concat(M.NETZ.nodes.filter((n) => n.b).map((n) => n.id)).filter((x) => M.KNOTEN[x].c.some((c) => laender.includes(c)));
   const [von, setVon] = useState(v0);
   const [nach, setNach] = useState(n0);
   const [fz, setFz] = useState<Fz>('pkw');
   const [hz, setHz] = useState('h');
+  const [tag, setTag] = useState(plus(refDay, 7));
   const r = useMemo(() => M.route(von, nach), [von, nach]);
-  const posten = useMemo(() => (r ? M.maut(r.schritte, fz) : []), [r, fz]);
+  const posten = useMemo(() => (r ? M.maut(r.schritte, fz, tag) : []), [r, fz, tag]);
   const s = M.mautSumme(posten);
   const n = hz === 'hz' ? 2 : 1;
   const vl = r ? M.vignettenLaender(r) : [];
@@ -191,6 +196,7 @@ export function MautCalc({ lang: l, methodHref, id, von: v0, nach: n0, laender }
       <SelectField id={`${id}-nach`} label={T(l, 'Nach', 'To', 'Naar')} value={nach} onChange={setNach} options={knotenOptions(ids, l)} />
       <SelectField id={`${id}-fz`} label={T(l, 'Fahrzeug', 'Vehicle', 'Voertuig')} value={fz} onChange={(x) => setFz(x as Fz)} options={fzOptions(l)} />
       <SelectField id={`${id}-hz`} label={T(l, 'Fahrt', 'Trip', 'Rit')} value={hz} onChange={setHz} options={[{ value: 'h', label: T(l, 'Einfach', 'One way', 'Enkel') }, { value: 'hz', label: T(l, 'Hin und zurück', 'Return', 'Heen en terug') }]} />
+      <DateField id={`${id}-tag`} label={T(l, 'Reisetag (wählt den Tarif)', 'Travel date (picks the rate)', 'Reisdag (kiest het tarief)')} value={tag} onChange={setTag} />
     </Row2>
   );
   const result = von === nach || !r ? <Note>{T(l, 'Bitte zwei verschiedene Orte wählen.', 'Please choose two different places.', 'Kies twee verschillende plaatsen.')}</Note> : (

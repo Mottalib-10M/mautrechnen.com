@@ -4,12 +4,15 @@
  */
 import { P, KURSE, type Fz } from './params';
 import { addDays, addMonths, diffDays } from './datum';
+import { tarifAm } from './tarif';
 
 export type VLand = keyof typeof P.vignetten;
 export const VIGNETTEN_LAENDER = Object.keys(P.vignetten) as VLand[];
 interface Produkt { id: string; preis: number; tage?: number; monate?: number; von?: string; bis?: string; jahresvignette?: boolean }
-interface VDef { waehrung: string; quelle: string; preise_bis: string | null; klasse: Record<Fz, string | null>; anhaenger: number; anhaenger_nv?: boolean; produkte: Record<string, Produkt[]> }
+interface VDef { waehrung: string; quelle: string; preise_bis: string | null; klasse: Record<Fz, string | null>; anhaenger: number; anhaenger_nv?: boolean; produkte: Record<string, Produkt[]>; folge?: unknown }
 const def = (land: VLand) => P.vignetten[land] as unknown as VDef;
+/** Preisliste für den Kauftag `start` : Folgeliste ab folge.ab (Vignettenjahr 2027), sonst die gelesene. */
+const defAm = (land: VLand, start: string): VDef => (tarifAm(def(land), start) ?? def(land));
 
 /** Euro je Einheit der Landeswährung (EZB-Referenzkurs). */
 export function inEuro(betrag: number, waehrung: string): number {
@@ -22,7 +25,7 @@ export const r2 = (x: number) => Math.round(x * 100) / 100;
 
 /** Letzter Gültigkeitstag eines Produkts, gekauft für den Tag `start` ; null = an diesem Tag nicht erhältlich. */
 export function gueltigBis(land: VLand, p: Produkt, start: string): string | null {
-  const d = def(land);
+  const d = defAm(land, start);
   if (p.von && p.bis) return start >= p.von && start <= p.bis ? p.bis : null;
   if (d.preise_bis && start > d.preise_bis) return null;
   if (p.jahresvignette) {
@@ -52,7 +55,7 @@ export interface VignettenErgebnis {
 
 /** Produkte der Fahrzeugklasse, mit Gültigkeit ab `start`. */
 export function produkte(land: VLand, fz: Fz, start: string) {
-  const d = def(land);
+  const d = defAm(land, start);
   const k = d.klasse[fz];
   if (!k) return [];
   return d.produkte[k].map((p) => ({ ...p, bis: gueltigBis(land, p, start), preisEur: r2(inEuro(p.preis, d.waehrung)) }));
@@ -68,13 +71,12 @@ export function vignette(land: VLand, fz: Fz, tage: string[]): VignettenErgebnis
   const leer = { land, waehrung: d.waehrung, wahl: [], summe: 0, summeEur: 0, anhaengerNv: fz === 'gespann' && !!d.anhaenger_nv };
   if (!k) return { ...leer, pflicht: false, verfuegbar: true };
   const need = [...new Set(tage)].sort();
-  const list = d.produkte[k];
   const memo = new Map<number, { cost: number; wahl: VignettenWahl[] } | null>();
   const f = (i: number): { cost: number; wahl: VignettenWahl[] } | null => {
     if (i >= need.length) return { cost: 0, wahl: [] };
     if (memo.has(i)) return memo.get(i)!;
     let best: { cost: number; wahl: VignettenWahl[] } | null = null;
-    for (const p of list) {
+    for (const p of defAm(land, need[i]).produkte[k]) {
       const bis = gueltigBis(land, p, need[i]);
       if (!bis) continue;
       let j = i;
