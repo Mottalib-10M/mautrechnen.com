@@ -1,0 +1,21 @@
+{
+ "name": "Mautrechnen",
+ "short_name": "Mautrechnen",
+ "description": "Maut, Vignetten, Tunnel und Sprit für die Urlaubsfahrt: Strecke wählen, Fahrzeug angeben, Kosten je Land und Abschnitt sehen, hin und zurück, mit Quellen.",
+ "start_url": "/de/",
+ "display": "standalone",
+ "background_color": "#ffffff",
+ "theme_color": "#9F1D20",
+ "icons": [
+  {
+   "src": "/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  }
+ ]
+}

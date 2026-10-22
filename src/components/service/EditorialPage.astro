@@ -1,0 +1,51 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { AUTHOR_NAME, CONTACT_EMAIL, LAST_UPDATED, SITE_NAMES } from '../../data/site-config';
+import { route, type Locale } from '../../i18n/routes';
+import { helpers } from '../../lib/helpers';
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+const H = helpers(lang); const T = H.T;
+const name = SITE_NAMES[lang];
+const crumb = T('Redaktionelle Grundsätze', 'Editorial policy', 'Redactiestatuut');
+const description = T(
+  `Woher die Preise auf ${name} kommen, wer für sie einsteht, wie oft sie gelesen werden, wie Schätzungen gekennzeichnet sind und was bei einem Fehler geschieht.`,
+  `Where the prices on ${name} come from, who answers for them, how often they are read, how estimates are labelled and what happens when an error is found.`,
+  `Waar de prijzen op ${name} vandaan komen, wie ervoor instaat, hoe vaak ze gelezen worden, hoe schattingen worden aangeduid en wat er bij een fout gebeurt.`);
+const mail = `mailto:${CONTACT_EMAIL}`;
+---
+<PageLayout title={`${crumb} – ${name}`} description={description} lang={lang} noindex={true} breadcrumbs={[{ label: crumb }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    {lang === 'de' && <>
+      <h1>Redaktionelle Grundsätze und Korrekturen</h1>
+      <p>Ein falscher Vignettenpreis, und jemand kauft die falsche Laufzeit. Hier steht, woher unsere Zahlen kommen, wer für sie einsteht und was wir tun, wenn eine nicht stimmt.</p>
+      <h2>Verantwortung</h2><p>{AUTHOR_NAME} steht für jeden angezeigten Preis, jede Schätzung und jede Formel ein. Eine Abweichung vom Tarifblatt melden Sie an <a href={mail}>{CONTACT_EMAIL}</a> ; wir prüfen sie an der Quelle.</p>
+      <h2>Nur Primärquellen</h2><p>Jeder Preis kommt vom Betreiber oder der Behörde selbst: Tarifblatt, Preisliste, Mautordnung. Kein Preis wird von einem Händler, einem Automobilclub oder einer anderen Rechnerseite übernommen. Ein Preis, den wir nicht selbst lesen konnten, erscheint nicht: der Abschnitt steht als „nicht verifiziert“ da.</p>
+      <h2>Schätzungen, immer gekennzeichnet</h2><p>Die Maut in Italien ist eine Schätzung nach der Formel der Betreiber und heißt überall so. Sie steht getrennt von der Summe der Tarifblätter.</p>
+      <h2>Prüfungen vor der Veröffentlichung</h2><p>Jeder Build prüft jede Vignette und jedes Mautpaar gegen die gelesenen Werte; ein Fehler stoppt die Veröffentlichung.</p>
+      <h2>Rhythmus</h2><p>Sprit und Kurse: zweimal pro Woche. Tarife: bei jeder neuen Preisliste der Betreiber, mindestens zum Jahreswechsel.</p>
+      <h2>Unabhängigkeit</h2><p>Keine geschäftliche Verbindung zu einem Betreiber, Händler oder Automobilclub. Eine solche Verbindung würde im Text genannt.</p>
+    </>}
+    {lang === 'en' && <>
+      <h1>Editorial and corrections policy</h1>
+      <p>A wrong vignette price, and someone buys the wrong duration. Here is where our figures come from, who answers for them and what we do when one is wrong.</p>
+      <h2>Responsibility</h2><p>{AUTHOR_NAME} answers for every price shown, every estimate and every formula. Report a gap with the rate sheet to <a href={mail}>{CONTACT_EMAIL}</a>; we check it at the source.</p>
+      <h2>Primary sources only</h2><p>Every price comes from the operator or authority itself: rate sheet, price list, toll regulations. No price is copied from a reseller, a motoring club or another calculator site. A price we could not read ourselves does not appear: the section is shown as “not verified”.</p>
+      <h2>Estimates, always labelled</h2><p>Italian tolls are an estimate based on the operators’ formula and are called that everywhere. They sit apart from the rate-sheet total.</p>
+      <h2>Checks before publication</h2><p>Every build tests each vignette and each toll pair against the values read; a mismatch stops publication.</p>
+      <h2>Rhythm</h2><p>Fuel and exchange rates: twice a week. Tolls: with every new operator price list, at least at each new year.</p>
+      <h2>Independence</h2><p>No business link with any operator, reseller or motoring club. Any such link would be stated in the text.</p>
+    </>}
+    {lang === 'nl' && <>
+      <h1>Redactiestatuut en correctiebeleid</h1>
+      <p>Een foute vignetprijs, en iemand koopt de verkeerde duur. Hier staat waar onze cijfers vandaan komen, wie ervoor instaat en wat we doen als er één niet klopt.</p>
+      <h2>Verantwoordelijkheid</h2><p>{AUTHOR_NAME} staat in voor elke getoonde prijs, elke schatting en elke formule. Een afwijking van het tariefblad meldt u via <a href={mail}>{CONTACT_EMAIL}</a>; we toetsen ze aan de bron.</p>
+      <h2>Uitsluitend primaire bronnen</h2><p>Elke prijs komt van de beheerder of de overheid zelf: tariefblad, prijslijst, tolreglement. Geen prijs wordt overgenomen van een verkoper, een automobielclub of een andere rekensite. Een prijs die we niet zelf konden lezen, verschijnt niet: het traject staat er als “niet geverifieerd”.</p>
+      <h2>Schattingen, altijd aangeduid</h2><p>De tol in Italië is een schatting volgens de formule van de beheerders en heet overal zo. Ze staat apart van het totaal van de tariefbladen.</p>
+      <h2>Controles vóór publicatie</h2><p>Elke build toetst elk vignet en elk tolpaar aan de gelezen waarden; een afwijking houdt de publicatie tegen.</p>
+      <h2>Ritme</h2><p>Brandstof en koersen: tweemaal per week. Tol: bij elke nieuwe prijslijst van een beheerder, minstens bij elke jaarwissel.</p>
+      <h2>Onafhankelijkheid</h2><p>Geen zakelijke band met een beheerder, verkoper of automobielclub. Zo’n band zou in de tekst vermeld worden.</p>
+    </>}
+    <p>{T('Siehe auch die', 'See also the', 'Zie ook de')} <a href={route('method', lang)}>{T('Methode', 'method', 'methode')}</a>. {T('Fassung:', 'Version:', 'Versie:')} {H.date(LAST_UPDATED)}.</p>
+  </div>
+</PageLayout>

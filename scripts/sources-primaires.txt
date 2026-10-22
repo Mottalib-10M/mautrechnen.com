@@ -1,0 +1,49 @@
+# Sources primaires propres à Mautrechnen (de-maut-vignette) : exploitants qui fixent et publient eux-mêmes
+# les tarifs repris dans src/data/params-2026.json. Format : une ligne de commentaire, puis le domaine.
+
+# ASFINAG : société publique autrichienne qui émet la vignette et perçoit la Streckenmaut (A9, A10, A11, A13, S16)
+asfinag.at
+# Felbertauernstraße AG : exploitant public de la Felbertauernstraße, publie son barème
+felbertauernstrasse.at
+# Großglockner Hochalpenstraßen AG : exploitant public de la route du Grossglockner, publie son barème
+grossglockner.at
+# DARS : société autoroutière publique slovène, émet la e-vinjeta et perçoit le péage du tunnel des Karawanken
+dars.si
+# SFDI (Státní fond dopravní infrastruktury) : portail officiel de la vignette électronique tchèque
+edalnice.cz
+# Nemzeti Útdíjfizetési Szolgáltató : opérateur public hongrois de l'e-matrica
+nemzetiutdij.hu
+# NDS : opérateur public slovaque de l'e-známka
+eznamka.sk
+# OpenStreetMap : base cartographique ouverte (ODbL) d'où sont tirées les distances et durées du réseau
+openstreetmap.org
+# APRR : concessionnaire autoroutier français, publie ses grilles tarifaires
+aprr.fr
+# Vinci Autoroutes (ASF, Escota) : concessionnaire autoroutier français, publie ses grilles tarifaires
+vinci-autoroutes.com
+# Sanef : concessionnaire autoroutier français, grilles tarifaires
+sanef.com
+# ATMB : société publique d'exploitation du tunnel du Mont-Blanc, publie ses tarifs
+atmb.com
+# SFTRF : société publique d'exploitation du tunnel du Fréjus, publie ses tarifs
+sftrf.fr
+# GSB : groupement d'exploitation du tunnel du Grand-Saint-Bernard, publie ses tarifs
+letunnel.com
+# Autostrade per l'Italia : concessionnaire, publie la formule et les tarifs kilométriques
+autostrade.it
+# Autostrada del Brennero (A22) : concessionnaire, publie ses tarifs
+autobrennero.it
+# HAC (Hrvatske autoceste) : société publique croate, publie les péages de ses autoroutes
+hac.hr
+# ARZ / AZM (Autocesta Zagreb–Macelj) : concessionnaire croate, publie ses tarifs
+azm.hr
+# BINA-Istra : concessionnaire de l'Ypsilon istrien, publie ses tarifs
+bina-istra.com
+# Autopista del Sol (Ausol) : concessionnaire espagnol, publie ses tarifs
+autopistadelsol.com
+# Abertis Autopistas (AP-6) : concessionnaire espagnol, publie ses tarifs
+autopistas.com
+# Sund & Bælt : société publique danoise du pont du Grand Belt, publie ses tarifs
+storebaelt.dk
+# Øresundsbro Konsortiet : propriétaires publics danois et suédois du pont de l'Øresund, publie ses tarifs
+oresundsbron.com

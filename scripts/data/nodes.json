@@ -1,0 +1,1886 @@
+{
+ "_lisezmoi": "Knoten des Streckennetzes. c = Land (Grenzpunkte: zwei Länder). s = als Start wählbar, z = als Ziel wählbar. Koordinaten auf der Autobahn bzw. am Grenzübergang (WGS84, lon/lat). Distanzen und Fahrzeiten zwischen Knoten: scripts/build-net.mjs über OSRM (OpenStreetMap, ODbL).",
+ "nodes": [
+  {
+   "id": "hamburg",
+   "c": [
+    "DE"
+   ],
+   "lon": 10.0,
+   "lat": 53.55,
+   "s": 1,
+   "n": {
+    "de": "Hamburg",
+    "en": "Hamburg",
+    "nl": "Hamburg"
+   }
+  },
+  {
+   "id": "bremen",
+   "c": [
+    "DE"
+   ],
+   "lon": 8.8,
+   "lat": 53.08,
+   "s": 1,
+   "n": {
+    "de": "Bremen",
+    "en": "Bremen",
+    "nl": "Bremen"
+   }
+  },
+  {
+   "id": "hannover",
+   "c": [
+    "DE"
+   ],
+   "lon": 9.74,
+   "lat": 52.37,
+   "s": 1,
+   "n": {
+    "de": "Hannover",
+    "en": "Hanover",
+    "nl": "Hannover"
+   }
+  },
+  {
+   "id": "berlin",
+   "c": [
+    "DE"
+   ],
+   "lon": 13.4,
+   "lat": 52.52,
+   "s": 1,
+   "n": {
+    "de": "Berlin",
+    "en": "Berlin",
+    "nl": "Berlijn"
+   }
+  },
+  {
+   "id": "leipzig",
+   "c": [
+    "DE"
+   ],
+   "lon": 12.37,
+   "lat": 51.34,
+   "s": 1,
+   "n": {
+    "de": "Leipzig",
+    "en": "Leipzig",
+    "nl": "Leipzig"
+   }
+  },
+  {
+   "id": "dresden",
+   "c": [
+    "DE"
+   ],
+   "lon": 13.74,
+   "lat": 51.05,
+   "s": 1,
+   "n": {
+    "de": "Dresden",
+    "en": "Dresden",
+    "nl": "Dresden"
+   }
+  },
+  {
+   "id": "dortmund",
+   "c": [
+    "DE"
+   ],
+   "lon": 7.47,
+   "lat": 51.51,
+   "s": 1,
+   "n": {
+    "de": "Dortmund",
+    "en": "Dortmund",
+    "nl": "Dortmund"
+   }
+  },
+  {
+   "id": "duesseldorf",
+   "c": [
+    "DE"
+   ],
+   "lon": 6.78,
+   "lat": 51.23,
+   "s": 1,
+   "n": {
+    "de": "Düsseldorf",
+    "en": "Düsseldorf",
+    "nl": "Düsseldorf"
+   }
+  },
+  {
+   "id": "koeln",
+   "c": [
+    "DE"
+   ],
+   "lon": 6.96,
+   "lat": 50.94,
+   "s": 1,
+   "n": {
+    "de": "Köln",
+    "en": "Cologne",
+    "nl": "Keulen"
+   }
+  },
+  {
+   "id": "frankfurt",
+   "c": [
+    "DE"
+   ],
+   "lon": 8.68,
+   "lat": 50.11,
+   "s": 1,
+   "n": {
+    "de": "Frankfurt am Main",
+    "en": "Frankfurt",
+    "nl": "Frankfurt am Main"
+   }
+  },
+  {
+   "id": "nuernberg",
+   "c": [
+    "DE"
+   ],
+   "lon": 11.08,
+   "lat": 49.45,
+   "s": 1,
+   "n": {
+    "de": "Nürnberg",
+    "en": "Nuremberg",
+    "nl": "Neurenberg"
+   }
+  },
+  {
+   "id": "mannheim",
+   "c": [
+    "DE"
+   ],
+   "lon": 8.47,
+   "lat": 49.49,
+   "s": 1,
+   "n": {
+    "de": "Mannheim",
+    "en": "Mannheim",
+    "nl": "Mannheim"
+   }
+  },
+  {
+   "id": "stuttgart",
+   "c": [
+    "DE"
+   ],
+   "lon": 9.18,
+   "lat": 48.78,
+   "s": 1,
+   "n": {
+    "de": "Stuttgart",
+    "en": "Stuttgart",
+    "nl": "Stuttgart"
+   }
+  },
+  {
+   "id": "karlsruhe",
+   "c": [
+    "DE"
+   ],
+   "lon": 8.4,
+   "lat": 49.01,
+   "s": 1,
+   "n": {
+    "de": "Karlsruhe",
+    "en": "Karlsruhe",
+    "nl": "Karlsruhe"
+   }
+  },
+  {
+   "id": "freiburg",
+   "c": [
+    "DE"
+   ],
+   "lon": 7.85,
+   "lat": 47.99,
+   "s": 1,
+   "n": {
+    "de": "Freiburg",
+    "en": "Freiburg",
+    "nl": "Freiburg"
+   }
+  },
+  {
+   "id": "muenchen",
+   "c": [
+    "DE"
+   ],
+   "lon": 11.58,
+   "lat": 48.14,
+   "s": 1,
+   "n": {
+    "de": "München",
+    "en": "Munich",
+    "nl": "München"
+   }
+  },
+  {
+   "id": "saarbruecken",
+   "c": [
+    "DE"
+   ],
+   "lon": 7.0,
+   "lat": 49.23,
+   "s": 1,
+   "n": {
+    "de": "Saarbrücken",
+    "en": "Saarbrücken",
+    "nl": "Saarbrücken"
+   }
+  },
+  {
+   "id": "amsterdam",
+   "c": [
+    "NL"
+   ],
+   "lon": 4.9,
+   "lat": 52.37,
+   "s": 1,
+   "n": {
+    "de": "Amsterdam",
+    "en": "Amsterdam",
+    "nl": "Amsterdam"
+   }
+  },
+  {
+   "id": "rotterdam",
+   "c": [
+    "NL"
+   ],
+   "lon": 4.48,
+   "lat": 51.92,
+   "s": 1,
+   "n": {
+    "de": "Rotterdam",
+    "en": "Rotterdam",
+    "nl": "Rotterdam"
+   }
+  },
+  {
+   "id": "denhaag",
+   "c": [
+    "NL"
+   ],
+   "lon": 4.3,
+   "lat": 52.07,
+   "s": 1,
+   "n": {
+    "de": "Den Haag",
+    "en": "The Hague",
+    "nl": "Den Haag"
+   }
+  },
+  {
+   "id": "utrecht",
+   "c": [
+    "NL"
+   ],
+   "lon": 5.12,
+   "lat": 52.09,
+   "s": 1,
+   "n": {
+    "de": "Utrecht",
+    "en": "Utrecht",
+    "nl": "Utrecht"
+   }
+  },
+  {
+   "id": "eindhoven",
+   "c": [
+    "NL"
+   ],
+   "lon": 5.47,
+   "lat": 51.44,
+   "s": 1,
+   "n": {
+    "de": "Eindhoven",
+    "en": "Eindhoven",
+    "nl": "Eindhoven"
+   }
+  },
+  {
+   "id": "groningen",
+   "c": [
+    "NL"
+   ],
+   "lon": 6.57,
+   "lat": 53.22,
+   "s": 1,
+   "n": {
+    "de": "Groningen",
+    "en": "Groningen",
+    "nl": "Groningen"
+   }
+  },
+  {
+   "id": "antwerpen",
+   "c": [
+    "BE"
+   ],
+   "lon": 4.4,
+   "lat": 51.22,
+   "s": 1,
+   "n": {
+    "de": "Antwerpen",
+    "en": "Antwerp",
+    "nl": "Antwerpen"
+   }
+  },
+  {
+   "id": "gent",
+   "c": [
+    "BE"
+   ],
+   "lon": 3.72,
+   "lat": 51.05,
+   "s": 1,
+   "n": {
+    "de": "Gent",
+    "en": "Ghent",
+    "nl": "Gent"
+   }
+  },
+  {
+   "id": "bruessel",
+   "c": [
+    "BE"
+   ],
+   "lon": 4.35,
+   "lat": 50.85,
+   "s": 1,
+   "n": {
+    "de": "Brüssel",
+    "en": "Brussels",
+    "nl": "Brussel"
+   }
+  },
+  {
+   "id": "luettich",
+   "c": [
+    "BE"
+   ],
+   "lon": 5.57,
+   "lat": 50.63,
+   "n": {
+    "de": "Lüttich",
+    "en": "Liège",
+    "nl": "Luik"
+   }
+  },
+  {
+   "id": "luxemburg",
+   "c": [
+    "LU"
+   ],
+   "lon": 6.13,
+   "lat": 49.61,
+   "z": 1,
+   "n": {
+    "de": "Luxemburg",
+    "en": "Luxembourg",
+    "nl": "Luxemburg"
+   }
+  },
+  {
+   "id": "wien",
+   "c": [
+    "AT"
+   ],
+   "lon": 16.37,
+   "lat": 48.21,
+   "s": 1,
+   "z": 1,
+   "n": {
+    "de": "Wien",
+    "en": "Vienna",
+    "nl": "Wenen"
+   }
+  },
+  {
+   "id": "linz",
+   "c": [
+    "AT"
+   ],
+   "lon": 14.29,
+   "lat": 48.31,
+   "s": 1,
+   "n": {
+    "de": "Linz",
+    "en": "Linz",
+    "nl": "Linz"
+   }
+  },
+  {
+   "id": "salzburg",
+   "c": [
+    "AT"
+   ],
+   "lon": 13.04,
+   "lat": 47.8,
+   "s": 1,
+   "z": 1,
+   "n": {
+    "de": "Salzburg",
+    "en": "Salzburg",
+    "nl": "Salzburg"
+   }
+  },
+  {
+   "id": "innsbruck",
+   "c": [
+    "AT"
+   ],
+   "lon": 11.4,
+   "lat": 47.26,
+   "s": 1,
+   "z": 1,
+   "n": {
+    "de": "Innsbruck",
+    "en": "Innsbruck",
+    "nl": "Innsbruck"
+   }
+  },
+  {
+   "id": "graz",
+   "c": [
+    "AT"
+   ],
+   "lon": 15.44,
+   "lat": 47.07,
+   "s": 1,
+   "n": {
+    "de": "Graz",
+    "en": "Graz",
+    "nl": "Graz"
+   }
+  },
+  {
+   "id": "villach",
+   "c": [
+    "AT"
+   ],
+   "lon": 13.85,
+   "lat": 46.61,
+   "n": {
+    "de": "Villach",
+    "en": "Villach",
+    "nl": "Villach"
+   }
+  },
+  {
+   "id": "bregenz",
+   "c": [
+    "AT"
+   ],
+   "lon": 9.75,
+   "lat": 47.5,
+   "n": {
+    "de": "Bregenz",
+    "en": "Bregenz",
+    "nl": "Bregenz"
+   }
+  },
+  {
+   "id": "landeck",
+   "c": [
+    "AT"
+   ],
+   "lon": 10.57,
+   "lat": 47.14,
+   "n": {
+    "de": "Landeck",
+    "en": "Landeck",
+    "nl": "Landeck"
+   }
+  },
+  {
+   "id": "zellamsee",
+   "c": [
+    "AT"
+   ],
+   "lon": 12.8,
+   "lat": 47.33,
+   "z": 1,
+   "n": {
+    "de": "Zell am See",
+    "en": "Zell am See",
+    "nl": "Zell am See"
+   }
+  },
+  {
+   "id": "zuerich",
+   "c": [
+    "CH"
+   ],
+   "lon": 8.54,
+   "lat": 47.38,
+   "z": 1,
+   "n": {
+    "de": "Zürich",
+    "en": "Zurich",
+    "nl": "Zürich"
+   }
+  },
+  {
+   "id": "luzern",
+   "c": [
+    "CH"
+   ],
+   "lon": 8.31,
+   "lat": 47.05,
+   "n": {
+    "de": "Luzern",
+    "en": "Lucerne",
+    "nl": "Luzern"
+   }
+  },
+  {
+   "id": "lugano",
+   "c": [
+    "CH"
+   ],
+   "lon": 8.95,
+   "lat": 46.0,
+   "z": 1,
+   "n": {
+    "de": "Lugano",
+    "en": "Lugano",
+    "nl": "Lugano"
+   }
+  },
+  {
+   "id": "b_kiefersfelden",
+   "c": [
+    "DE",
+    "AT"
+   ],
+   "lon": 12.18,
+   "lat": 47.61,
+   "b": 1,
+   "n": {
+    "de": "Grenze Kiefersfelden/Kufstein",
+    "en": "Kiefersfelden/Kufstein border",
+    "nl": "grens Kiefersfelden/Kufstein"
+   }
+  },
+  {
+   "id": "b_walserberg",
+   "c": [
+    "DE",
+    "AT"
+   ],
+   "lon": 12.98,
+   "lat": 47.79,
+   "b": 1,
+   "n": {
+    "de": "Grenze Walserberg",
+    "en": "Walserberg border",
+    "nl": "grens Walserberg"
+   }
+  },
+  {
+   "id": "b_suben",
+   "c": [
+    "DE",
+    "AT"
+   ],
+   "lon": 13.43,
+   "lat": 48.43,
+   "b": 1,
+   "n": {
+    "de": "Grenze Suben/Passau",
+    "en": "Suben/Passau border",
+    "nl": "grens Suben/Passau"
+   }
+  },
+  {
+   "id": "b_hoerbranz",
+   "c": [
+    "DE",
+    "AT"
+   ],
+   "lon": 9.76,
+   "lat": 47.55,
+   "b": 1,
+   "n": {
+    "de": "Grenze Hörbranz/Lindau",
+    "en": "Hörbranz/Lindau border",
+    "nl": "grens Hörbranz/Lindau"
+   }
+  },
+  {
+   "id": "b_weil",
+   "c": [
+    "DE",
+    "CH"
+   ],
+   "lon": 7.61,
+   "lat": 47.59,
+   "b": 1,
+   "n": {
+    "de": "Grenze Weil am Rhein/Basel",
+    "en": "Weil am Rhein/Basel border",
+    "nl": "grens Weil am Rhein/Bazel"
+   }
+  },
+  {
+   "id": "b_neuenburg",
+   "c": [
+    "DE",
+    "FR"
+   ],
+   "lon": 7.55,
+   "lat": 47.81,
+   "b": 1,
+   "n": {
+    "de": "Grenze Neuenburg/Mulhouse",
+    "en": "Neuenburg/Mulhouse border",
+    "nl": "grens Neuenburg/Mulhouse"
+   }
+  },
+  {
+   "id": "b_kehl",
+   "c": [
+    "DE",
+    "FR"
+   ],
+   "lon": 7.8,
+   "lat": 48.57,
+   "b": 1,
+   "n": {
+    "de": "Grenze Kehl/Straßburg",
+    "en": "Kehl/Strasbourg border",
+    "nl": "grens Kehl/Straatsburg"
+   }
+  },
+  {
+   "id": "b_goldenebremm",
+   "c": [
+    "DE",
+    "FR"
+   ],
+   "lon": 6.97,
+   "lat": 49.21,
+   "b": 1,
+   "n": {
+    "de": "Grenze Goldene Bremm",
+    "en": "Goldene Bremm border",
+    "nl": "grens Goldene Bremm"
+   }
+  },
+  {
+   "id": "b_aachen",
+   "c": [
+    "DE",
+    "BE"
+   ],
+   "lon": 6.03,
+   "lat": 50.75,
+   "b": 1,
+   "n": {
+    "de": "Grenze Aachen-Lichtenbusch",
+    "en": "Aachen-Lichtenbusch border",
+    "nl": "grens Aken-Lichtenbusch"
+   }
+  },
+  {
+   "id": "b_venlo",
+   "c": [
+    "DE",
+    "NL"
+   ],
+   "lon": 6.21,
+   "lat": 51.36,
+   "b": 1,
+   "n": {
+    "de": "Grenze Venlo",
+    "en": "Venlo border",
+    "nl": "grens Venlo"
+   }
+  },
+  {
+   "id": "b_emmerich",
+   "c": [
+    "DE",
+    "NL"
+   ],
+   "lon": 6.15,
+   "lat": 51.87,
+   "b": 1,
+   "n": {
+    "de": "Grenze Emmerich",
+    "en": "Emmerich border",
+    "nl": "grens Emmerich"
+   }
+  },
+  {
+   "id": "b_bunde",
+   "c": [
+    "DE",
+    "NL"
+   ],
+   "lon": 7.2,
+   "lat": 53.18,
+   "b": 1,
+   "n": {
+    "de": "Grenze Bunde/Nieuweschans",
+    "en": "Bunde/Nieuweschans border",
+    "nl": "grens Nieuweschans"
+   }
+  },
+  {
+   "id": "b_breitenau",
+   "c": [
+    "DE",
+    "CZ"
+   ],
+   "lon": 13.94,
+   "lat": 50.78,
+   "b": 1,
+   "n": {
+    "de": "Grenze Breitenau (D8)",
+    "en": "Breitenau border (D8)",
+    "nl": "grens Breitenau (D8)"
+   }
+  },
+  {
+   "id": "b_waidhaus",
+   "c": [
+    "DE",
+    "CZ"
+   ],
+   "lon": 12.55,
+   "lat": 49.64,
+   "b": 1,
+   "n": {
+    "de": "Grenze Waidhaus/Rozvadov",
+    "en": "Waidhaus/Rozvadov border",
+    "nl": "grens Waidhaus/Rozvadov"
+   }
+  },
+  {
+   "id": "b_hazeldonk",
+   "c": [
+    "NL",
+    "BE"
+   ],
+   "lon": 4.74,
+   "lat": 51.5,
+   "b": 1,
+   "n": {
+    "de": "Grenze Hazeldonk",
+    "en": "Hazeldonk border",
+    "nl": "grens Hazeldonk"
+   }
+  },
+  {
+   "id": "b_maastricht",
+   "c": [
+    "NL",
+    "BE"
+   ],
+   "lon": 5.7,
+   "lat": 50.8,
+   "b": 1,
+   "n": {
+    "de": "Grenze Maastricht",
+    "en": "Maastricht border",
+    "nl": "grens Maastricht"
+   }
+  },
+  {
+   "id": "b_rekkem",
+   "c": [
+    "BE",
+    "FR"
+   ],
+   "lon": 3.15,
+   "lat": 50.78,
+   "b": 1,
+   "n": {
+    "de": "Grenze Rekkem/Lille",
+    "en": "Rekkem/Lille border",
+    "nl": "grens Rekkem/Rijsel"
+   }
+  },
+  {
+   "id": "b_sterpenich",
+   "c": [
+    "BE",
+    "LU"
+   ],
+   "lon": 5.9,
+   "lat": 49.66,
+   "b": 1,
+   "n": {
+    "de": "Grenze Sterpenich (Arlon)",
+    "en": "Sterpenich border (Arlon)",
+    "nl": "grens Sterpenich (Aarlen)"
+   }
+  },
+  {
+   "id": "b_zoufftgen",
+   "c": [
+    "LU",
+    "FR"
+   ],
+   "lon": 6.13,
+   "lat": 49.47,
+   "b": 1,
+   "n": {
+    "de": "Grenze Zoufftgen (A31)",
+    "en": "Zoufftgen border (A31)",
+    "nl": "grens Zoufftgen (A31)"
+   }
+  },
+  {
+   "id": "b_stmargrethen",
+   "c": [
+    "AT",
+    "CH"
+   ],
+   "lon": 9.64,
+   "lat": 47.45,
+   "b": 1,
+   "n": {
+    "de": "Grenze St. Margrethen",
+    "en": "St. Margrethen border",
+    "nl": "grens St. Margrethen"
+   }
+  },
+  {
+   "id": "b_brenner",
+   "c": [
+    "AT",
+    "IT"
+   ],
+   "lon": 11.5,
+   "lat": 47.0,
+   "b": 1,
+   "n": {
+    "de": "Brenner",
+    "en": "Brenner Pass",
+    "nl": "Brenner"
+   }
+  },
+  {
+   "id": "b_karawanken",
+   "c": [
+    "AT",
+    "SI"
+   ],
+   "lon": 14.01,
+   "lat": 46.47,
+   "b": 1,
+   "n": {
+    "de": "Karawankentunnel",
+    "en": "Karawanken tunnel",
+    "nl": "Karawankentunnel"
+   }
+  },
+  {
+   "id": "b_arnoldstein",
+   "c": [
+    "AT",
+    "IT"
+   ],
+   "lon": 13.66,
+   "lat": 46.53,
+   "b": 1,
+   "n": {
+    "de": "Grenze Arnoldstein/Tarvisio",
+    "en": "Arnoldstein/Tarvisio border",
+    "nl": "grens Arnoldstein/Tarvisio"
+   }
+  },
+  {
+   "id": "b_spielfeld",
+   "c": [
+    "AT",
+    "SI"
+   ],
+   "lon": 15.63,
+   "lat": 46.71,
+   "b": 1,
+   "n": {
+    "de": "Grenze Spielfeld/Šentilj",
+    "en": "Spielfeld/Šentilj border",
+    "nl": "grens Spielfeld/Šentilj"
+   }
+  },
+  {
+   "id": "b_nickelsdorf",
+   "c": [
+    "AT",
+    "HU"
+   ],
+   "lon": 17.1,
+   "lat": 47.94,
+   "b": 1,
+   "n": {
+    "de": "Grenze Nickelsdorf/Hegyeshalom",
+    "en": "Nickelsdorf/Hegyeshalom border",
+    "nl": "grens Nickelsdorf/Hegyeshalom"
+   }
+  },
+  {
+   "id": "b_chiasso",
+   "c": [
+    "CH",
+    "IT"
+   ],
+   "lon": 9.03,
+   "lat": 45.84,
+   "b": 1,
+   "n": {
+    "de": "Grenze Chiasso/Como",
+    "en": "Chiasso/Como border",
+    "nl": "grens Chiasso/Como"
+   }
+  },
+  {
+   "id": "b_basel_fr",
+   "c": [
+    "CH",
+    "FR"
+   ],
+   "lon": 7.55,
+   "lat": 47.58,
+   "b": 1,
+   "n": {
+    "de": "Grenze Basel/Saint-Louis",
+    "en": "Basel/Saint-Louis border",
+    "nl": "grens Bazel/Saint-Louis"
+   }
+  },
+  {
+   "id": "b_fernetici",
+   "c": [
+    "IT",
+    "SI"
+   ],
+   "lon": 13.83,
+   "lat": 45.7,
+   "b": 1,
+   "n": {
+    "de": "Grenze Fernetti/Fernetiči",
+    "en": "Fernetti/Fernetiči border",
+    "nl": "grens Fernetti/Fernetiči"
+   }
+  },
+  {
+   "id": "b_ventimiglia",
+   "c": [
+    "FR",
+    "IT"
+   ],
+   "lon": 7.53,
+   "lat": 43.79,
+   "b": 1,
+   "n": {
+    "de": "Grenze Ventimiglia",
+    "en": "Ventimiglia border",
+    "nl": "grens Ventimiglia"
+   }
+  },
+  {
+   "id": "b_lejonquera",
+   "c": [
+    "FR",
+    "ES"
+   ],
+   "lon": 2.87,
+   "lat": 42.43,
+   "b": 1,
+   "n": {
+    "de": "Grenze Le Perthus/La Jonquera",
+    "en": "Le Perthus/La Jonquera border",
+    "nl": "grens Le Perthus/La Jonquera"
+   }
+  },
+  {
+   "id": "b_obrezje",
+   "c": [
+    "SI",
+    "HR"
+   ],
+   "lon": 15.69,
+   "lat": 45.85,
+   "b": 1,
+   "n": {
+    "de": "Grenze Obrežje/Bregana",
+    "en": "Obrežje/Bregana border",
+    "nl": "grens Obrežje/Bregana"
+   }
+  },
+  {
+   "id": "b_gruskovje",
+   "c": [
+    "SI",
+    "HR"
+   ],
+   "lon": 15.86,
+   "lat": 46.29,
+   "b": 1,
+   "n": {
+    "de": "Grenze Gruškovje/Macelj",
+    "en": "Gruškovje/Macelj border",
+    "nl": "grens Gruškovje/Macelj"
+   }
+  },
+  {
+   "id": "b_rupa",
+   "c": [
+    "SI",
+    "HR"
+   ],
+   "lon": 14.27,
+   "lat": 45.48,
+   "b": 1,
+   "n": {
+    "de": "Grenze Jelšane/Rupa",
+    "en": "Jelšane/Rupa border",
+    "nl": "grens Jelšane/Rupa"
+   }
+  },
+  {
+   "id": "b_dragonja",
+   "c": [
+    "SI",
+    "HR"
+   ],
+   "lon": 13.65,
+   "lat": 45.45,
+   "b": 1,
+   "n": {
+    "de": "Grenze Dragonja/Plovanija",
+    "en": "Dragonja/Plovanija border",
+    "nl": "grens Dragonja/Plovanija"
+   }
+  },
+  {
+   "id": "b_rajka",
+   "c": [
+    "HU",
+    "SK"
+   ],
+   "lon": 17.19,
+   "lat": 47.99,
+   "b": 1,
+   "n": {
+    "de": "Grenze Rajka",
+    "en": "Rajka border",
+    "nl": "grens Rajka"
+   }
+  },
+  {
+   "id": "b_kittsee",
+   "c": [
+    "AT",
+    "SK"
+   ],
+   "lon": 17.07,
+   "lat": 48.08,
+   "b": 1,
+   "n": {
+    "de": "Grenze Kittsee/Jarovce",
+    "en": "Kittsee/Jarovce border",
+    "nl": "grens Kittsee/Jarovce"
+   }
+  },
+  {
+   "id": "ljubljana",
+   "c": [
+    "SI"
+   ],
+   "lon": 14.51,
+   "lat": 46.06,
+   "z": 1,
+   "n": {
+    "de": "Ljubljana",
+    "en": "Ljubljana",
+    "nl": "Ljubljana"
+   }
+  },
+  {
+   "id": "maribor",
+   "c": [
+    "SI"
+   ],
+   "lon": 15.65,
+   "lat": 46.55,
+   "n": {
+    "de": "Maribor",
+    "en": "Maribor",
+    "nl": "Maribor"
+   }
+  },
+  {
+   "id": "postojna",
+   "c": [
+    "SI"
+   ],
+   "lon": 14.21,
+   "lat": 45.78,
+   "n": {
+    "de": "Postojna",
+    "en": "Postojna",
+    "nl": "Postojna"
+   }
+  },
+  {
+   "id": "koper",
+   "c": [
+    "SI"
+   ],
+   "lon": 13.73,
+   "lat": 45.55,
+   "n": {
+    "de": "Koper",
+    "en": "Koper",
+    "nl": "Koper"
+   }
+  },
+  {
+   "id": "portoroz",
+   "c": [
+    "SI"
+   ],
+   "lon": 13.59,
+   "lat": 45.51,
+   "z": 1,
+   "n": {
+    "de": "Portorož/Piran",
+    "en": "Portorož/Piran",
+    "nl": "Portorož/Piran"
+   }
+  },
+  {
+   "id": "bled",
+   "c": [
+    "SI"
+   ],
+   "lon": 14.11,
+   "lat": 46.37,
+   "z": 1,
+   "n": {
+    "de": "Bled",
+    "en": "Bled",
+    "nl": "Bled"
+   }
+  },
+  {
+   "id": "zagreb",
+   "c": [
+    "HR"
+   ],
+   "lon": 15.98,
+   "lat": 45.81,
+   "z": 1,
+   "n": {
+    "de": "Zagreb",
+    "en": "Zagreb",
+    "nl": "Zagreb"
+   }
+  },
+  {
+   "id": "karlovac",
+   "c": [
+    "HR"
+   ],
+   "lon": 15.55,
+   "lat": 45.49,
+   "n": {
+    "de": "Karlovac",
+    "en": "Karlovac",
+    "nl": "Karlovac"
+   }
+  },
+  {
+   "id": "rijeka",
+   "c": [
+    "HR"
+   ],
+   "lon": 14.44,
+   "lat": 45.33,
+   "z": 1,
+   "n": {
+    "de": "Rijeka",
+    "en": "Rijeka",
+    "nl": "Rijeka"
+   }
+  },
+  {
+   "id": "krk",
+   "c": [
+    "HR"
+   ],
+   "lon": 14.57,
+   "lat": 45.03,
+   "z": 1,
+   "n": {
+    "de": "Krk (Insel)",
+    "en": "Krk (island)",
+    "nl": "Krk (eiland)"
+   }
+  },
+  {
+   "id": "kanfanar",
+   "c": [
+    "HR"
+   ],
+   "lon": 13.83,
+   "lat": 45.12,
+   "n": {
+    "de": "Kanfanar (Istrisches Ypsilon)",
+    "en": "Kanfanar (Istrian Y)",
+    "nl": "Kanfanar (Istrische Y)"
+   }
+  },
+  {
+   "id": "umag",
+   "c": [
+    "HR"
+   ],
+   "lon": 13.52,
+   "lat": 45.43,
+   "z": 1,
+   "n": {
+    "de": "Umag",
+    "en": "Umag",
+    "nl": "Umag"
+   }
+  },
+  {
+   "id": "porec",
+   "c": [
+    "HR"
+   ],
+   "lon": 13.59,
+   "lat": 45.23,
+   "z": 1,
+   "n": {
+    "de": "Poreč",
+    "en": "Poreč",
+    "nl": "Poreč"
+   }
+  },
+  {
+   "id": "rovinj",
+   "c": [
+    "HR"
+   ],
+   "lon": 13.64,
+   "lat": 45.08,
+   "z": 1,
+   "n": {
+    "de": "Rovinj",
+    "en": "Rovinj",
+    "nl": "Rovinj"
+   }
+  },
+  {
+   "id": "pula",
+   "c": [
+    "HR"
+   ],
+   "lon": 13.85,
+   "lat": 44.87,
+   "z": 1,
+   "n": {
+    "de": "Pula",
+    "en": "Pula",
+    "nl": "Pula"
+   }
+  },
+  {
+   "id": "zadar",
+   "c": [
+    "HR"
+   ],
+   "lon": 15.23,
+   "lat": 44.12,
+   "z": 1,
+   "n": {
+    "de": "Zadar",
+    "en": "Zadar",
+    "nl": "Zadar"
+   }
+  },
+  {
+   "id": "sibenik",
+   "c": [
+    "HR"
+   ],
+   "lon": 15.89,
+   "lat": 43.73,
+   "z": 1,
+   "n": {
+    "de": "Šibenik",
+    "en": "Šibenik",
+    "nl": "Šibenik"
+   }
+  },
+  {
+   "id": "split",
+   "c": [
+    "HR"
+   ],
+   "lon": 16.44,
+   "lat": 43.51,
+   "z": 1,
+   "n": {
+    "de": "Split",
+    "en": "Split",
+    "nl": "Split"
+   }
+  },
+  {
+   "id": "makarska",
+   "c": [
+    "HR"
+   ],
+   "lon": 17.02,
+   "lat": 43.3,
+   "z": 1,
+   "n": {
+    "de": "Makarska",
+    "en": "Makarska",
+    "nl": "Makarska"
+   }
+  },
+  {
+   "id": "verona",
+   "c": [
+    "IT"
+   ],
+   "lon": 10.99,
+   "lat": 45.44,
+   "z": 1,
+   "n": {
+    "de": "Verona",
+    "en": "Verona",
+    "nl": "Verona"
+   }
+  },
+  {
+   "id": "gardasee",
+   "c": [
+    "IT"
+   ],
+   "lon": 10.69,
+   "lat": 45.44,
+   "z": 1,
+   "n": {
+    "de": "Gardasee (Peschiera)",
+    "en": "Lake Garda (Peschiera)",
+    "nl": "Gardameer (Peschiera)"
+   }
+  },
+  {
+   "id": "rivagarda",
+   "c": [
+    "IT"
+   ],
+   "lon": 10.84,
+   "lat": 45.89,
+   "z": 1,
+   "n": {
+    "de": "Gardasee Nord (Riva)",
+    "en": "Lake Garda north (Riva)",
+    "nl": "Gardameer noord (Riva)"
+   }
+  },
+  {
+   "id": "bozen",
+   "c": [
+    "IT"
+   ],
+   "lon": 11.35,
+   "lat": 46.5,
+   "z": 1,
+   "n": {
+    "de": "Bozen",
+    "en": "Bolzano",
+    "nl": "Bolzano"
+   }
+  },
+  {
+   "id": "modena",
+   "c": [
+    "IT"
+   ],
+   "lon": 10.93,
+   "lat": 44.65,
+   "n": {
+    "de": "Modena",
+    "en": "Modena",
+    "nl": "Modena"
+   }
+  },
+  {
+   "id": "bologna",
+   "c": [
+    "IT"
+   ],
+   "lon": 11.34,
+   "lat": 44.49,
+   "n": {
+    "de": "Bologna",
+    "en": "Bologna",
+    "nl": "Bologna"
+   }
+  },
+  {
+   "id": "rimini",
+   "c": [
+    "IT"
+   ],
+   "lon": 12.57,
+   "lat": 44.06,
+   "z": 1,
+   "n": {
+    "de": "Rimini",
+    "en": "Rimini",
+    "nl": "Rimini"
+   }
+  },
+  {
+   "id": "florenz",
+   "c": [
+    "IT"
+   ],
+   "lon": 11.25,
+   "lat": 43.77,
+   "z": 1,
+   "n": {
+    "de": "Florenz",
+    "en": "Florence",
+    "nl": "Florence"
+   }
+  },
+  {
+   "id": "rom",
+   "c": [
+    "IT"
+   ],
+   "lon": 12.5,
+   "lat": 41.9,
+   "z": 1,
+   "n": {
+    "de": "Rom",
+    "en": "Rome",
+    "nl": "Rome"
+   }
+  },
+  {
+   "id": "venedig",
+   "c": [
+    "IT"
+   ],
+   "lon": 12.25,
+   "lat": 45.48,
+   "z": 1,
+   "n": {
+    "de": "Venedig (Mestre)",
+    "en": "Venice (Mestre)",
+    "nl": "Venetië (Mestre)"
+   }
+  },
+  {
+   "id": "jesolo",
+   "c": [
+    "IT"
+   ],
+   "lon": 12.64,
+   "lat": 45.5,
+   "z": 1,
+   "n": {
+    "de": "Jesolo",
+    "en": "Jesolo",
+    "nl": "Jesolo"
+   }
+  },
+  {
+   "id": "lignano",
+   "c": [
+    "IT"
+   ],
+   "lon": 13.13,
+   "lat": 45.68,
+   "z": 1,
+   "n": {
+    "de": "Lignano/Bibione",
+    "en": "Lignano/Bibione",
+    "nl": "Lignano/Bibione"
+   }
+  },
+  {
+   "id": "udine",
+   "c": [
+    "IT"
+   ],
+   "lon": 13.23,
+   "lat": 46.06,
+   "n": {
+    "de": "Udine",
+    "en": "Udine",
+    "nl": "Udine"
+   }
+  },
+  {
+   "id": "triest",
+   "c": [
+    "IT"
+   ],
+   "lon": 13.77,
+   "lat": 45.65,
+   "z": 1,
+   "n": {
+    "de": "Triest",
+    "en": "Trieste",
+    "nl": "Triëst"
+   }
+  },
+  {
+   "id": "mailand",
+   "c": [
+    "IT"
+   ],
+   "lon": 9.19,
+   "lat": 45.46,
+   "z": 1,
+   "n": {
+    "de": "Mailand",
+    "en": "Milan",
+    "nl": "Milaan"
+   }
+  },
+  {
+   "id": "genua",
+   "c": [
+    "IT"
+   ],
+   "lon": 8.93,
+   "lat": 44.41,
+   "n": {
+    "de": "Genua",
+    "en": "Genoa",
+    "nl": "Genua"
+   }
+  },
+  {
+   "id": "strassburg",
+   "c": [
+    "FR"
+   ],
+   "lon": 7.75,
+   "lat": 48.58,
+   "z": 1,
+   "n": {
+    "de": "Straßburg",
+    "en": "Strasbourg",
+    "nl": "Straatsburg"
+   }
+  },
+  {
+   "id": "mulhouse",
+   "c": [
+    "FR"
+   ],
+   "lon": 7.34,
+   "lat": 47.75,
+   "n": {
+    "de": "Mülhausen",
+    "en": "Mulhouse",
+    "nl": "Mulhouse"
+   }
+  },
+  {
+   "id": "metz",
+   "c": [
+    "FR"
+   ],
+   "lon": 6.18,
+   "lat": 49.12,
+   "n": {
+    "de": "Metz",
+    "en": "Metz",
+    "nl": "Metz"
+   }
+  },
+  {
+   "id": "nancy",
+   "c": [
+    "FR"
+   ],
+   "lon": 6.18,
+   "lat": 48.69,
+   "n": {
+    "de": "Nancy",
+    "en": "Nancy",
+    "nl": "Nancy"
+   }
+  },
+  {
+   "id": "lille",
+   "c": [
+    "FR"
+   ],
+   "lon": 3.06,
+   "lat": 50.63,
+   "n": {
+    "de": "Lille",
+    "en": "Lille",
+    "nl": "Rijsel"
+   }
+  },
+  {
+   "id": "paris",
+   "c": [
+    "FR"
+   ],
+   "lon": 2.35,
+   "lat": 48.86,
+   "z": 1,
+   "n": {
+    "de": "Paris",
+    "en": "Paris",
+    "nl": "Parijs"
+   }
+  },
+  {
+   "id": "beaune",
+   "c": [
+    "FR"
+   ],
+   "lon": 4.84,
+   "lat": 47.02,
+   "n": {
+    "de": "Beaune",
+    "en": "Beaune",
+    "nl": "Beaune"
+   }
+  },
+  {
+   "id": "lyon",
+   "c": [
+    "FR"
+   ],
+   "lon": 4.84,
+   "lat": 45.76,
+   "z": 1,
+   "n": {
+    "de": "Lyon",
+    "en": "Lyon",
+    "nl": "Lyon"
+   }
+  },
+  {
+   "id": "orange",
+   "c": [
+    "FR"
+   ],
+   "lon": 4.81,
+   "lat": 44.14,
+   "z": 1,
+   "n": {
+    "de": "Orange/Avignon (Provence)",
+    "en": "Orange/Avignon (Provence)",
+    "nl": "Orange/Avignon (Provence)"
+   }
+  },
+  {
+   "id": "montpellier",
+   "c": [
+    "FR"
+   ],
+   "lon": 3.88,
+   "lat": 43.61,
+   "z": 1,
+   "n": {
+    "de": "Montpellier",
+    "en": "Montpellier",
+    "nl": "Montpellier"
+   }
+  },
+  {
+   "id": "narbonne",
+   "c": [
+    "FR"
+   ],
+   "lon": 3.0,
+   "lat": 43.18,
+   "n": {
+    "de": "Narbonne",
+    "en": "Narbonne",
+    "nl": "Narbonne"
+   }
+  },
+  {
+   "id": "aix",
+   "c": [
+    "FR"
+   ],
+   "lon": 5.45,
+   "lat": 43.53,
+   "n": {
+    "de": "Aix-en-Provence",
+    "en": "Aix-en-Provence",
+    "nl": "Aix-en-Provence"
+   }
+  },
+  {
+   "id": "nizza",
+   "c": [
+    "FR"
+   ],
+   "lon": 7.26,
+   "lat": 43.7,
+   "z": 1,
+   "n": {
+    "de": "Nizza",
+    "en": "Nice",
+    "nl": "Nice"
+   }
+  },
+  {
+   "id": "barcelona",
+   "c": [
+    "ES"
+   ],
+   "lon": 2.17,
+   "lat": 41.39,
+   "z": 1,
+   "n": {
+    "de": "Barcelona",
+    "en": "Barcelona",
+    "nl": "Barcelona"
+   }
+  },
+  {
+   "id": "lloret",
+   "c": [
+    "ES"
+   ],
+   "lon": 2.85,
+   "lat": 41.7,
+   "z": 1,
+   "n": {
+    "de": "Lloret de Mar (Costa Brava)",
+    "en": "Lloret de Mar (Costa Brava)",
+    "nl": "Lloret de Mar (Costa Brava)"
+   }
+  },
+  {
+   "id": "salou",
+   "c": [
+    "ES"
+   ],
+   "lon": 1.14,
+   "lat": 41.08,
+   "z": 1,
+   "n": {
+    "de": "Salou (Costa Daurada)",
+    "en": "Salou (Costa Daurada)",
+    "nl": "Salou (Costa Dorada)"
+   }
+  },
+  {
+   "id": "valencia",
+   "c": [
+    "ES"
+   ],
+   "lon": -0.38,
+   "lat": 39.47,
+   "z": 1,
+   "n": {
+    "de": "Valencia",
+    "en": "Valencia",
+    "nl": "Valencia"
+   }
+  },
+  {
+   "id": "prag",
+   "c": [
+    "CZ"
+   ],
+   "lon": 14.42,
+   "lat": 50.08,
+   "z": 1,
+   "n": {
+    "de": "Prag",
+    "en": "Prague",
+    "nl": "Praag"
+   }
+  },
+  {
+   "id": "budapest",
+   "c": [
+    "HU"
+   ],
+   "lon": 19.04,
+   "lat": 47.5,
+   "z": 1,
+   "n": {
+    "de": "Budapest",
+    "en": "Budapest",
+    "nl": "Boedapest"
+   }
+  },
+  {
+   "id": "balaton",
+   "c": [
+    "HU"
+   ],
+   "lon": 18.05,
+   "lat": 46.91,
+   "z": 1,
+   "n": {
+    "de": "Plattensee (Siófok)",
+    "en": "Lake Balaton (Siófok)",
+    "nl": "Balatonmeer (Siófok)"
+   }
+  },
+  {
+   "id": "bratislava",
+   "c": [
+    "SK"
+   ],
+   "lon": 17.11,
+   "lat": 48.15,
+   "z": 1,
+   "n": {
+    "de": "Bratislava",
+    "en": "Bratislava",
+    "nl": "Bratislava"
+   }
+  },
+  {
+   "id": "b_lanzhot",
+   "c": [
+    "CZ",
+    "SK"
+   ],
+   "lon": 16.97,
+   "lat": 48.7,
+   "b": 1,
+   "n": {
+    "de": "Grenze Lanžhot/Brodské (D2)",
+    "en": "Lanžhot/Brodské border (D2)",
+    "nl": "grens Lanžhot/Brodské (D2)"
+   }
+  }
+ ]
+}

@@ -1,0 +1,1555 @@
+{
+ "_lies_mich": "Alle Preise des Rechners stehen hier, nie im Code (RECETTE-SITE.md §4). Jeder Wert wurde auf der genannten Seite des Betreibers oder der Behörde gelesen (retrieved_at). Abschnitte, deren Preis nicht gelesen werden konnte, stehen als „nv“ (nicht verifiziert) und gehen in keine Summe ein. Recherche: research/peages.md und research/vignettes.md.",
+ "year": 2026,
+ "retrieved_at": "2026-10-21",
+ "valid_from": "2026-01-01",
+ "valid_to": "2026-12-31",
+ "sources": {
+  "wob": {
+   "url": "https://energy.ec.europa.eu/data-and-analysis/weekly-oil-bulletin_en",
+   "label": {
+    "de": "Europäische Kommission, Weekly Oil Bulletin (Preise mit Steuern, wöchentlich)",
+    "en": "European Commission, Weekly Oil Bulletin (prices with taxes, weekly)",
+    "nl": "Europese Commissie, Weekly Oil Bulletin (prijzen met belastingen, wekelijks)"
+   }
+  },
+  "ezb": {
+   "url": "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html",
+   "label": {
+    "de": "Europäische Zentralbank, Euro-Referenzkurse",
+    "en": "European Central Bank, euro reference exchange rates",
+    "nl": "Europese Centrale Bank, euro-referentiekoersen"
+   }
+  },
+  "osm": {
+   "url": "https://www.openstreetmap.org/copyright",
+   "label": {
+    "de": "OpenStreetMap-Mitwirkende (ODbL), Strecken mit OSRM berechnet",
+    "en": "OpenStreetMap contributors (ODbL), routes computed with OSRM",
+    "nl": "OpenStreetMap-bijdragers (ODbL), routes berekend met OSRM"
+   }
+  },
+  "asfinagVignette": {
+   "url": "https://www.asfinag.at/maut-vignette/vignette/",
+   "label": {
+    "de": "ASFINAG, Vignette: Preise 2026 und Ende der Klebevignette",
+    "en": "ASFINAG, vignette: 2026 prices and end of the sticker",
+    "nl": "ASFINAG, vignet: prijzen 2026 en einde van het plakvignet"
+   }
+  },
+  "asfinagDigital": {
+   "url": "https://www.asfinag.at/maut-vignette/vignette/digitale-vignette/",
+   "label": {
+    "de": "ASFINAG, Digitale Vignette (18-Tage-Frist)",
+    "en": "ASFINAG, digital vignette (18-day rule)",
+    "nl": "ASFINAG, digitaal vignet (regel van 18 dagen)"
+   }
+  },
+  "asfinagHelp": {
+   "url": "https://help.asfinag.at/vignette-und-streckenmaut/vignette/",
+   "label": {
+    "de": "ASFINAG Hilfe, Vignette: Preise, Ersatzmaut, Wohnmobile",
+    "en": "ASFINAG help, vignette: prices, substitute toll, motorhomes",
+    "nl": "ASFINAG hulp, vignet: prijzen, vervangende tol, campers"
+   }
+  },
+  "asfinagStrecke": {
+   "url": "https://www.asfinag.at/maut-vignette/streckenmaut/",
+   "label": {
+    "de": "ASFINAG, Streckenmaut-Tarife ab 1.1.2026",
+    "en": "ASFINAG, section toll rates from 1 January 2026",
+    "nl": "ASFINAG, trajecttol vanaf 1 januari 2026"
+   }
+  },
+  "asfinagMautordnung": {
+   "url": "https://media.asfinag.at/media/evdmultg/00_mo_v88.pdf",
+   "label": {
+    "de": "ASFINAG, Mautordnung Version 88 (Anhänger, Streckenmaut)",
+    "en": "ASFINAG, toll regulations version 88 (trailers, section toll)",
+    "nl": "ASFINAG, tolreglement versie 88 (aanhangers, trajecttol)"
+   }
+  },
+  "asfinagPresse": {
+   "url": "https://www.asfinag.at/ueber-uns/presse/pressemeldungen/klebevignette-2026-wird-feuerrot/",
+   "label": {
+    "de": "ASFINAG, Presse 08.10.2025: letzte Klebevignette 2026",
+    "en": "ASFINAG press release, 8 Oct 2025: last sticker vignette 2026",
+    "nl": "ASFINAG persbericht, 8 okt. 2025: laatste plakvignet 2026"
+   }
+  },
+  "felbertauern": {
+   "url": "https://shop.felbertauernstrasse.at/de/c/pkw",
+   "label": {
+    "de": "Felbertauernstraße AG, Tarife Pkw und Wohnmobil",
+    "en": "Felbertauernstraße AG, car and motorhome rates",
+    "nl": "Felbertauernstraße AG, tarieven auto en camper"
+   }
+  },
+  "grossglockner": {
+   "url": "https://www.grossglockner.at/en/for-your-visit/prices-opening-times",
+   "label": {
+    "de": "Großglockner Hochalpenstraße, Preise 2026",
+    "en": "Grossglockner High Alpine Road, prices 2026",
+    "nl": "Großglockner Hochalpenstraße, prijzen 2026"
+   }
+  },
+  "bazgVignette": {
+   "url": "https://www.bazg.admin.ch/de/faq-vignette-und-e-vignette-erwerb",
+   "label": {
+    "de": "BAZG, FAQ Vignette und E-Vignette",
+    "en": "Swiss customs (FOCBS), vignette and e-vignette FAQ",
+    "nl": "Zwitserse douane (BAZG), FAQ vignet en e-vignet"
+   }
+  },
+  "bazgEvignette": {
+   "url": "https://www.bazg.admin.ch/de/elektronische-vignette-via-portal-kaufen",
+   "label": {
+    "de": "BAZG, E-Vignette über das Portal kaufen",
+    "en": "Swiss customs (FOCBS), buying the e-vignette",
+    "nl": "Zwitserse douane (BAZG), e-vignet kopen"
+   }
+  },
+  "darsVignette": {
+   "url": "https://evinjeta.dars.si/en/about-e-vignette",
+   "label": {
+    "de": "DARS, E-Vignette Slowenien: Klassen und Preise",
+    "en": "DARS, Slovenian e-vignette: classes and prices",
+    "nl": "DARS, Sloveens e-vignet: klassen en prijzen"
+   }
+  },
+  "darsValidity": {
+   "url": "https://evinjeta.dars.si/en/e-vignette-validity",
+   "label": {
+    "de": "DARS, Gültigkeit der E-Vignette",
+    "en": "DARS, e-vignette validity",
+    "nl": "DARS, geldigheid van het e-vignet"
+   }
+  },
+  "darsKarawanken": {
+   "url": "https://evinjeta.dars.si/en/predor-karavanke",
+   "label": {
+    "de": "DARS, Karawankentunnel: Tunnelmaut",
+    "en": "DARS, Karavanke tunnel toll",
+    "nl": "DARS, tol van de Karawankentunnel"
+   }
+  },
+  "edalnice": {
+   "url": "https://edalnice.cz/en/price-list",
+   "label": {
+    "de": "SFDI eDálnice, Preisliste ab 1.1.2026",
+    "en": "SFDI eDálnice, price list from 1 Jan 2026",
+    "nl": "SFDI eDálnice, prijslijst vanaf 1 jan. 2026"
+   }
+  },
+  "edalniceFaq": {
+   "url": "https://edalnice.cz/en/faq",
+   "label": {
+    "de": "SFDI eDálnice, häufige Fragen (Motorrad, Anhänger, Strafen)",
+    "en": "SFDI eDálnice, FAQ (motorcycles, trailers, fines)",
+    "nl": "SFDI eDálnice, FAQ (motor, aanhanger, boetes)"
+   }
+  },
+  "nemzetiutdij": {
+   "url": "https://nemzetiutdij.hu/hu/e-matrica/dijak/e-matrica-arak",
+   "label": {
+    "de": "Nemzeti Útdíjfizetési Szolgáltató, E-Matrica-Preise ab 1.1.2026",
+    "en": "Hungarian National Toll Payment Services, e-matrica prices from 1 Jan 2026",
+    "nl": "Hongaarse tolbetaaldienst, e-matrica-prijzen vanaf 1 jan. 2026"
+   }
+  },
+  "eznamka": {
+   "url": "https://eznamka.sk/en/evignettes/types-and-prices",
+   "label": {
+    "de": "NDS eznamka.sk, Arten und Preise",
+    "en": "NDS eznamka.sk, types and prices",
+    "nl": "NDS eznamka.sk, soorten en prijzen"
+   }
+  },
+  "aprr": {
+   "url": "https://voyage.aprr.fr/sites/default/files/2026-02/TARIFS_APRR.pdf",
+   "label": {
+    "de": "APRR, Mauttarife ab 1. Februar 2026 (Klassen 1 bis 5)",
+    "en": "APRR, toll rates from 1 February 2026 (classes 1 to 5)",
+    "nl": "APRR, toltarieven vanaf 1 februari 2026 (klassen 1 tot 5)"
+   }
+  },
+  "vinciLiaisons": {
+   "url": "https://www.vinci-autoroutes.com/static/b9b8279934080436ee3bba255c7835e2/vinci_autoroutes-tarifs-principales-liaisons-2026.pdf",
+   "label": {
+    "de": "VINCI Autoroutes (ASF, Escota), Hauptverbindungen ab 1. Februar 2026",
+    "en": "VINCI Autoroutes (ASF, Escota), main routes from 1 February 2026",
+    "nl": "VINCI Autoroutes (ASF, Escota), hoofdverbindingen vanaf 1 februari 2026"
+   }
+  },
+  "asfGuide": {
+   "url": "https://public-content.vinci-autoroutes.com/PDF/Tarifs-peage-asf/ASF-Guide-tarifaire-2026-maj062026.pdf",
+   "label": {
+    "de": "ASF, Tarifführer 2026 (Fahrzeugklassen, Raster)",
+    "en": "ASF, 2026 rate guide (vehicle classes, grid)",
+    "nl": "ASF, tariefgids 2026 (voertuigklassen, raster)"
+   }
+  },
+  "sanef": {
+   "url": "https://www.autoroutes.sanef.com/sites/default/files/2026-01/2026_02-Grille-Sanef.pdf",
+   "label": {
+    "de": "Sanef, Tarifraster 2026 (A1, A4): von uns nicht automatisch lesbar",
+    "en": "Sanef, 2026 rate grid (A1, A4): not machine-readable for us",
+    "nl": "Sanef, tariefrooster 2026 (A1, A4): voor ons niet automatisch leesbaar"
+   }
+  },
+  "atmb": {
+   "url": "https://www.atmb.com/telepeage-tarifs/les-tarifs-au-tunnel-du-mont-blanc-pour-les-vehicules-legers/",
+   "label": {
+    "de": "ATMB, Tarife Mont-Blanc-Tunnel 2026",
+    "en": "ATMB, Mont Blanc tunnel rates 2026",
+    "nl": "ATMB, tarieven Mont Blanc-tunnel 2026"
+   }
+  },
+  "sftrf": {
+   "url": "https://www.sftrf.fr/wp-content/uploads/2025/12/Tarifs_tunnel_2026_FR.pdf",
+   "label": {
+    "de": "SFTRF, Tarife Fréjus-Tunnel ab 1.1.2026",
+    "en": "SFTRF, Fréjus tunnel rates from 1 Jan 2026",
+    "nl": "SFTRF, tarieven Fréjustunnel vanaf 1 jan. 2026"
+   }
+  },
+  "gsb": {
+   "url": "https://letunnel.com/fr/",
+   "label": {
+    "de": "Tunnel du Grand-Saint-Bernard, Tarife ab 1.2.2026",
+    "en": "Great St Bernard tunnel, rates from 1 Feb 2026",
+    "nl": "Grote Sint-Bernardtunnel, tarieven vanaf 1 feb. 2026"
+   }
+  },
+  "aspiCalcolo": {
+   "url": "https://www.autostrade.it/it/servizi-al-cliente/pedaggio/come-si-calcola-il-pedaggio",
+   "label": {
+    "de": "Autostrade per l'Italia, Berechnung der Maut und Kilometertarife 2026",
+    "en": "Autostrade per l'Italia, how the toll is calculated, 2026 per-km rates",
+    "nl": "Autostrade per l'Italia, berekening van de tol en kilometertarieven 2026"
+   }
+  },
+  "aspiClassi": {
+   "url": "https://www.autostrade.it/it/servizi-al-cliente/pedaggio/classi-di-pedaggio",
+   "label": {
+    "de": "Autostrade per l'Italia, Mautklassen",
+    "en": "Autostrade per l'Italia, toll classes",
+    "nl": "Autostrade per l'Italia, tolklassen"
+   }
+  },
+  "a22": {
+   "url": "https://www.autobrennero.it/media/fzulutir/it_tariffe-a22_2026.pdf",
+   "label": {
+    "de": "Autostrada del Brennero (A22), Tarife 2026",
+    "en": "Autostrada del Brennero (A22), 2026 rates",
+    "nl": "Autostrada del Brennero (A22), tarieven 2026"
+   }
+  },
+  "hacA1": {
+   "url": "https://www.hac.hr/hr/cestarina/cjenik/a1",
+   "label": {
+    "de": "Hrvatske autoceste, Preisliste A1",
+    "en": "Hrvatske autoceste, A1 price list",
+    "nl": "Hrvatske autoceste, prijslijst A1"
+   }
+  },
+  "hacBregana": {
+   "url": "https://www.hac.hr/hr/cestarina/cjenik/bregana",
+   "label": {
+    "de": "Hrvatske autoceste, Mautstelle Bregana",
+    "en": "Hrvatske autoceste, Bregana toll plaza",
+    "nl": "Hrvatske autoceste, tolpost Bregana"
+   }
+  },
+  "hacRupa": {
+   "url": "https://www.hac.hr/hr/cestarina/cjenik/rupa",
+   "label": {
+    "de": "Hrvatske autoceste, Mautstelle Rupa",
+    "en": "Hrvatske autoceste, Rupa toll plaza",
+    "nl": "Hrvatske autoceste, tolpost Rupa"
+   }
+  },
+  "azm": {
+   "url": "https://www.azm.hr/cestarine-kalkulator",
+   "label": {
+    "de": "Autocesta Zagreb–Macelj, Mautrechner des Betreibers",
+    "en": "Autocesta Zagreb–Macelj, operator toll calculator",
+    "nl": "Autocesta Zagreb–Macelj, tolcalculator van de exploitant"
+   }
+  },
+  "bina": {
+   "url": "https://www.bina-istra.com/cestarina/cjenik-dionica-na-karti",
+   "label": {
+    "de": "BINA-Istra, Preise je Abschnitt (Istrisches Ypsilon)",
+    "en": "BINA-Istra, prices per section (Istrian Y)",
+    "nl": "BINA-Istra, prijzen per traject (Istrische Y)"
+   }
+  },
+  "ausol": {
+   "url": "https://www.autopistadelsol.com/es/tarifas-y-descuentos/tarifas/",
+   "label": {
+    "de": "Autopista del Sol (AP-7 Málaga–Guadiaro), Tarife 2026",
+    "en": "Autopista del Sol (AP-7 Málaga–Guadiaro), 2026 rates",
+    "nl": "Autopista del Sol (AP-7 Málaga–Guadiaro), tarieven 2026"
+   }
+  },
+  "ap6": {
+   "url": "https://www.autopistas.com/wp-content/uploads/2025/12/26_004-Castellana-AP6_AP51_AP61-T26.pdf",
+   "label": {
+    "de": "Abertis Autopistas, Tarife AP-6, AP-51, AP-61 ab 1.1.2026",
+    "en": "Abertis Autopistas, AP-6, AP-51, AP-61 rates from 1 Jan 2026",
+    "nl": "Abertis Autopistas, tarieven AP-6, AP-51, AP-61 vanaf 1 jan. 2026"
+   }
+  },
+  "storebaelt": {
+   "url": "https://storebaelt.dk/en/prices-and-discounts/private/",
+   "label": {
+    "de": "Sund & Bælt, Preise Storebælt-Brücke",
+    "en": "Sund & Bælt, Great Belt bridge prices",
+    "nl": "Sund & Bælt, prijzen Grote Beltbrug"
+   }
+  },
+  "oresund": {
+   "url": "https://www.oresundsbron.com/en/prices",
+   "label": {
+    "de": "Øresundsbron, Preise",
+    "en": "Øresund Bridge, prices",
+    "nl": "Sontbrug, prijzen"
+   }
+  }
+ },
+ "fahrzeuge": [
+  "pkw",
+  "wohnmobil",
+  "gespann",
+  "motorrad"
+ ],
+ "verbrauch_vorgabe": {
+  "pkw": 7,
+  "wohnmobil": 11,
+  "gespann": 11,
+  "motorrad": 5
+ },
+ "_vignetten": "Je Land: Währung, Fahrzeugklasse je Fahrzeugart (null = keine Vignettenpflicht), zusätzliche Vignetten für den Anhänger, Produkte mit Laufzeit (tage, monate, oder fest von/bis) und Preis in Landeswährung. preise_bis = letzter Reisetag, für den die veröffentlichten Preise gelten (danach: Preise 2027 noch nicht veröffentlicht).",
+ "vignetten": {
+  "AT": {
+   "waehrung": "EUR",
+   "quelle": "asfinagVignette",
+   "preise_bis": "2026-11-30",
+   "klasse": {
+    "pkw": "kfz",
+    "wohnmobil": "kfz",
+    "gespann": "kfz",
+    "motorrad": "moto"
+   },
+   "anhaenger": 0,
+   "produkte": {
+    "kfz": [
+     {
+      "id": "1t",
+      "tage": 1,
+      "preis": 9.6
+     },
+     {
+      "id": "10t",
+      "tage": 10,
+      "preis": 12.8
+     },
+     {
+      "id": "2m",
+      "monate": 2,
+      "preis": 32.0
+     },
+     {
+      "id": "jahr",
+      "von": "2025-12-01",
+      "bis": "2027-01-31",
+      "preis": 106.8
+     }
+    ],
+    "moto": [
+     {
+      "id": "1t",
+      "tage": 1,
+      "preis": 3.8
+     },
+     {
+      "id": "10t",
+      "tage": 10,
+      "preis": 5.1
+     },
+     {
+      "id": "2m",
+      "monate": 2,
+      "preis": 12.8
+     },
+     {
+      "id": "jahr",
+      "von": "2025-12-01",
+      "bis": "2027-01-31",
+      "preis": 42.7
+     }
+    ]
+   },
+   "strafe": {
+    "betrag": 200,
+    "moto": 100,
+    "text": "Ersatzmaut ab 1.1.2026"
+   },
+   "ende_klebevignette": "2027-01-31",
+   "nur_digital_ab": "2027-02-01",
+   "frist_online_tage": 18
+  },
+  "CH": {
+   "waehrung": "CHF",
+   "quelle": "bazgVignette",
+   "preise_bis": null,
+   "klasse": {
+    "pkw": "kfz",
+    "wohnmobil": "kfz",
+    "gespann": "kfz",
+    "motorrad": "kfz"
+   },
+   "anhaenger": 1,
+   "produkte": {
+    "kfz": [
+     {
+      "id": "jahr",
+      "jahresvignette": true,
+      "preis": 40
+     }
+    ]
+   },
+   "strafe": {
+    "betrag": 200,
+    "text": "Busse CHF 200 plus Vignette"
+   }
+  },
+  "SI": {
+   "waehrung": "EUR",
+   "quelle": "darsVignette",
+   "preise_bis": "2026-12-31",
+   "klasse": {
+    "pkw": "2A",
+    "wohnmobil": "2B",
+    "gespann": "2A",
+    "motorrad": "1"
+   },
+   "anhaenger": 0,
+   "anhaenger_nv": true,
+   "produkte": {
+    "2A": [
+     {
+      "id": "7t",
+      "tage": 7,
+      "preis": 16.0
+     },
+     {
+      "id": "1m",
+      "monate": 1,
+      "preis": 32.0
+     },
+     {
+      "id": "jahr",
+      "monate": 12,
+      "preis": 117.5
+     }
+    ],
+    "2B": [
+     {
+      "id": "7t",
+      "tage": 7,
+      "preis": 32.0
+     },
+     {
+      "id": "1m",
+      "monate": 1,
+      "preis": 64.1
+     },
+     {
+      "id": "jahr",
+      "monate": 12,
+      "preis": 235.0
+     }
+    ],
+    "1": [
+     {
+      "id": "7t",
+      "tage": 7,
+      "preis": 8.0
+     },
+     {
+      "id": "6m",
+      "monate": 6,
+      "preis": 32.0
+     },
+     {
+      "id": "jahr",
+      "monate": 12,
+      "preis": 58.7
+     }
+    ]
+   },
+   "strafe": {
+    "betrag": 300,
+    "text": "Busse 300 €"
+   }
+  },
+  "CZ": {
+   "waehrung": "CZK",
+   "quelle": "edalnice",
+   "preise_bis": "2026-12-31",
+   "klasse": {
+    "pkw": "kfz",
+    "wohnmobil": "kfz",
+    "gespann": "kfz",
+    "motorrad": null
+   },
+   "anhaenger": 0,
+   "produkte": {
+    "kfz": [
+     {
+      "id": "1t",
+      "tage": 1,
+      "preis": 230
+     },
+     {
+      "id": "10t",
+      "tage": 10,
+      "preis": 300
+     },
+     {
+      "id": "30t",
+      "tage": 30,
+      "preis": 480
+     },
+     {
+      "id": "jahr",
+      "tage": 365,
+      "preis": 2570
+     }
+    ]
+   },
+   "strafe": {
+    "betrag": 5000,
+    "text": "bis 5 000 CZK vor Ort"
+   }
+  },
+  "HU": {
+   "waehrung": "HUF",
+   "quelle": "nemzetiutdij",
+   "preise_bis": "2026-12-31",
+   "klasse": {
+    "pkw": "D1",
+    "wohnmobil": "D1",
+    "gespann": "D1",
+    "motorrad": "D1M"
+   },
+   "anhaenger": 0,
+   "produkte": {
+    "D1": [
+     {
+      "id": "1t",
+      "tage": 1,
+      "preis": 5550
+     },
+     {
+      "id": "10t",
+      "tage": 10,
+      "preis": 6900
+     },
+     {
+      "id": "1m",
+      "monate": 1,
+      "preis": 11170
+     },
+     {
+      "id": "jahr",
+      "von": "2026-01-01",
+      "bis": "2027-01-31",
+      "preis": 61760
+     }
+    ],
+    "D1M": [
+     {
+      "id": "1t",
+      "tage": 1,
+      "preis": 2770
+     },
+     {
+      "id": "10t",
+      "tage": 10,
+      "preis": 3450
+     },
+     {
+      "id": "1m",
+      "monate": 1,
+      "preis": 5590
+     },
+     {
+      "id": "jahr",
+      "von": "2026-01-01",
+      "bis": "2027-01-31",
+      "preis": 61760
+     }
+    ]
+   },
+   "strafe": {
+    "betrag": 27790,
+    "text": "Grundzuschlag 27 790 HUF"
+   }
+  },
+  "SK": {
+   "waehrung": "EUR",
+   "quelle": "eznamka",
+   "preise_bis": "2026-12-31",
+   "klasse": {
+    "pkw": "kfz",
+    "wohnmobil": "kfz",
+    "gespann": "kfz",
+    "motorrad": null
+   },
+   "anhaenger": 0,
+   "anhaenger_hinweis": true,
+   "produkte": {
+    "kfz": [
+     {
+      "id": "1t",
+      "tage": 1,
+      "preis": 8.1
+     },
+     {
+      "id": "10t",
+      "tage": 10,
+      "preis": 10.8
+     },
+     {
+      "id": "30t",
+      "tage": 30,
+      "preis": 17.1
+     },
+     {
+      "id": "jahr",
+      "tage": 365,
+      "preis": 90.0
+     }
+    ]
+   },
+   "strafe": null
+  }
+ },
+ "_streckenmaut": "Mautabschnitte mit Einzelpreis je Durchfahrt und Richtung (Österreich: Streckenmaut der ASFINAG; Motorrad zahlt laut Tarifblatt gleich, Anhänger frei). Auf dem Mautabschnitt selbst gilt keine Vignettenpflicht; ohne_vignette = die ganze Kante ist Mautabschnitt (A13 Innsbruck–Brenner). Auf A9, A10, A11 und der Arlbergstrecke liegen davor und dahinter vignettenpflichtige Autobahnstücke.",
+ "streckenmaut": {
+  "brenner": {
+   "land": "AT",
+   "kante": "innsbruck|b_brenner",
+   "quelle": "asfinagStrecke",
+   "preis": {
+    "pkw": 12.5,
+    "wohnmobil": 12.5,
+    "gespann": 12.5,
+    "motorrad": 12.5
+   },
+   "name": {
+    "de": "A13 Brennerautobahn",
+    "en": "A13 Brenner motorway",
+    "nl": "A13 Brennersnelweg"
+   },
+   "ohne_vignette": true,
+   "mehrfahrtenkarte": 75.0,
+   "teilstrecken": [
+    1.0,
+    3.5,
+    4.0,
+    6.0
+   ]
+  },
+  "tauern": {
+   "land": "AT",
+   "kante": "salzburg|villach",
+   "quelle": "asfinagStrecke",
+   "preis": {
+    "pkw": 15.0,
+    "wohnmobil": 15.0,
+    "gespann": 15.0,
+    "motorrad": 15.0
+   },
+   "name": {
+    "de": "A10 Tauernautobahn (Tauern- und Katschbergtunnel)",
+    "en": "A10 Tauern motorway (Tauern and Katschberg tunnels)",
+    "nl": "A10 Tauernsnelweg (Tauern- en Katschbergtunnel)"
+   },
+   "mehrfahrtenkarte": 90.0,
+   "teilstrecke": 7.5
+  },
+  "karawanken": {
+   "land": "AT",
+   "kante": "villach|b_karawanken",
+   "quelle": "asfinagStrecke",
+   "preis": {
+    "pkw": 9.0,
+    "wohnmobil": 9.0,
+    "gespann": 9.0,
+    "motorrad": 9.0
+   },
+   "name": {
+    "de": "A11 Karawankentunnel",
+    "en": "A11 Karawanken tunnel",
+    "nl": "A11 Karawankentunnel"
+   },
+   "monatskarte_14": 40.4,
+   "dars_hrusica": 9.0
+  },
+  "pyhrn": {
+   "land": "AT",
+   "kante": "linz|graz",
+   "quelle": "asfinagStrecke",
+   "preis": {
+    "pkw": 19.0,
+    "wohnmobil": 19.0,
+    "gespann": 19.0,
+    "motorrad": 19.0
+   },
+   "teile": {
+    "bosruck": 7.0,
+    "gleinalm": 12.0
+   },
+   "name": {
+    "de": "A9 Pyhrnautobahn (Bosruck- und Gleinalmtunnel)",
+    "en": "A9 Pyhrn motorway (Bosruck and Gleinalm tunnels)",
+    "nl": "A9 Pyhrnsnelweg (Bosruck- en Gleinalmtunnel)"
+   },
+   "mehrfahrtenkarte": 80.0
+  },
+  "arlberg": {
+   "land": "AT",
+   "kante": "landeck|bregenz",
+   "quelle": "asfinagStrecke",
+   "preis": {
+    "pkw": 13.0,
+    "wohnmobil": 13.0,
+    "gespann": 13.0,
+    "motorrad": 13.0
+   },
+   "name": {
+    "de": "S16 Arlberg-Straßentunnel",
+    "en": "S16 Arlberg road tunnel",
+    "nl": "S16 Arlberg-wegtunnel"
+   },
+   "mehrfahrtenkarte": 78.0
+  }
+ },
+ "_maut_fr": "Frankreich: geschlossene Systeme mit Preis je Paar Ein- und Ausfahrt, gelesen auf den Rastern der Betreiber (gültig ab 1.2.2026). Klasse 1 = Pkw bis 2 m Höhe; Klasse 2 = Wohnmobil und Gespann mit Wohnwagen über 2 m Höhe; Klasse 5 = Motorrad. Ein Paar ohne gelesenen Preis gilt als nicht verifiziert.",
+ "systeme": {
+  "aprr": {
+   "land": "FR",
+   "quelle": "aprr",
+   "gueltig_ab": "2026-02-01",
+   "name": {
+    "de": "APRR (A36, A31, A6)",
+    "en": "APRR (A36, A31, A6)",
+    "nl": "APRR (A36, A31, A6)"
+   },
+   "paare": {
+    "mulhouse|beaune": {
+     "von": "Barrière Fontaine-Larivière + Saint-Maurice",
+     "bis": "Beaune Sud",
+     "preis": {
+      "pkw": 21.3,
+      "wohnmobil": 33.0,
+      "gespann": 33.0,
+      "motorrad": 12.8
+     },
+     "teile": [
+      {
+       "name": "Fontaine-Larivière",
+       "preis": {
+        "pkw": 3.1,
+        "wohnmobil": 4.9,
+        "gespann": 4.9,
+        "motorrad": 1.9
+       }
+      },
+      {
+       "name": "Saint-Maurice → Beaune Sud",
+       "preis": {
+        "pkw": 18.2,
+        "wohnmobil": 28.1,
+        "gespann": 28.1,
+        "motorrad": 10.9
+       }
+      }
+     ]
+    },
+    "mulhouse|lyon": {
+     "von": "Barrière Fontaine-Larivière + Saint-Maurice",
+     "bis": "Villefranche-Limas",
+     "preis": {
+      "pkw": 35.9,
+      "wohnmobil": 55.4,
+      "gespann": 55.4,
+      "motorrad": 21.1
+     },
+     "teile": [
+      {
+       "name": "Fontaine-Larivière",
+       "preis": {
+        "pkw": 3.1,
+        "wohnmobil": 4.9,
+        "gespann": 4.9,
+        "motorrad": 1.9
+       }
+      },
+      {
+       "name": "Saint-Maurice → Villefranche-Limas",
+       "preis": {
+        "pkw": 32.8,
+        "wohnmobil": 50.5,
+        "gespann": 50.5,
+        "motorrad": 19.2
+       }
+      }
+     ]
+    },
+    "nancy|beaune": {
+     "von": "Gye",
+     "bis": "Beaune Sud",
+     "preis": {
+      "pkw": 22.4,
+      "wohnmobil": 34.3,
+      "gespann": 34.3,
+      "motorrad": 13.4
+     }
+    },
+    "nancy|lyon": {
+     "von": "Gye",
+     "bis": "Villefranche-Limas",
+     "preis": {
+      "pkw": 36.9,
+      "wohnmobil": 56.7,
+      "gespann": 56.7,
+      "motorrad": 22.4
+     }
+    },
+    "paris|beaune": {
+     "von": "Fleury-en-Bière",
+     "bis": "Beaune Sud",
+     "preis": {
+      "pkw": 27.6,
+      "wohnmobil": 42.5,
+      "gespann": 42.5,
+      "motorrad": 16.2
+     }
+    },
+    "paris|lyon": {
+     "von": "Fleury-en-Bière",
+     "bis": "Villefranche-Limas",
+     "preis": {
+      "pkw": 41.3,
+      "wohnmobil": 64.3,
+      "gespann": 64.3,
+      "motorrad": 24.8
+     }
+    },
+    "beaune|lyon": {
+     "von": "Beaune Sud",
+     "bis": "Villefranche-Limas",
+     "preis": {
+      "pkw": 13.7,
+      "wohnmobil": 21.7,
+      "gespann": 21.7,
+      "motorrad": 8.3
+     }
+    }
+   }
+  },
+  "asf": {
+   "land": "FR",
+   "quelle": "vinciLiaisons",
+   "gueltig_ab": "2026-02-01",
+   "name": {
+    "de": "ASF (A7, A9)",
+    "en": "ASF (A7, A9)",
+    "nl": "ASF (A7, A9)"
+   },
+   "paare": {
+    "lyon|orange": {
+     "von": "Lyon (Vienne)",
+     "bis": "Orange centre",
+     "quelle": "asfGuide",
+     "preis": {
+      "pkw": 20.4,
+      "wohnmobil": 31.4,
+      "gespann": 31.4,
+      "motorrad": null
+     }
+    },
+    "lyon|montpellier": {
+     "von": "Lyon",
+     "bis": "Montpellier",
+     "preis": {
+      "pkw": 32.8,
+      "wohnmobil": 51.3,
+      "gespann": 51.3,
+      "motorrad": 19.2
+     }
+    },
+    "lyon|b_lejonquera": {
+     "von": "Lyon",
+     "bis": "Le Perthus (Spanien)",
+     "preis": {
+      "pkw": 55.5,
+      "wohnmobil": 86.4,
+      "gespann": 86.4,
+      "motorrad": 32.8
+     }
+    },
+    "montpellier|narbonne": {
+     "von": "Montpellier",
+     "bis": "Narbonne-est",
+     "preis": {
+      "pkw": 9.7,
+      "wohnmobil": 14.7,
+      "gespann": 14.7,
+      "motorrad": 5.6
+     }
+    },
+    "montpellier|b_lejonquera": {
+     "von": "Montpellier",
+     "bis": "Le Perthus (Spanien)",
+     "preis": {
+      "pkw": 23.1,
+      "wohnmobil": 35.3,
+      "gespann": 35.3,
+      "motorrad": 13.0
+     }
+    },
+    "lyon|aix": {
+     "von": "Lyon",
+     "bis": "Marseille-Aix",
+     "preis": {
+      "pkw": 28.1,
+      "wohnmobil": 45.7,
+      "gespann": 45.7,
+      "motorrad": 17.0
+     }
+    }
+   }
+  },
+  "escota": {
+   "land": "FR",
+   "quelle": "vinciLiaisons",
+   "gueltig_ab": "2026-02-01",
+   "name": {
+    "de": "Escota (A8)",
+    "en": "Escota (A8)",
+    "nl": "Escota (A8)"
+   },
+   "paare": {
+    "aix|nizza": {
+     "von": "Aix",
+     "bis": "Nice",
+     "preis": {
+      "pkw": 21.2,
+      "wohnmobil": 31.5,
+      "gespann": 31.5,
+      "motorrad": 13.0
+     }
+    }
+   }
+  },
+  "hac": {
+   "land": "HR",
+   "quelle": "hacA1",
+   "gueltig_ab": null,
+   "name": {
+    "de": "Hrvatske autoceste (A1, A6)",
+    "en": "Hrvatske autoceste (A1, A6)",
+    "nl": "Hrvatske autoceste (A1, A6)"
+   },
+   "paare": {
+    "zagreb|karlovac": {
+     "von": "Zagreb (Lučko)",
+     "bis": "Karlovac",
+     "preis": {
+      "pkw": 2.8,
+      "wohnmobil": 5.0,
+      "gespann": 5.0,
+      "motorrad": 1.7
+     }
+    },
+    "zagreb|rijeka": {
+     "von": "Zagreb (Lučko)",
+     "bis": "Rijeka (Grobnik)",
+     "preis": {
+      "pkw": 10.1,
+      "wohnmobil": 18.5,
+      "gespann": 18.5,
+      "motorrad": 6.1
+     }
+    },
+    "zagreb|zadar": {
+     "von": "Zagreb (Lučko)",
+     "bis": "Zadar centar",
+     "preis": {
+      "pkw": 17.6,
+      "wohnmobil": 28.2,
+      "gespann": 28.2,
+      "motorrad": 10.8
+     }
+    },
+    "zagreb|sibenik": {
+     "von": "Zagreb (Lučko)",
+     "bis": "Šibenik",
+     "preis": {
+      "pkw": 22.1,
+      "wohnmobil": 35.3,
+      "gespann": 35.3,
+      "motorrad": 13.4
+     }
+    },
+    "zagreb|split": {
+     "von": "Zagreb (Lučko)",
+     "bis": "Split (Dugopolje)",
+     "preis": {
+      "pkw": 26.4,
+      "wohnmobil": 41.4,
+      "gespann": 41.4,
+      "motorrad": 15.8
+     }
+    }
+   }
+  },
+  "bina": {
+   "land": "HR",
+   "quelle": "bina",
+   "gueltig_ab": null,
+   "name": {
+    "de": "BINA-Istra (Istrisches Ypsilon)",
+    "en": "BINA-Istra (Istrian Y)",
+    "nl": "BINA-Istra (Istrische Y)"
+   },
+   "paare": {
+    "umag|kanfanar": {
+     "von": "Umag",
+     "bis": "Kanfanar",
+     "preis": {
+      "pkw": 4.7,
+      "wohnmobil": 6.8,
+      "gespann": 6.8,
+      "motorrad": 2.8
+     }
+    },
+    "umag|pula": {
+     "von": "Umag",
+     "bis": "Pula",
+     "preis": {
+      "pkw": 6.4,
+      "wohnmobil": 9.8,
+      "gespann": 9.8,
+      "motorrad": 3.8
+     }
+    },
+    "kanfanar|pula": {
+     "von": "Kanfanar",
+     "bis": "Pula",
+     "preis": {
+      "pkw": 2.8,
+      "wohnmobil": 3.6,
+      "gespann": 3.6,
+      "motorrad": 1.7
+     }
+    },
+    "rijeka|kanfanar": {
+     "von": "Tunnel Učka",
+     "bis": "Kanfanar",
+     "preis": {
+      "pkw": 8.7,
+      "wohnmobil": 12.7,
+      "gespann": 12.7,
+      "motorrad": 5.2
+     }
+    },
+    "rijeka|pula": {
+     "von": "Tunnel Učka",
+     "bis": "Pula",
+     "preis": {
+      "pkw": 10.5,
+      "wohnmobil": 15.7,
+      "gespann": 15.7,
+      "motorrad": 6.3
+     }
+    },
+    "umag|rijeka": {
+     "von": "Umag",
+     "bis": "Tunnel Učka",
+     "preis": {
+      "pkw": 12.4,
+      "wohnmobil": 18.8,
+      "gespann": 18.8,
+      "motorrad": 7.4
+     }
+    }
+   }
+  }
+ },
+ "_barrieren": "Offene Mautstellen: ein Preis je Durchfahrt.",
+ "barrieren": {
+  "bregana": {
+   "land": "HR",
+   "quelle": "hacBregana",
+   "name": {
+    "de": "Mautstelle Bregana (A3)",
+    "en": "Bregana toll plaza (A3)",
+    "nl": "Tolpost Bregana (A3)"
+   },
+   "preis": {
+    "pkw": 1.0,
+    "wohnmobil": 1.2,
+    "gespann": 1.2,
+    "motorrad": 0.6
+   }
+  },
+  "rupa": {
+   "land": "HR",
+   "quelle": "hacRupa",
+   "name": {
+    "de": "Mautstelle Rupa (A7)",
+    "en": "Rupa toll plaza (A7)",
+    "nl": "Tolpost Rupa (A7)"
+   },
+   "preis": {
+    "pkw": 1.1,
+    "wohnmobil": 2.1,
+    "gespann": 2.1,
+    "motorrad": 0.7
+   }
+  },
+  "macelj": {
+   "land": "HR",
+   "quelle": "azm",
+   "name": {
+    "de": "A2 Trakošćan – Zaprešić (Autocesta Zagreb–Macelj)",
+    "en": "A2 Trakošćan – Zaprešić (Autocesta Zagreb–Macelj)",
+    "nl": "A2 Trakošćan – Zaprešić (Autocesta Zagreb–Macelj)"
+   },
+   "preis": {
+    "pkw": 6.7,
+    "wohnmobil": 10.0,
+    "gespann": 10.0,
+    "motorrad": 4.0
+   }
+  }
+ },
+ "_italien": "Italien: Schätzung = Kilometertarif des Betreibers (MwSt. 22 % inbegriffen) × Kilometer des Abschnitts laut Routing, auf 10 Cent gerundet. Die amtlichen Kilometer von Mautstelle zu Mautstelle sind nicht frei veröffentlicht. Klasse A = Pkw und Motorrad, B = Wohnmobil (Vorderachse über 1,30 m), 3 = Pkw mit einachsigem Wohnwagen.",
+ "italien_tarife": {
+  "aspi_pianura": {
+   "quelle": "aspiCalcolo",
+   "betreiber": "Autostrade per l'Italia",
+   "art": "pianura",
+   "preis": {
+    "pkw": 0.07869,
+    "wohnmobil": 0.08054,
+    "gespann": 0.10615,
+    "motorrad": 0.07869
+   }
+  },
+  "aspi_montagna": {
+   "quelle": "aspiCalcolo",
+   "betreiber": "Autostrade per l'Italia",
+   "art": "montagna",
+   "preis": {
+    "pkw": 0.09315,
+    "wohnmobil": 0.09536,
+    "gespann": 0.1232,
+    "motorrad": 0.09315
+   }
+  },
+  "a22_montagna": {
+   "quelle": "a22",
+   "betreiber": "Autostrada del Brennero",
+   "art": "montagna",
+   "preis": {
+    "pkw": 0.07592,
+    "wohnmobil": 0.0777,
+    "gespann": 0.10289,
+    "motorrad": 0.07592
+   }
+  },
+  "a22_pianura": {
+   "quelle": "a22",
+   "betreiber": "Autostrada del Brennero",
+   "art": "pianura",
+   "preis": {
+    "pkw": 0.06412,
+    "wohnmobil": 0.06564,
+    "gespann": 0.08901,
+    "motorrad": 0.06412
+   }
+  }
+ },
+ "_kanten": "Mautart jeder Kante in Frankreich, Italien, Kroatien, Slowenien und Spanien. sys = geschlossenes System, strecke = Streckenmaut, barriere = offene Mautstelle, it = italienische Schätzung, nv = Maut vorhanden, Preis nicht verifiziert (Grund), frei = keine Maut. Kanten in Ländern mit Vignette (AT, CH, SI, CZ, HU, SK) und ohne Pkw-Maut (DE, NL, BE, LU) brauchen keinen Eintrag, außer Streckenmaut.",
+ "kanten": {
+  "b_kehl|strassburg": {
+   "typ": "frei"
+  },
+  "strassburg|metz": {
+   "typ": "nv",
+   "grund": "sanef"
+  },
+  "strassburg|mulhouse": {
+   "typ": "frei"
+  },
+  "strassburg|nancy": {
+   "typ": "nv",
+   "grund": "sanef"
+  },
+  "b_neuenburg|mulhouse": {
+   "typ": "frei"
+  },
+  "b_basel_fr|mulhouse": {
+   "typ": "frei"
+  },
+  "mulhouse|beaune": {
+   "typ": "sys",
+   "sys": "aprr"
+  },
+  "b_goldenebremm|metz": {
+   "typ": "nv",
+   "grund": "sanef"
+  },
+  "b_zoufftgen|metz": {
+   "typ": "frei"
+  },
+  "metz|nancy": {
+   "typ": "frei"
+  },
+  "metz|paris": {
+   "typ": "nv",
+   "grund": "sanef"
+  },
+  "nancy|beaune": {
+   "typ": "sys",
+   "sys": "aprr"
+  },
+  "b_rekkem|lille": {
+   "typ": "frei"
+  },
+  "lille|paris": {
+   "typ": "nv",
+   "grund": "sanef"
+  },
+  "paris|beaune": {
+   "typ": "sys",
+   "sys": "aprr"
+  },
+  "paris|lyon": {
+   "typ": "sys",
+   "sys": "aprr"
+  },
+  "beaune|lyon": {
+   "typ": "sys",
+   "sys": "aprr"
+  },
+  "lyon|orange": {
+   "typ": "sys",
+   "sys": "asf"
+  },
+  "orange|montpellier": {
+   "typ": "sys",
+   "sys": "asf"
+  },
+  "montpellier|narbonne": {
+   "typ": "sys",
+   "sys": "asf"
+  },
+  "narbonne|b_lejonquera": {
+   "typ": "sys",
+   "sys": "asf"
+  },
+  "orange|aix": {
+   "typ": "sys",
+   "sys": "asf"
+  },
+  "aix|nizza": {
+   "typ": "sys",
+   "sys": "escota"
+  },
+  "nizza|b_ventimiglia": {
+   "typ": "nv",
+   "grund": "escota_grenze"
+  },
+  "b_brenner|bozen": {
+   "typ": "it",
+   "tarif": "a22_montagna"
+  },
+  "bozen|rivagarda": {
+   "typ": "it",
+   "tarif": "a22_montagna"
+  },
+  "bozen|verona": {
+   "typ": "it",
+   "tarif": "a22_montagna"
+  },
+  "verona|gardasee": {
+   "typ": "nv",
+   "grund": "it_konzession"
+  },
+  "verona|modena": {
+   "typ": "it",
+   "tarif": "a22_pianura"
+  },
+  "verona|venedig": {
+   "typ": "nv",
+   "grund": "it_konzession"
+  },
+  "gardasee|mailand": {
+   "typ": "nv",
+   "grund": "it_konzession"
+  },
+  "modena|bologna": {
+   "typ": "it",
+   "tarif": "aspi_pianura"
+  },
+  "bologna|rimini": {
+   "typ": "it",
+   "tarif": "aspi_pianura"
+  },
+  "bologna|florenz": {
+   "typ": "it",
+   "tarif": "aspi_montagna"
+  },
+  "florenz|rom": {
+   "typ": "it",
+   "tarif": "aspi_pianura"
+  },
+  "mailand|bologna": {
+   "typ": "it",
+   "tarif": "aspi_pianura"
+  },
+  "mailand|b_chiasso": {
+   "typ": "it",
+   "tarif": "aspi_pianura"
+  },
+  "mailand|genua": {
+   "typ": "nv",
+   "grund": "it_konzession"
+  },
+  "genua|b_ventimiglia": {
+   "typ": "nv",
+   "grund": "it_konzession"
+  },
+  "venedig|jesolo": {
+   "typ": "nv",
+   "grund": "it_konzession"
+  },
+  "venedig|lignano": {
+   "typ": "nv",
+   "grund": "it_konzession"
+  },
+  "b_arnoldstein|udine": {
+   "typ": "it",
+   "tarif": "aspi_montagna"
+  },
+  "udine|lignano": {
+   "typ": "nv",
+   "grund": "it_konzession"
+  },
+  "udine|venedig": {
+   "typ": "nv",
+   "grund": "it_konzession"
+  },
+  "udine|triest": {
+   "typ": "nv",
+   "grund": "it_konzession"
+  },
+  "triest|b_fernetici": {
+   "typ": "frei"
+  },
+  "b_gruskovje|zagreb": {
+   "typ": "barriere",
+   "id": "macelj"
+  },
+  "b_obrezje|zagreb": {
+   "typ": "barriere",
+   "id": "bregana"
+  },
+  "zagreb|karlovac": {
+   "typ": "sys",
+   "sys": "hac"
+  },
+  "karlovac|rijeka": {
+   "typ": "sys",
+   "sys": "hac"
+  },
+  "b_rupa|rijeka": {
+   "typ": "barriere",
+   "id": "rupa"
+  },
+  "rijeka|krk": {
+   "typ": "frei"
+  },
+  "b_dragonja|umag": {
+   "typ": "frei"
+  },
+  "umag|porec": {
+   "typ": "frei"
+  },
+  "porec|rovinj": {
+   "typ": "frei"
+  },
+  "umag|kanfanar": {
+   "typ": "sys",
+   "sys": "bina"
+  },
+  "kanfanar|pula": {
+   "typ": "sys",
+   "sys": "bina"
+  },
+  "kanfanar|rovinj": {
+   "typ": "frei"
+  },
+  "rijeka|kanfanar": {
+   "typ": "sys",
+   "sys": "bina"
+  },
+  "karlovac|zadar": {
+   "typ": "sys",
+   "sys": "hac"
+  },
+  "zadar|sibenik": {
+   "typ": "sys",
+   "sys": "hac"
+  },
+  "sibenik|split": {
+   "typ": "sys",
+   "sys": "hac"
+  },
+  "split|makarska": {
+   "typ": "frei"
+  },
+  "b_lejonquera|lloret": {
+   "typ": "frei"
+  },
+  "b_lejonquera|barcelona": {
+   "typ": "frei"
+  },
+  "barcelona|salou": {
+   "typ": "frei"
+  },
+  "salou|valencia": {
+   "typ": "frei"
+  }
+ },
+ "nv_gruende": {
+  "sanef": {
+   "de": "Sanef (A4, A1): das Tarifraster 2026 ist für Programme gesperrt, wir haben es nicht gelesen",
+   "en": "Sanef (A4, A1): the 2026 rate grid blocks automated access, we could not read it",
+   "nl": "Sanef (A4, A1): het tariefrooster 2026 blokkeert automatische toegang, wij konden het niet lezen"
+  },
+  "escota_grenze": {
+   "de": "A8 Nizza – italienische Grenze (Mautstelle La Turbie): Preis nicht gelesen",
+   "en": "A8 Nice – Italian border (La Turbie toll plaza): price not read",
+   "nl": "A8 Nice – Italiaanse grens (tolpost La Turbie): prijs niet gelezen"
+  },
+  "it_konzession": {
+   "de": "Italien, Konzessionen ohne gelesenen Kilometertarif (A4 Brescia–Padova, Alto Adriatico, A7 Milano–Serravalle, A10 dei Fiori)",
+   "en": "Italy, concessions whose per-km rate we could not read (A4 Brescia–Padova, Alto Adriatico, A7 Milano–Serravalle, A10 dei Fiori)",
+   "nl": "Italië, concessies waarvan wij het kilometertarief niet konden lezen (A4 Brescia–Padova, Alto Adriatico, A7 Milano–Serravalle, A10 dei Fiori)"
+  },
+  "hac_paar": {
+   "de": "Kroatien: Preis für diese Ein- und Ausfahrt nicht gelesen",
+   "en": "Croatia: price for this entry and exit not read",
+   "nl": "Kroatië: prijs voor deze op- en afrit niet gelezen"
+  },
+  "fr_paar": {
+   "de": "Frankreich: Preis für diese Ein- und Ausfahrt nicht gelesen",
+   "en": "France: price for this entry and exit not read",
+   "nl": "Frankrijk: prijs voor deze op- en afrit niet gelezen"
+  }
+ },
+ "tunnel": {
+  "felbertauern": {
+   "land": "AT",
+   "quelle": "felbertauern",
+   "einfach": {
+    "pkw": 13.5,
+    "wohnmobil": 13.5,
+    "motorrad": 12.0
+   }
+  },
+  "grossglockner": {
+   "land": "AT",
+   "quelle": "grossglockner",
+   "tageskarte": {
+    "pkw": 46.5,
+    "motorrad": 36.5
+   },
+   "herbst": {
+    "pkw": 36.5,
+    "motorrad": 30.0
+   },
+   "herbst_ab": "2026-10-15"
+  },
+  "montblanc": {
+   "land": "FR",
+   "quelle": "atmb",
+   "einfach": {
+    "pkw": 55.5,
+    "wohnmobil": 73.4,
+    "motorrad": 36.7
+   },
+   "hinzurueck": {
+    "pkw": 69.2,
+    "wohnmobil": 92.3,
+    "motorrad": 46.1
+   }
+  },
+  "frejus": {
+   "land": "FR",
+   "quelle": "sftrf",
+   "einfach": {
+    "pkw": 55.5,
+    "wohnmobil": 73.4,
+    "motorrad": 36.7
+   },
+   "hinzurueck": {
+    "pkw": 69.2,
+    "wohnmobil": 92.3,
+    "motorrad": 46.1
+   }
+  },
+  "gsb": {
+   "land": "CH",
+   "quelle": "gsb",
+   "einfach": {
+    "pkw": 33.5,
+    "wohnmobil": 52.5,
+    "motorrad": 20.0
+   },
+   "hinzurueck": {
+    "pkw": 53.5,
+    "wohnmobil": 84.0,
+    "motorrad": 28.0
+   }
+  }
+ },
+ "daenemark": {
+  "quelle": "storebaelt",
+  "storebaelt_dkk": 235,
+  "oresund_dkk": 470
+ },
+ "spanien": {
+  "ausol_normal": 12.0,
+  "ausol_saison": 19.55,
+  "ap6_villalba_adanero": 15.7
+ },
+ "_vignettenfrei": "Kanten ohne Vignettenpflicht: AT seit 15.12.2019 A1 Walserberg–Salzburg Nord, A12 Grenze–Kufstein-Süd, A14 Hörbranz–Hohenems (asfinagVignette); SI seit 1.1.2026 H5 und H6 an der Küste (darsValidity). Streckenmaut-Abschnitte brauchen ebenfalls keine Vignette.",
+ "vignettenfrei": {
+  "b_walserberg|salzburg": "asfinagVignette",
+  "b_kiefersfelden|zellamsee": "asfinagVignette",
+  "b_hoerbranz|bregenz": "asfinagVignette",
+  "koper|portoroz": "darsValidity",
+  "koper|b_dragonja": "darsValidity"
+ }
+}

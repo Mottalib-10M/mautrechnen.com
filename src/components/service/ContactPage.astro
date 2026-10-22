@@ -1,0 +1,46 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import LegalIdentity from '../LegalIdentity.astro';
+import { AUTHOR_NAME, CONTACT_EMAIL, LAST_UPDATED, SITE_NAMES } from '../../data/site-config';
+import { route, type Locale } from '../../i18n/routes';
+import { contactPageSchema } from '../../lib/seo';
+import { helpers } from '../../lib/helpers';
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+const H = helpers(lang); const T = H.T;
+const name = SITE_NAMES[lang];
+const crumb = T('Kontakt', 'Contact', 'Contact');
+const description = T(
+  `Schreiben Sie dem Herausgeber von ${name}: einen veralteten Mautpreis melden, eine neue Preisliste nennen, eine Frage zur Methode stellen oder den Rechner einbinden.`,
+  `Write to the publisher of ${name}: report an out-of-date toll price, point to a new price list, ask about the method or embed the calculator on your own site.`,
+  `Schrijf de uitgever van ${name}: meld een verouderde tolprijs, wijs op een nieuwe prijslijst, stel een vraag over de methode of sluit de rekenhulp in op uw site.`);
+const mail = `mailto:${CONTACT_EMAIL}`;
+---
+<PageLayout title={`${crumb} – ${name}`} description={description} lang={lang} noindex={true} jsonLd={[contactPageSchema({ name: crumb, description, path: route('contact', lang), lang })]} breadcrumbs={[{ label: crumb }]} showAuthor={false}>
+  <div class="prose prose-slate max-w-none">
+    <h1>{crumb}</h1>
+    {lang === 'de' && <>
+      <p>Eine Adresse, jede Woche gelesen: <a href={mail}>{CONTACT_EMAIL}</a>. Es gibt keine Telefonnummer, und wir rufen niemanden zurück: diese Seite verkauft nichts.</p>
+      <h2>Einen Fehler melden</h2><p>Nennen Sie das Land, den Abschnitt oder die Vignette, die Fahrzeugklasse und die Seite des Betreibers, die einen anderen Preis zeigt. Ein bestätigter Fehler wird korrigiert und als Test aufgenommen, wie es die <a href={route('editorial', lang)}>redaktionellen Grundsätze</a> vorsehen.</p>
+      <h2>Was wir nicht können</h2><p>Wir verkaufen keine Vignetten, stellen keine Mautbescheinigungen aus und bearbeiten keine Ersatzmaut: dafür sind die Betreiber zuständig (ASFINAG, BAZG, DARS und die anderen auf der Seite <a href={route('method', lang)}>Methode</a>).</p>
+      <h2>Den Rechner einbinden</h2><p>Automobilclubs, Campingplätze, Vereine und Redaktionen können den Rechner kostenlos einbinden: der Code steht auf der Seite <a href={route('widget', lang)}>Rechner einbinden</a>.</p>
+      <h2>Herausgeber</h2>
+    </>}
+    {lang === 'en' && <>
+      <p>One address, read every week: <a href={mail}>{CONTACT_EMAIL}</a>. There is no phone line and we call nobody back: this site sells nothing.</p>
+      <h2>Report an error</h2><p>Give the country, the section or vignette, the vehicle class and the operator page that shows a different price. A confirmed error is corrected and becomes a test, as the <a href={route('editorial', lang)}>editorial policy</a> sets out.</p>
+      <h2>What we cannot do</h2><p>We sell no vignettes, issue no toll receipts and handle no substitute-toll claims: the operators do that (ASFINAG, the Swiss customs, DARS and the others listed in the <a href={route('method', lang)}>method</a>).</p>
+      <h2>Embed the calculator</h2><p>Want the trip cost calculator for vignettes, tolls and fuel on your own blog, campsite website or travel forum? It is free and needs no account; copy the short code from the <a href={route('widget', lang)}>Embed the calculator</a> page.</p>
+      <h2>Publisher</h2>
+    </>}
+    {lang === 'nl' && <>
+      <p>Eén adres, elke week gelezen: <a href={mail}>{CONTACT_EMAIL}</a>. Er is geen telefoonlijn en we bellen niemand terug: deze site verkoopt niets.</p>
+      <h2>Een fout melden</h2><p>Vermeld het land, het traject of het vignet, de voertuigklasse en de pagina van de beheerder die een andere prijs toont. Een bevestigde fout wordt verbeterd en een test, zoals het <a href={route('editorial', lang)}>redactiestatuut</a> voorziet.</p>
+      <h2>Wat we niet kunnen doen</h2><p>Wij verkopen geen vignetten, geven geen tolbewijzen af en behandelen geen vervangende tol: dat doen de beheerders (ASFINAG, de Zwitserse douane, DARS en de anderen op de pagina <a href={route('method', lang)}>methode</a>).</p>
+      <h2>De rekenhulp insluiten</h2><p>Automobielclubs, campings, verenigingen en redacties kunnen de rekenhulp gratis insluiten: de code staat op de pagina <a href={route('widget', lang)}>Rekenhulp insluiten</a>.</p>
+      <h2>Uitgever</h2>
+    </>}
+    <LegalIdentity lang={lang} />
+    <p>{T(`${AUTHOR_NAME} ist für den Inhalt von ${name} verantwortlich; die vollständigen Angaben stehen im`, `${AUTHOR_NAME} is responsible for the content of ${name}; full details are in the`, `${AUTHOR_NAME} is verantwoordelijk voor de inhoud van ${name}; de volledige gegevens staan in het`)} <a href={route('terms', lang)}>{T('Impressum', 'legal notice', 'colofon')}</a>. {T('Seite geprüft am', 'Page reviewed on', 'Pagina nagekeken op')} {H.date(LAST_UPDATED)}.</p>
+  </div>
+</PageLayout>

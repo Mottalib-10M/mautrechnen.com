@@ -1,0 +1,29 @@
+# Wöchentliche Aktualisierung : Weekly Oil Bulletin (Montagsstichtag, Veröffentlichung meist dienstags)
+# und Euro-Referenzkurse der EZB, dann Neuaufbau und Veröffentlichung der Seite.
+name: Spritpreise und Kurse aktualisieren
+on:
+  schedule:
+    - cron: '0 9 * * 2'   # dienstags 9:00 UTC
+    - cron: '0 9 * * 4'   # donnerstags 9:00 UTC, falls das Bulletin später erscheint
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: pip install openpyxl
+      - run: python3 scripts/update-data.py
+      - uses: actions/setup-node@v4
+        with: { node-version: '22' }
+      - run: npm ci --legacy-peer-deps
+      - run: npm run build && npx vitest run
+      - name: Commit, falls sich Daten geändert haben
+        run: |
+          git config user.name 'Radif Partners'
+          git config user.email 'amradif@gmail.com'
+          git add src/data/sprit.json src/data/kurse.json
+          git diff --cached --quiet || (git commit -m 'Daten: Weekly Oil Bulletin und EZB-Kurse' && git push)

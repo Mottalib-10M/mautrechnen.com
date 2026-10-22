@@ -1,0 +1,43 @@
+# Mautrechnen
+
+> Independent German/English/Dutch site by Radif Partners: the full cost of a holiday drive from Germany, the Netherlands or Belgium, there and back. Vignettes of Austria, Switzerland, Slovenia, the Czech Republic, Hungary and Slovakia in the cheapest duration for the travel dates; distance-based tolls in France (APRR, ASF, Escota rate sheets of 1 February 2026), Croatia (HAC, AZM, BINA-Istra), Spain (Ausol, AP-6); Austrian section tolls (Brenner, Tauern, Karawanken, Pyhrn, Arlberg) and Alpine tunnels; Italian tolls shown separately as an estimate (operator per-km rate × routed km, rounded to 10 cents); fuel at each country's national average from the European Commission Weekly Oil Bulletin; currency conversion at ECB reference rates. Sections whose price could not be read from the operator (e.g. Sanef) are marked "not verified" and left out of totals. All calculations run in the browser; no sign-up, no affiliate links. Not an authority or toll operator.
+
+## Main pages (German)
+- /de/ : Mautrechner 2026, cost of the whole trip
+- /de/vignette-oesterreich/ : Austrian vignette 2026, cheapest duration
+- /de/digitale-vignette-oesterreich/ : end of the sticker vignette on 31 January 2027
+- /de/vignette-schweiz/ : Swiss vignette
+- /de/vignette-slowenien/ : Slovenian vignette
+- /de/vignette-tschechien/ : Czech vignette
+- /de/vignette-ungarn/ : Hungarian e-matrica
+- /de/maut-italien/ : Italian tolls (estimate method)
+- /de/maut-frankreich/ : French tolls
+- /de/maut-kroatien/ : Croatian tolls
+- /de/maut-spanien/ : Spanish tolls
+- /de/maut-oesterreich/ : Austrian vignette and section tolls
+- /de/brennermaut/ : Brenner toll
+- /de/tauerntunnel-maut/ : Tauern tunnel toll
+- /de/karawankentunnel-maut/ : Karawanken tunnel toll
+- /de/maut-nach-kroatien/ : whole trip to Croatia
+- /de/maut-nach-italien/ : whole trip to Italy
+- /de/methode/ : sources, rules, tests and limits
+
+## Main pages (English)
+- /en/ : toll calculator 2026
+- /en/austria-vignette/ ; /en/switzerland-vignette/ ; /en/slovenia-vignette/ ; /en/czech-vignette/ ; /en/hungary-vignette/
+- /en/italy-tolls/ ; /en/france-tolls/ ; /en/croatia-tolls/ ; /en/spain-tolls/ ; /en/austria-tolls/
+- /en/fuel-prices-austria/ ; /en/fuel-prices-italy/ ; /en/fuel-prices-france/ ; /en/fuel-prices-germany/
+- /en/tolls-to-croatia/ ; /en/tolls-to-italy/
+- /en/method/ : method and sources
+
+## Main pages (Dutch)
+- /nl/ : tol berekenen 2026
+- /nl/vignet-oostenrijk/ ; /nl/vignet-zwitserland/ ; /nl/tol-frankrijk/ ; /nl/tol-italie/ ; /nl/tol-kroatie/
+- /nl/benzineprijs-duitsland/ ; /nl/benzineprijs-belgie/ ; /nl/tanken-in-luxemburg/
+- /nl/tol-naar-kroatie/ ; /nl/tol-naar-italie/
+- /nl/methode/
+
+## Data
+- Rates: operator rate sheets read on 2026-10-21, each with source URL (ASFINAG, BAZG, DARS, edalnice.cz, nemzetiutdij.hu, eznamka.sk, APRR, Vinci Autoroutes, ATMB, SFTRF, Autostrade per l'Italia, Autostrada del Brennero, HAC, AZM, BINA-Istra, Ausol, Abertis).
+- Fuel: European Commission Weekly Oil Bulletin, updated weekly. Exchange rates: ECB.
+- Routing: OpenStreetMap (ODbL) via OSRM.

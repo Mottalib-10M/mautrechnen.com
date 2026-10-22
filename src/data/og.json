@@ -1,0 +1,27 @@
+{
+ "accent": "#9F1D20",
+ "symbol": "M",
+ "variants": [
+  {
+   "file": "og-de.png",
+   "title": "Maut, Vignette und Sprit\nfür die Urlaubsfahrt",
+   "subtitle": "Österreich · Schweiz · Italien · Frankreich · Kroatien · Slowenien",
+   "badge": "Tarife der Betreiber 2026",
+   "brand": "Mautrechnen"
+  },
+  {
+   "file": "og-en.png",
+   "title": "Tolls, vignettes and fuel\nfor your holiday drive",
+   "subtitle": "Austria · Switzerland · Italy · France · Croatia · Slovenia",
+   "badge": "Operator tariffs 2026",
+   "brand": "Mautrechnen"
+  },
+  {
+   "file": "og-nl.png",
+   "title": "Tol, vignet en brandstof\nvoor je vakantierit",
+   "subtitle": "Oostenrijk · Zwitserland · Italië · Frankrijk · Kroatië · Slovenië",
+   "badge": "Tarieven van de beheerders 2026",
+   "brand": "Mautrechnen"
+  }
+ ]
+}
