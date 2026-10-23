@@ -3,4 +3,4 @@ Allow: /
 
 Disallow: /*?*
 
-Sitemap: https://de-maut-vignette.example/sitemap-index.xml
+Sitemap: https://mautrechnen.com/sitemap-index.xml

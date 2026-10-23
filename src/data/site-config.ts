@@ -1,5 +1,5 @@
 /** Configuration centrale du site (générée par new-site.py). */
-export const SITE_URL = "https://de-maut-vignette.example";
+export const SITE_URL = "https://mautrechnen.com";
 export const SITE_NAMES: Record<string, string> = {"de": "Mautrechnen", "en": "Mautrechnen", "nl": "Mautrechnen"};
 export const LANG_TAGS: Record<string, string> = {"de": "de-DE", "en": "en-DE", "nl": "nl-NL"};
 export const OG_LOCALES: Record<string, string> = {"de": "de_DE", "en": "en_GB", "nl": "nl_NL"};
@@ -18,7 +18,7 @@ export const AUTHOR_DESC: Record<string, string> = {"de": "Radif Partners liest 
  *  themes reellement traites par le site, pas une liste de mots-cles : un sujet
  *  declare ici sans page qui le couvre est une declaration fausse. */
 export const KNOWS_ABOUT: Record<string, string[]> = {"de": ["Vignettenpflicht in Österreich, der Schweiz, Slowenien, Tschechien und Ungarn", "Streckenmaut an Brenner, Tauern, Karawanken und Arlberg", "Autobahngebühren in Frankreich, Italien, Kroatien und Spanien", "Kraftstoffpreise in der Europäischen Union"], "en": ["Vignette rules in Austria, Switzerland, Slovenia, Czechia and Hungary", "Section tolls at the Brenner, Tauern, Karawanken and Arlberg", "Motorway tolls in France, Italy, Croatia and Spain", "Fuel prices across the European Union"], "nl": ["Vignetplicht in Oostenrijk, Zwitserland, Slovenië, Tsjechië en Hongarije", "Trajecttol aan de Brenner, Tauern, Karawanken en Arlberg", "Tol in Frankrijk, Italië, Kroatië en Spanje", "Brandstofprijzen in de Europese Unie"]};
-export const CONTACT_EMAIL = "kontakt@de-maut-vignette.example";
+export const CONTACT_EMAIL = "kontakt@mautrechnen.com";
 export const THEME_COLOR = '#9F1D20';
 export const LOGO_SYMBOL = 'M';
 export const BING_VERIFY_CODE = '';
