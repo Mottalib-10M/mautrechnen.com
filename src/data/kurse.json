@@ -1,11 +1,11 @@
 {
  "quelle": "Europäische Zentralbank, Euro-Referenzkurse",
  "quelle_url": "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.de.html",
- "stand": "2026-10-27",
+ "stand": "2026-10-29",
  "kurse": {
-  "CZK": 24.348,
-  "DKK": 7.4742,
-  "HUF": 367.48,
-  "CHF": 0.9239
+  "CZK": 24.336,
+  "DKK": 7.4736,
+  "HUF": 365.95,
+  "CHF": 0.9222
  }
 }
